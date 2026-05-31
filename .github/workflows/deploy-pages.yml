@@ -1,0 +1,29 @@
+name: deploy-pages
+# Publishes app/ to GitHub Pages on EVERY push that touches app/** — no engines, ~30s.
+# This is what makes the VPS's daily data pushes (and code/design pushes) actually go LIVE.
+# The deploy-key push from the VPS is a normal push, so it triggers this automatically.
+on:
+  push:
+    paths: ["app/**"]
+  workflow_dispatch: {}
+permissions:
+  pages: write
+  id-token: write
+  contents: read
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.dep.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: app
+      - id: dep
+        uses: actions/deploy-pages@v4
