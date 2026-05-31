@@ -223,8 +223,12 @@ function renderBillionaires() {
   const con = BILL.consensus || [];
   if (con.length) {
     h += sec("★ Consensus picks", "held by 2+ funds");
-    h += `<div class="c"><div class="line">Names multiple of these funds own — start here:</div>` +
-      con.map(c => kv(tc(c.name), (c.funds || []).join(" · "))).join("") + `</div>`;
+    h += `<div class="c"><div class="line" style="margin-top:0">Names multiple of these funds own — start here:</div>` +
+      con.map(c => {
+        const fs = c.funds || [];
+        return `<div class="crow"><div class="cname">${esc(tc(c.name))} <span class="cnt">${fs.length} fund${fs.length === 1 ? "" : "s"}</span></div>` +
+          `<div class="cfunds">${fs.map(f => `<span class="fchip">${esc(f)}</span>`).join("")}</div></div>`;
+      }).join("") + `</div>`;
   }
   const funds = (BILL.funds || []).slice().sort((a, b) => (b.portfolio || 0) - (a.portfolio || 0));
   h += sec(`Funds`, `${funds.length} tracked`);
