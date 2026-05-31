@@ -337,6 +337,21 @@ async function boot() {
 }
 
 $("tabs").addEventListener("click", e => { if (e.target.classList.contains("tab")) go(e.target.dataset.view); });
-if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+// PWA auto-update: register, check for new versions on open + refocus, and reload ONCE when
+// a new worker takes over — so the home-screen app stays current instead of stuck on an old build.
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js").then(reg => {
+    reg.update();                                                 // check for a new SW now
+    setInterval(() => reg.update(), 60 * 60 * 1000);              // ...and hourly while open
+    document.addEventListener("visibilitychange", () => { if (!document.hidden) { reg.update(); boot(); } });
+  }).catch(() => {});
+  // Only reload on an UPDATE (a controller already existed), not the first-ever install — avoids loops.
+  if (navigator.serviceWorker.controller) {
+    let reloaded = false;
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (reloaded) return; reloaded = true; location.reload();
+    });
+  }
+}
 boot();
 setInterval(() => { if (["home", "alerts", "macro"].includes(VIEW)) boot(); }, 120000);
