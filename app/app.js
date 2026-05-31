@@ -1,5 +1,5 @@
 // Smart Money PWA — clarity-first: every number labeled, every section explained in plain English.
-let A = null, BILL = null, MACRO = null, POL = null, VAL = null, VIEW = "home", POL_SORT = "active";
+let A = null, BILL = null, MACRO = null, POL = null, VAL = null, PICKS = null, BT = null, VIEW = "home", POL_SORT = "active";
 
 const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const safeUrl = u => /^https?:\/\//i.test(String(u || "")) ? u : "#";
@@ -34,6 +34,7 @@ function go(v) {
 
 function route() {
   if (VIEW === "home") renderHome();
+  else if (VIEW === "fund") renderFund();
   else if (VIEW === "alerts") renderAlerts();
   else if (VIEW === "billionaires") renderBillionaires();
   else if (VIEW === "macro") renderMacro();
@@ -97,6 +98,70 @@ function valuationBlock(ticker) {
     (has(m.ev_ebitda) ? kv("EV / EBITDA", `${m.ev_ebitda.toFixed(1)}× · ${pct("ev_ebitda")} pctile vs peers`) : "") +
     (has(m.ev_rev) ? kv("EV / Revenue", `${m.ev_rev.toFixed(1)}× · ${pct("ev_rev")} pctile vs peers`) : "") +
     `<div class="hint">Rough fair-value estimate — directional, not gospel. Lower percentile = cheaper than its peers.</div>`;
+}
+
+// AI Fund — CEO → 5-investor committee → deterministic CIO → QA gate → Top 5 day/month.
+function fundPickCard(p, rank) {
+  const sc = Math.round(p.score || 0), [bw, bc] = band(sc);
+  const com = p.committee || {};
+  const comRows = Object.keys(com).map(n => kv(n, `${com[n]}/100`)).join("");
+  const val = (p.intrinsic != null && !isNaN(p.intrinsic))
+    ? kv("Est. fair value / price", `$${p.intrinsic.toFixed(2)} / $${(p.market_price || 0).toFixed(2)}`) : "";
+  const reason = p.narration ? esc(p.narration) : esc(p.why || "");
+  return `<div class="c tap" onclick="this.classList.toggle('open')">
+    <div class="c-h"><span class="rank">#${rank}</span><span class="tk">${esc(p.ticker)}</span><span class="chip">${esc((p.type || "").replace("_", " "))}</span><span class="pill ${bc}">${sc}/100</span></div>
+    <div class="fields">${field("Sector", esc(p.sector || "—"))}${field("Conviction", bw)}</div>
+    <div class="det">${reason ? `<div class="line">${reason}</div>` : ""}
+      <div class="lbl">Committee vote (each investor's score)</div>${comRows}${val}</div></div>`;
+}
+
+function renderFund() {
+  let h = intro("AI Fund", "An AI investment committee — 5 famous-investor agents, a CEO, and a QA gate — that turns the app's signals into Top-5 picks. Run by a deterministic CIO, so no AI hallucination picks your trades.");
+  h += explain("How this works (and what it is NOT)", `
+    A mini hedge-fund org runs over the app's signals every update:
+    <dl class="gloss">
+    <dt>👔 CEO</dt><dd>Reads the market regime + past lessons, sets the day's risk posture, and schedules the work.</dd>
+    <dt>🧠 Committee</dt><dd>5 agents in the style of Buffett, Munger, Ackman, Cohen & Dalio each score the candidates their own way.</dd>
+    <dt>🧮 CIO</dt><dd>A <b>deterministic</b> rule blends their votes (regime-weighted) into the ranking — the math decides, not an LLM.</dd>
+    <dt>✅ QA gate</dt><dd>Sanity-checks the result before it's published. If it looks wrong, it holds.</dd>
+    <dt>📚 Learning</dt><dd>Tracks how past picks actually did and feeds lessons back to the CEO.</dd>
+    </dl>
+    <b>Not advice.</b> Scores are signal-strength (0–100), not predictions. See "Track record" for the honest performance check.`);
+  if (!PICKS || !PICKS.top_day || !PICKS.top_day.length) {
+    $("list").innerHTML = h + '<div class="empty">No picks yet.<br>Run <b>committee.py</b> to convene the board.</div>'; return;
+  }
+  const ceo = PICKS.ceo || {};
+  const pCls = ceo.posture === "defensive" ? "r" : ceo.posture === "constructive" ? "g" : "a";
+  const qa = PICKS.qa || {};
+  h += `<div class="c"><div class="c-h"><span class="name">👔 CEO directive</span><span class="pill ${pCls}">${esc(ceo.posture || "—")}</span></div>
+    <div class="line">${esc(ceo.directive || "")}</div>
+    <div class="hint">${qa.passed ? "✅ QA passed" : "⚠️ QA held: " + esc((qa.issues || []).join("; "))} · ${PICKS.universe || 0} candidates · updated ${ago(PICKS.updated)} ago</div></div>`;
+
+  h += sec("Top 5 — Today", "highest conviction");
+  h += PICKS.top_day.map((p, i) => fundPickCard(p, i + 1)).join("");
+
+  if (PICKS.top_month && PICKS.top_month.length) {
+    h += sec("Top 5 — This Month", "30-day conviction");
+    h += PICKS.top_month.map((p, i) => fundPickCard(p, i + 1)).join("");
+  }
+
+  // Track record (honest backtest)
+  h += sec("Track record", "honest backtest");
+  const f = (BT && BT.forward) || {}, r = (BT && BT.retrospective) || {};
+  if (f.n) {
+    const cls = f.beat_spy ? "g" : "r";
+    h += `<div class="c"><div class="c-h"><span class="name" style="font-size:15px">Forward test (real)</span><span class="pill ${cls}">${f.excess > 0 ? "+" : ""}${f.excess}% vs SPY</span></div>
+      <div class="line">Locked picks since their pick date: <b>${f.avg_return > 0 ? "+" : ""}${f.avg_return}%</b> vs SPY <b>${f.spy_return > 0 ? "+" : ""}${f.spy_return}%</b> · ${f.hit_rate}% beat SPY · n=${f.n}. No lookahead.</div></div>`;
+  } else {
+    h += `<div class="c"><div class="c-h"><span class="name" style="font-size:15px">Forward test (real)</span><span class="chip">maturing</span></div>
+      <div class="line">${esc(f.note || "Accumulating — picks need ~2 weeks to grade.")}</div></div>`;
+  }
+  if (r.n) {
+    h += `<div class="c"><div class="c-h"><span class="name" style="font-size:15px">Retrospective (rough)</span><span class="pill ${r.excess > 0 ? "g" : "r"}">${r.excess > 0 ? "+" : ""}${r.excess}% vs SPY</span></div>
+      <div class="line">Flagged names' trailing ${r.window_days}d: <b>${r.avg_return}%</b> vs SPY <b>${r.spy_return}%</b>.</div>
+      <div class="hint">${esc(r.note || "")}</div></div>`;
+  }
+  $("list").innerHTML = h;
 }
 
 function renderAlerts() {
@@ -264,7 +329,7 @@ function renderPoliticians() {
 }
 
 async function boot() {
-  [A, BILL, MACRO, VAL] = await Promise.all([getJSON("alerts.json"), getJSON("billionaires.json"), getJSON("macro.json"), getJSON("valuation.json")]);
+  [A, BILL, MACRO, VAL, PICKS, BT] = await Promise.all([getJSON("alerts.json"), getJSON("billionaires.json"), getJSON("macro.json"), getJSON("valuation.json"), getJSON("picks.json"), getJSON("backtest.json")]);
   const o = MACRO && MACRO.overall;
   $("statusmini").innerHTML = o ? `macro <b style="color:${o === "GREEN" ? "var(--green)" : o === "RED" ? "var(--red)" : "var(--amber)"}">${esc(o)}</b>` : "";
   $("sub").textContent = `${(A && A.count) || 0} alerts · ${(BILL && BILL.funds && BILL.funds.length) || 0} funds · updated ${ago((A && A.updated) || (MACRO && MACRO.updated))} ago`;

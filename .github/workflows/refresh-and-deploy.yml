@@ -30,11 +30,13 @@ jobs:
           python run.py          || echo "alerts failed"
           python billionaires.py || echo "billionaires failed"
           python politicians.py  || echo "politicians failed"
+          python committee.py    || echo "committee failed"   # CEO + 5-investor board -> Top 5 day/month
+          python backtest.py     || echo "backtest failed"    # honest forward + retrospective vs SPY
       - name: Commit refreshed JSON
         run: |
           git config user.name "alerts-bot"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add app/*.json || true
+          git add app/*.json fund_state/ || true   # fund_state persists picks history → learning + month/forward
           git commit -m "data refresh" || echo "no changes"
           git push || true
       - uses: actions/configure-pages@v5
