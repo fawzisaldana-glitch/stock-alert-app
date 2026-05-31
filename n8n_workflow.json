@@ -1,0 +1,32 @@
+{
+  "name": "Smart-Money Alerts",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": { "interval": [ { "field": "hours", "hoursInterval": 2 } ] }
+      },
+      "id": "schedule",
+      "name": "Every 2h (market hours best)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [ 260, 300 ]
+    },
+    {
+      "parameters": {
+        "command": "python \"C:\\\\Users\\\\Owner\\\\OneDrive\\\\stock-alert-app\\\\run.py\" --notify"
+      },
+      "id": "runengine",
+      "name": "Run alert engine (--notify)",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [ 520, 300 ]
+    }
+  ],
+  "connections": {
+    "Every 2h (market hours best)": {
+      "main": [ [ { "node": "Run alert engine (--notify)", "type": "main", "index": 0 } ] ]
+    }
+  },
+  "settings": { "executionOrder": "v1" },
+  "_note": "Import via n8n > Workflows > Import from File. The engine itself does the SEC/USAspending pulls + Telegram push, so n8n only needs to trigger it on a schedule. Alternative (no n8n): Windows Task Scheduler running the same command."
+}

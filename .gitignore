@@ -1,0 +1,14 @@
+# Secrets and local state — never commit these
+# (gitignore note: '#' is only a comment at line start — NO trailing/inline comments)
+.env
+alerts.db
+__pycache__/
+*.pyc
+# Local-only / ephemeral artifacts:
+# cache/ = daily valuation + peer caches (regenerated, would go stale)
+# phone-qr.png = ephemeral tunnel QR
+# .claude/ = local dev launch config
+cache/
+phone-qr.png
+.claude/
+# app/*.json AND app/reports/*.xlsx ARE committed — the data the PWA reads, refreshed by CI.

@@ -1,0 +1,8 @@
+# Core (stdlib does most of the work):
+defusedxml>=0.7.1   # safely parse filer-submitted SEC XML (blocks XXE / billion-laughs)
+truststore>=0.9.0   # validate TLS against the OS cert store (handles corporate/AV proxies)
+# For the politician win-rate (free price data):
+yfinance>=0.2
+pandas>=2.0
+# For research.py — formula-driven DCF + comps Excel deliverables (deep-dive button in PWA):
+openpyxl>=3.1
