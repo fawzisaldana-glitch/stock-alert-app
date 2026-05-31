@@ -87,6 +87,12 @@
   .stag.strong{color:var(--green);border-color:rgba(33,214,160,.32);background:rgba(33,214,160,.08)}
   .stag.exp{color:var(--amber);border-color:rgba(246,178,62,.32);background:rgba(246,178,62,.08)}
   .subnote{color:var(--faint);font-size:12px;margin:0 2px 5px;font-family:var(--mono)}
+  /* segmented sort control (Politicians) */
+  .seg{display:flex;gap:6px;margin:4px 2px 8px;overflow-x:auto;scrollbar-width:none}
+  .seg::-webkit-scrollbar{display:none}
+  .segbtn{flex:0 0 auto;padding:6px 12px;border-radius:9px;font-size:12.5px;font-weight:600;color:var(--dim);
+          background:var(--card);border:1px solid var(--line);cursor:pointer;white-space:nowrap;transition:.15s}
+  .segbtn.on{color:var(--bg);background:var(--accent);border-color:var(--accent)}
 </style>
 </head>
 <body>

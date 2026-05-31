@@ -1,5 +1,5 @@
 // Smart Money PWA — clarity-first: every number labeled, every section explained in plain English.
-let A = null, BILL = null, MACRO = null, POL = null, VAL = null, VIEW = "home";
+let A = null, BILL = null, MACRO = null, POL = null, VAL = null, VIEW = "home", POL_SORT = "active";
 
 const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const safeUrl = u => /^https?:\/\//i.test(String(u || "")) ? u : "#";
@@ -216,30 +216,49 @@ function renderMacro() {
   $("list").innerHTML = h;
 }
 
+function setPolSort(s) { POL_SORT = s; renderPoliticians(); }
+
 function renderPoliticians() {
   let h = intro("Politician trades", "Stock trades that members of Congress disclosed. Interesting to watch — but a weak, late signal, not a buy trigger.");
   h += explain("How to read this tab — and the HD / “house” confusion", `
-    Members of Congress must disclose their stock trades. This shows their recent <b>buys</b>.
+    Members of Congress must disclose their stock trades. <b>Tap a person to see only their trades.</b>
     <dl class="gloss">
     <dt>"House" / "Senate"</dt><dd>Which chamber of Congress the person serves in — <b>not</b> a property. "Rep." = House, "Sen." = Senate.</dd>
-    <dt>The ticker (e.g. HD)</dt><dd>The <b>stock</b> they bought. HD = Home Depot, PH = Parker-Hannifin. It's a company symbol — <b>nothing to do with buying a house.</b></dd>
-    <dt>"% since"</dt><dd>Roughly how that stock has done since the trade date — approximate, and disclosure lags the actual trade by weeks.</dd>
+    <dt>The ticker (e.g. HD)</dt><dd>The <b>stock</b> they traded. HD = Home Depot, PH = Parker-Hannifin. A company symbol — <b>nothing to do with buying a house.</b></dd>
+    <dt>"avg" / "% since"</dt><dd>Roughly how their buys have done since the disclosed date — approximate, and disclosure lags the real trade by weeks.</dd>
+    <dt>Sort buttons</dt><dd><b>Active</b> = most trades · <b>Recent</b> = newest first · <b>Profitable</b> = best average return on buys.</dd>
     </dl>
-    Why it's down here: research ranks congressional trading as one of the <b>weakest</b> signals (lagged, small samples). Fun to know, not an edge. A fuller version (100+ politicians, tap a person for their trades) is coming next.`);
-  if (!POL || !POL.recent || !POL.recent.length) {
+    Heads-up: research ranks congressional trading among the <b>weakest</b> signals (lagged, small samples) — fun to know, not an edge. This shows recent disclosures from a free feed (~20-30 members), not the full roster.`);
+  const pols = (POL && POL.politicians) || [];
+  if (!pols.length) {
     $("list").innerHTML = h + '<div class="empty">No data yet.<br>Run <b>politicians.py</b> to populate.</div>'; return;
   }
-  if (POL.leaders && POL.leaders.length) {
-    h += sec("Most active buyers", "est. results");
-    h += `<div class="c"><div class="line">Who's been buying the most (estimated % positive is rough — see the note above):</div>` +
-      POL.leaders.map(l => kv(l.name, `${l.trades} buys · ~${l.win_rate}% positive · avg ${l.avg_return > 0 ? "+" : ""}${l.avg_return}%`)).join("") + `</div>`;
-  }
-  h += sec("Recent buys");
-  h += (POL.recent || []).map(t => {
-    const ch = String(t.chamber || ""), pre = /sen/i.test(ch) ? "Sen." : /house|rep/i.test(ch) ? "Rep." : "";
-    const retTxt = t.ret == null ? "—" : (t.ret > 0 ? "+" : "") + t.ret + "%";
-    return `<div class="c"><div class="c-h"><span class="tk">${esc(t.ticker)}</span><span class="chip">stock</span><span class="pill ${t.ret > 0 ? "g" : ""}">${esc(retTxt)}</span></div>
-      <div class="line"><b>${esc((pre ? pre + " " : "") + t.name)}</b>${ch ? " · " + esc(ch) : ""} · bought ${esc(t.date)}</div></div>`;
+
+  // sort toggle (segmented control)
+  const seg = (id, label) => `<span class="segbtn ${POL_SORT === id ? "on" : ""}" onclick="setPolSort('${id}')">${label}</span>`;
+  h += `<div class="seg">${seg("active", "Most active")}${seg("recent", "Most recent")}${seg("profitable", "Most profitable")}</div>`;
+
+  const sorted = pols.slice();
+  if (POL_SORT === "recent") sorted.sort((a, b) => String(b.last_date).localeCompare(String(a.last_date)));
+  else if (POL_SORT === "profitable") sorted.sort((a, b) => (b.avg_return == null ? -1e9 : b.avg_return) - (a.avg_return == null ? -1e9 : a.avg_return));
+  else sorted.sort((a, b) => b.trades - a.trades);
+
+  h += sorted.map(p => {
+    const pre = /sen/i.test(p.chamber) ? "Sen." : "Rep.";
+    const ar = p.avg_return == null ? null : (p.avg_return > 0 ? "+" : "") + p.avg_return + "%";
+    const arCls = p.avg_return == null ? "" : p.avg_return > 0 ? "g" : "r";
+    const pill = ar ? `<span class="pill ${arCls}">${esc(ar)} avg</span>` : `<span class="pill">${p.trades} trades</span>`;
+    const items = (p.items || []).map(t => {
+      const verb = (t.type || "").toLowerCase().startsWith("purchase") || (t.type || "").toLowerCase().startsWith("buy") ? "bought" : "sold";
+      const retTxt = t.ret == null ? "" : ` <span class="pill ${t.ret > 0 ? "g" : "r"}" style="margin-left:6px">${t.ret > 0 ? "+" : ""}${t.ret}%</span>`;
+      const co = t.company ? tc(t.company) : "";
+      return `<div class="kv"><span class="k">${esc(t.ticker || "—")}${co ? " · " + esc(co) : ""}</span><span class="v">${esc(verb)} ${esc(t.date)}${retTxt}</span></div>`;
+    }).join("");
+    return `<div class="c tap" onclick="this.classList.toggle('open')">
+      <div class="c-h"><span class="name" style="font-size:16px">${esc(pre + " " + p.name)}</span>${pill}</div>
+      <div class="fields">${field("Chamber", esc(p.chamber))}${field("Disclosed trades", p.trades)}${field("Buys", p.buys)}${field("Last trade", esc(p.last_date || "—"))}</div>
+      <div class="det"><div class="lbl">Their disclosed trades</div>${items}
+        ${p.win_rate != null ? `<div class="hint">~${p.win_rate}% of their buys are positive since the disclosed date (approximate).</div>` : ""}</div></div>`;
   }).join("");
   $("list").innerHTML = h;
 }
