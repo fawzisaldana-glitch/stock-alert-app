@@ -2,9 +2,7 @@ name: refresh-and-deploy
 # Runs the data engines on a schedule and publishes the PWA to GitHub Pages — free, always-on.
 on:
   schedule:
-    - cron: "0 11 * * *"     # ~6am ET, EVERY morning (cloud-run, PC off). 1x/day now;
-                             # add a 2nd line (e.g. "0 21 * * *") later for the CEO's 2x cadence.
-    - cron: "0 17 * * *"     # TEMP one-time schedule-fire VERIFICATION — remove after it fires green.
+    - cron: "0 11 * * *"     # ~6am ET daily backup run (kept as a safety net; primary orchestration moving to cloud n8n)
   workflow_dispatch: {}        # manual "Run workflow" button
 permissions:
   contents: write
