@@ -1,9 +1,9 @@
 name: refresh-and-deploy
 # Runs the data engines on a schedule and publishes the PWA to GitHub Pages — free, always-on.
 on:
-  schedule:
-    - cron: "0 11 * * *"     # ~6am ET daily backup run (kept as a safety net; primary orchestration moving to cloud n8n)
-  workflow_dispatch: {}        # manual "Run workflow" button
+  # Daily driver is now the cloud n8n workflow (SSH → VPS engines). This stays as a
+  # MANUAL fallback only — no schedule, so it won't fight the VPS for git pushes.
+  workflow_dispatch: {}
 permissions:
   contents: write
   pages: write
