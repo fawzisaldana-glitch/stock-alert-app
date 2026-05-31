@@ -1,5 +1,5 @@
 // Service worker: cache the app shell for installability/offline; always fetch fresh alerts.
-const CACHE = "sma-v5";
+const CACHE = "sma-v6";
 const SHELL = ["./", "index.html", "app.js", "manifest.webmanifest", "icon-192.png", "icon-512.png"];
 
 self.addEventListener("install", e => {

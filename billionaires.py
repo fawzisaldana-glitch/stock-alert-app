@@ -16,14 +16,59 @@ import defusedxml.ElementTree as ET
 import config
 import fetch
 
-# Famous investors -> resolved by name to their fund's SEC CIK at runtime.
+# Famous investors -> resolved by name to their fund's SEC 13F-HR CIK at runtime.
+# Unresolved names are skipped gracefully (printed + omitted), so a few misses are fine.
 FUNDS = [
-    "Berkshire Hathaway",            # Warren Buffett
-    "Scion Asset Management",        # Michael Burry
-    "Pershing Square Capital Management",  # Bill Ackman
-    "Appaloosa LP",                  # David Tepper
-    "Duquesne Family Office",        # Stanley Druckenmiller
-    "Third Point LLC",               # Dan Loeb
+    "Berkshire Hathaway",                   # Warren Buffett
+    "Scion Asset Management",               # Michael Burry
+    "Pershing Square Capital Management",   # Bill Ackman
+    "Appaloosa LP",                         # David Tepper
+    "Duquesne Family Office",               # Stanley Druckenmiller
+    "Third Point LLC",                      # Dan Loeb
+    "Icahn Capital LP",                     # Carl Icahn
+    "Baupost Group",                        # Seth Klarman
+    "Oaktree Capital Management",           # Howard Marks
+    "Soros Fund Management",                # George Soros
+    "Renaissance Technologies",             # Jim Simons
+    "Tiger Global Management",              # Chase Coleman
+    "Greenlight Capital",                   # David Einhorn
+    "Fairholme Capital Management",         # Bruce Berkowitz
+    "Gotham Asset Management",              # Joel Greenblatt
+    "Himalaya Capital Management",          # Li Lu
+    "Polen Capital Management",
+    "Tweedy Browne Company",
+    "Elliott Investment Management",        # Paul Singer
+    "Lone Pine Capital",                    # Steve Mandel
+    "Viking Global Investors",              # Andreas Halvorsen
+    "Coatue Management",                    # Philippe Laffont
+    "Abrams Capital Management",            # David Abrams
+    "Akre Capital Management",              # Chuck Akre
+    "Trian Fund Management",                # Nelson Peltz
+    "ValueAct Capital Management",          # Jeff Ubben / Mason Morfit
+    "Southeastern Asset Management",        # Mason Hawkins
+    "Pzena Investment Management",          # Rich Pzena
+    "Dodge & Cox",
+    "First Eagle Investment Management",
+    "Davis Selected Advisers",              # Chris Davis
+    "Eagle Capital Management",
+    "Hound Partners",
+    "Wedgewood Partners",
+    "Greenhaven Associates",                # Edgar Wachenheim
+    "Pabrai Investments",                   # Mohnish Pabrai
+    "Smead Capital Management",
+    "AQR Capital Management",               # Cliff Asness
+    "Citadel Advisors",                     # Ken Griffin
+    "Millennium Management",                # Izzy Englander
+    "Point72 Asset Management",             # Steve Cohen
+    "D1 Capital Partners",                  # Dan Sundheim
+    "Two Sigma Investments",
+    "Marshall Wace",
+    "Ruane Cunniff",                        # Sequoia Fund
+    "Markel Group",                         # Tom Gayner
+    "Bridgewater Associates",               # Ray Dalio
+    "Tudor Investment",                     # Paul Tudor Jones
+    "Hussman Strategic Advisors",           # John Hussman
+    "Altarock Partners",
 ]
 
 
@@ -127,11 +172,18 @@ def analyze(name_query):
         return None
     cur = _aggregate(infotable(cik, filings[0][0]))
     prev = _aggregate(infotable(cik, filings[1][0])) if len(filings) > 1 else {}
-    # 13F value is in dollars (post-2023) or thousands (older) — auto-scale by portfolio magnitude
-    tot = sum(a["value"] for a in cur.values())
-    if 0 < tot < 1e9:
-        for a in cur.values():
-            a["value"] *= 1000
+    # 13F "value" units are INCONSISTENT across filers (Berkshire reports dollars, Duquesne
+    # reports thousands — both in 2026 filings), so neither portfolio magnitude nor filing date
+    # reliably distinguishes them. Detect PER FILER from the implied share price (value/shares):
+    # a real stock trades above $1, so a median implied price below $1 means values are in
+    # thousands → scale ×1000. Median ignores the occasional option/notional line.
+    def _normalize_units(agg):
+        ps = sorted(a["value"] / a["shares"] for a in agg.values() if a["shares"] > 0 and a["value"] > 0)
+        if ps and ps[len(ps) // 2] < 1.0:
+            for a in agg.values():
+                a["value"] *= 1000
+    _normalize_units(cur)
+    _normalize_units(prev)
     new_buys = sorted([(c, a) for c, a in cur.items() if c not in prev],
                       key=lambda x: -x[1]["value"])
     adds = sorted([(c, a) for c, a in cur.items()
@@ -169,6 +221,9 @@ def main():
             print(f"  {q[:34]:34s} -> unresolved / no 13F")
             continue
         seen.add(r["cik"])
+        if r["holdings"] == 0 or r["portfolio"] <= 0:
+            print(f"  {q[:34]:34s} -> resolved but 0 holdings parsed — skipped")
+            continue
         results.append(r)
         print(f"\n{r['entity'][:48]} (as of {r['report']}) ${r['portfolio']/1e9:.1f}B / {r['holdings']} pos")
         for label, key in (("NEW BUYS", "new_buys"), ("ADDED TO", "adds"), ("TOP HOLDINGS", "top")):

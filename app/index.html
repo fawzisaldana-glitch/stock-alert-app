@@ -68,6 +68,25 @@
   .sw{width:9px;height:9px;border-radius:3px;display:inline-block}
   .empty{color:var(--dim);text-align:center;padding:46px 22px;line-height:1.8}
   a{color:var(--accent)}
+  /* "How to read this" explainers (collapsible, beginner-friendly) */
+  details.explain{background:var(--card);border:1px solid var(--line);border-radius:12px;margin:2px 0;overflow:hidden}
+  details.explain summary{cursor:pointer;list-style:none;padding:11px 14px;color:var(--accent);font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px}
+  details.explain summary::-webkit-details-marker{display:none}
+  details.explain summary .i{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;border:1px solid var(--accent);font-family:var(--serif);font-style:italic;font-size:11px}
+  details.explain[open] summary{border-bottom:1px solid var(--line)}
+  .ebody{padding:12px 14px;color:var(--dim);font-size:13px;line-height:1.6}
+  .ebody b{color:var(--txt);font-weight:600}
+  dl.gloss{margin:8px 0 0}
+  dl.gloss dt{color:var(--txt);font-weight:600;font-size:12.5px;margin-top:9px}
+  dl.gloss dd{margin:2px 0 0;color:var(--dim);font-size:12.5px;line-height:1.55}
+  .dotc{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:5px;vertical-align:middle}
+  .dotc.g{background:var(--green)} .dotc.a{background:var(--amber)} .dotc.r{background:var(--red)}
+  /* section sub-headers within a tab */
+  .sec{display:flex;align-items:center;gap:9px;margin:15px 2px 3px;font-family:var(--serif);font-weight:600;font-size:16px;color:var(--txt)}
+  .stag{font-family:var(--mono);font-size:10px;font-weight:600;padding:2px 8px;border-radius:6px;color:var(--dim);border:1px solid var(--line);white-space:nowrap}
+  .stag.strong{color:var(--green);border-color:rgba(33,214,160,.32);background:rgba(33,214,160,.08)}
+  .stag.exp{color:var(--amber);border-color:rgba(246,178,62,.32);background:rgba(246,178,62,.08)}
+  .subnote{color:var(--faint);font-size:12px;margin:0 2px 5px;font-family:var(--mono)}
 </style>
 </head>
 <body>
@@ -83,7 +102,6 @@
       <div class="tab" data-view="billionaires">Billionaires</div>
       <div class="tab" data-view="politicians">Politicians</div>
       <div class="tab" data-view="macro">Macro</div>
-      <div class="tab" data-view="research">Research</div>
     </div>
   </header>
   <main id="list"></main>
