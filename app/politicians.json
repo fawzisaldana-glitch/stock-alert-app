@@ -1,255 +1,576 @@
 {
-  "updated": 1780209835.4011657,
-  "source": "FMP senate/house-latest (interim: cached + yfinance names; full refresh next CI run)",
-  "disclaimer": "Informational only - NOT a buy signal. Returns approximate (from trade date), amounts are ranges, congress is a weak/lagged signal.",
+  "updated": 1780335525.573846,
+  "source": "FMP (senate-latest + house-latest)",
+  "disclaimer": "Informational only \u2014 NOT a buy signal. Recent disclosures from the free data feed (~20-30 members), not the full roster. Returns are approximate (from the disclosed trade date, which lags the actual trade by weeks-to-months).",
   "politicians": [
-    {
-      "name": "John Boozman",
-      "chamber": "Senate",
-      "trades": 9,
-      "buys": 9,
-      "last_date": "2026-04-09",
-      "avg_return": 4.4,
-      "win_rate": 67,
-      "items": [
-        {
-          "ticker": "DVN",
-          "company": "Devon Energy Corporation",
-          "type": "Purchase",
-          "date": "2026-04-09",
-          "amount": "",
-          "ret": -7.1
-        },
-        {
-          "ticker": "CEG",
-          "company": "Constellation Energy Corporatio",
-          "type": "Purchase",
-          "date": "2026-04-02",
-          "amount": "",
-          "ret": 5.6
-        },
-        {
-          "ticker": "GOOGL",
-          "company": "Alphabet Inc.",
-          "type": "Purchase",
-          "date": "2025-09-17",
-          "amount": "",
-          "ret": 52.6
-        },
-        {
-          "ticker": "IEF",
-          "company": "iShares 7-10 Year Treasury Bond",
-          "type": "Purchase",
-          "date": "2025-09-16",
-          "amount": "",
-          "ret": -0.1
-        },
-        {
-          "ticker": "IEI",
-          "company": "iShares 3-7 Year Treasury Bond ",
-          "type": "Purchase",
-          "date": "2025-09-16",
-          "amount": "",
-          "ret": 0.4
-        },
-        {
-          "ticker": "SCHP",
-          "company": "Schwab U.S. TIPs ETF",
-          "type": "Purchase",
-          "date": "2025-09-16",
-          "amount": "",
-          "ret": 1.1
-        },
-        {
-          "ticker": "SHY",
-          "company": "iShares 1-3 Year Treasury Bond ",
-          "type": "Purchase",
-          "date": "2025-09-16",
-          "amount": "",
-          "ret": 1.6
-        },
-        {
-          "ticker": "ETN",
-          "company": "Eaton Corporation, PLC",
-          "type": "Purchase",
-          "date": "2025-09-12",
-          "amount": "",
-          "ret": 10.4
-        },
-        {
-          "ticker": "ADBE",
-          "company": "Adobe Inc.",
-          "type": "Purchase",
-          "date": "2025-09-04",
-          "amount": "",
-          "ret": -24.7
-        }
-      ]
-    },
     {
       "name": "David Taylor",
       "chamber": "House",
-      "trades": 8,
+      "trades": 13,
       "buys": 8,
       "last_date": "2026-05-15",
-      "avg_return": 3.2,
+      "avg_return": 1.8,
       "win_rate": 62,
       "items": [
         {
-          "ticker": "PH",
-          "company": "Parker-Hannifin Corporation",
-          "type": "Purchase",
-          "date": "2026-05-15",
-          "amount": "",
-          "ret": -2.1
-        },
-        {
-          "ticker": "MEDP",
-          "company": "Medpace Holdings, Inc.",
-          "type": "Purchase",
-          "date": "2026-05-15",
-          "amount": "",
-          "ret": 7.7
-        },
-        {
-          "ticker": "HD",
-          "company": "Home Depot, Inc. (The)",
-          "type": "Purchase",
-          "date": "2026-05-15",
-          "amount": "",
-          "ret": 6.6
-        },
-        {
           "ticker": "T",
-          "company": "AT&T Inc.",
+          "company": "AT&T Inc",
           "type": "Purchase",
           "date": "2026-05-15",
-          "amount": "",
-          "ret": 3.2
+          "amount": "$1,001 - $15,000",
+          "ret": 2.6,
+          "link": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034650.pdf"
         },
         {
-          "ticker": "PH",
-          "company": "Parker-Hannifin Corporation",
-          "type": "Purchase",
+          "ticker": "GOOGL",
+          "company": "Alphabet Inc",
+          "type": "Sale",
           "date": "2026-05-15",
-          "amount": "",
-          "ret": -2.1
+          "amount": "$1,001 - $15,000",
+          "ret": null,
+          "link": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034650.pdf"
+        },
+        {
+          "ticker": "AAPL",
+          "company": "Apple Inc",
+          "type": "Sale",
+          "date": "2026-05-15",
+          "amount": "$1,001 - $15,000",
+          "ret": null,
+          "link": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034650.pdf"
+        },
+        {
+          "ticker": "GOOGL",
+          "company": "Alphabet Inc",
+          "type": "Sale",
+          "date": "2026-05-15",
+          "amount": "$15,001 - $50,000",
+          "ret": null,
+          "link": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034650.pdf"
+        },
+        {
+          "ticker": "AAPL",
+          "company": "Apple Inc",
+          "type": "Sale",
+          "date": "2026-05-15",
+          "amount": "$1,001 - $15,000",
+          "ret": null,
+          "link": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034650.pdf"
         },
         {
           "ticker": "MEDP",
-          "company": "Medpace Holdings, Inc.",
+          "company": "Medpace Holdings Inc",
           "type": "Purchase",
           "date": "2026-05-15",
-          "amount": "",
-          "ret": 7.7
+          "amount": "$1,001 - $15,000",
+          "ret": 9.2,
+          "link": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034650.pdf"
+        },
+        {
+          "ticker": "AAPL",
+          "company": "Apple Inc",
+          "type": "Sale",
+          "date": "2026-05-15",
+          "amount": "$1,001 - $15,000",
+          "ret": null,
+          "link": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034650.pdf"
         },
         {
           "ticker": "PH",
-          "company": "Parker-Hannifin Corporation",
+          "company": "Parker-Hannifin Corp",
           "type": "Purchase",
           "date": "2026-05-15",
-          "amount": "",
-          "ret": -2.1
+          "amount": "$1,001 - $15,000",
+          "ret": -4.6,
+          "link": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034650.pdf"
+        },
+        {
+          "ticker": "PH",
+          "company": "Parker-Hannifin Corp",
+          "type": "Purchase",
+          "date": "2026-05-15",
+          "amount": "$1,001 - $15,000",
+          "ret": -4.6,
+          "link": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034650.pdf"
         },
         {
           "ticker": "HD",
-          "company": "Home Depot, Inc. (The)",
+          "company": "The Home Depot Inc",
           "type": "Purchase",
           "date": "2026-05-15",
-          "amount": "",
-          "ret": 6.6
+          "amount": "$1,001 - $15,000",
+          "ret": 3.7,
+          "link": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034650.pdf"
+        },
+        {
+          "ticker": "HD",
+          "company": "The Home Depot Inc",
+          "type": "Purchase",
+          "date": "2026-05-15",
+          "amount": "$1,001 - $15,000",
+          "ret": 3.7,
+          "link": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034650.pdf"
+        },
+        {
+          "ticker": "PH",
+          "company": "Parker-Hannifin Corp",
+          "type": "Purchase",
+          "date": "2026-05-15",
+          "amount": "$1,001 - $15,000",
+          "ret": -4.6,
+          "link": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034650.pdf"
+        },
+        {
+          "ticker": "MEDP",
+          "company": "Medpace Holdings Inc",
+          "type": "Purchase",
+          "date": "2026-05-15",
+          "amount": "$1,001 - $15,000",
+          "ret": 9.2,
+          "link": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034650.pdf"
         }
       ]
     },
     {
-      "name": "Gary Peters",
+      "name": "John Boozman",
       "chamber": "Senate",
-      "trades": 2,
-      "buys": 2,
-      "last_date": "2026-04-23",
-      "avg_return": 0.5,
-      "win_rate": 50,
+      "trades": 12,
+      "buys": 9,
+      "last_date": "2026-04-09",
+      "avg_return": 4.2,
+      "win_rate": 44,
       "items": [
         {
-          "ticker": "PEP",
-          "company": "Pepsico, Inc.",
+          "ticker": "DVN",
+          "company": "Devon Energy Corp",
           "type": "Purchase",
-          "date": "2026-04-23",
-          "amount": "",
-          "ret": -7.4
+          "date": "2026-04-09",
+          "amount": "$1,001 - $15,000",
+          "ret": -3.7,
+          "link": "https://efdsearch.senate.gov/search/view/ptr/f148dc2e-d440-4759-be4d-f000c1cd6e89/"
         },
         {
-          "ticker": "SJM",
-          "company": "The J.M. Smucker Company",
+          "ticker": "CEG",
+          "company": "CONSTELLATION ENE CORP",
           "type": "Purchase",
-          "date": "2026-04-23",
-          "amount": "",
-          "ret": 8.5
+          "date": "2026-04-02",
+          "amount": "$1,001 - $15,000",
+          "ret": -0.9,
+          "link": "https://efdsearch.senate.gov/search/view/ptr/f148dc2e-d440-4759-be4d-f000c1cd6e89/"
+        },
+        {
+          "ticker": "TBLL",
+          "company": "INVESCO SHORT TERM TREAS ETF",
+          "type": "Sale",
+          "date": "2026-04-02",
+          "amount": "$1,001 - $15,000",
+          "ret": null,
+          "link": "https://efdsearch.senate.gov/search/view/ptr/c99d5ebd-82ce-439c-a678-014946f46c50/"
+        },
+        {
+          "ticker": "GOOGL",
+          "company": "Alphabet Inc",
+          "type": "Purchase",
+          "date": "2025-09-17",
+          "amount": "$1,001 - $15,000",
+          "ret": 51.4,
+          "link": "https://efdsearch.senate.gov/search/view/ptr/27f15751-bcec-4e3e-a0ab-d7e843c08d06/"
+        },
+        {
+          "ticker": "IEF",
+          "company": "iShares 7-10 Year Treasury Bond ETF",
+          "type": "Purchase",
+          "date": "2025-09-16",
+          "amount": "$15,001 - $50,000",
+          "ret": -0.7,
+          "link": "https://efdsearch.senate.gov/search/view/ptr/27f15751-bcec-4e3e-a0ab-d7e843c08d06/"
+        },
+        {
+          "ticker": "IEI",
+          "company": "iShares 3-7 Year Treasury Bond ETF",
+          "type": "Purchase",
+          "date": "2025-09-16",
+          "amount": "$15,001 - $50,000",
+          "ret": -0.1,
+          "link": "https://efdsearch.senate.gov/search/view/ptr/27f15751-bcec-4e3e-a0ab-d7e843c08d06/"
+        },
+        {
+          "ticker": "SCHP",
+          "company": "Schwab US TIPS ETF",
+          "type": "Purchase",
+          "date": "2025-09-16",
+          "amount": "$1,001 - $15,000",
+          "ret": 0.3,
+          "link": "https://efdsearch.senate.gov/search/view/ptr/27f15751-bcec-4e3e-a0ab-d7e843c08d06/"
+        },
+        {
+          "ticker": "SHY",
+          "company": "iShares 1-3 Year Treasury Bond ETF",
+          "type": "Purchase",
+          "date": "2025-09-16",
+          "amount": "$1,001 - $15,000",
+          "ret": 1.2,
+          "link": "https://efdsearch.senate.gov/search/view/ptr/27f15751-bcec-4e3e-a0ab-d7e843c08d06/"
+        },
+        {
+          "ticker": "ETN",
+          "company": "Eaton Corp PLC",
+          "type": "Purchase",
+          "date": "2025-09-12",
+          "amount": "$1,001 - $15,000",
+          "ret": 11.1,
+          "link": "https://efdsearch.senate.gov/search/view/ptr/27f15751-bcec-4e3e-a0ab-d7e843c08d06/"
+        },
+        {
+          "ticker": "ADBE",
+          "company": "Adobe Inc",
+          "type": "Purchase",
+          "date": "2025-09-04",
+          "amount": "$1,001 - $15,000",
+          "ret": -20.5,
+          "link": "https://efdsearch.senate.gov/search/view/ptr/27f15751-bcec-4e3e-a0ab-d7e843c08d06/"
+        },
+        {
+          "ticker": "IVW",
+          "company": "iShares S&P 500 Growth ETF",
+          "type": "Sale",
+          "date": "2025-03-19",
+          "amount": "$1,001 - $15,000",
+          "ret": null,
+          "link": "https://efdsearch.senate.gov/search/view/ptr/8292d644-09cf-45f9-8126-cbf54a114745/"
+        },
+        {
+          "ticker": "DTE",
+          "company": "DTE Energy Co",
+          "type": "Sale",
+          "date": "2025-03-19",
+          "amount": "$1,001 - $15,000",
+          "ret": null,
+          "link": "https://efdsearch.senate.gov/search/view/ptr/8292d644-09cf-45f9-8126-cbf54a114745/"
         }
       ]
     },
     {
       "name": "John Fetterman",
       "chamber": "Senate",
-      "trades": 2,
-      "buys": 2,
-      "last_date": "2026-04-10",
-      "avg_return": 13.2,
+      "trades": 5,
+      "buys": 3,
+      "last_date": "2026-04-13",
+      "avg_return": 12.2,
       "win_rate": 100,
       "items": [
         {
+          "ticker": "BXSL",
+          "company": "BLACKSTONE SECURED LENDING F",
+          "type": "Sale",
+          "date": "2026-04-13",
+          "amount": "$1,001 - $15,000",
+          "ret": null,
+          "link": "https://efdsearch.senate.gov/search/view/ptr/f34c4d7a-29ba-48fb-beea-d94c1368cc99/"
+        },
+        {
           "ticker": "ATH",
-          "company": "",
+          "company": "Athene Holding Ltd",
           "type": "Purchase",
           "date": "2026-04-10",
-          "amount": "",
-          "ret": null
+          "amount": "$1,001 - $15,000",
+          "ret": null,
+          "link": "https://efdsearch.senate.gov/search/view/ptr/f34c4d7a-29ba-48fb-beea-d94c1368cc99/"
+        },
+        {
+          "ticker": "NFS",
+          "company": "Nationwide Financial Services Inc",
+          "type": "Sale",
+          "date": "2026-04-10",
+          "amount": "$1,001 - $15,000",
+          "ret": null,
+          "link": "https://efdsearch.senate.gov/search/view/ptr/f34c4d7a-29ba-48fb-beea-d94c1368cc99/"
         },
         {
           "ticker": "JPM",
-          "company": "JP Morgan Chase & Co.",
+          "company": "JPMorgan Chase & Co",
           "type": "Purchase",
           "date": "2025-06-17",
-          "amount": "",
-          "ret": 13.2
+          "amount": "$1,001 - $15,000",
+          "ret": 12.2,
+          "link": "https://efdsearch.senate.gov/search/view/ptr/50e54b67-b398-470e-8baf-e09e3be81d86/"
+        },
+        {
+          "ticker": "FCBN",
+          "company": "First Citizens Bancorporation Inc",
+          "type": "Purchase",
+          "date": "2025-04-24",
+          "amount": "$1,001 - $15,000",
+          "ret": null,
+          "link": "https://efdsearch.senate.gov/search/view/ptr/98b63289-518f-44d6-b51c-4efc59acde85/"
         }
       ]
     },
     {
       "name": "Jonathan Jackson",
       "chamber": "House",
-      "trades": 1,
+      "trades": 5,
       "buys": 1,
-      "last_date": "2026-04-20",
-      "avg_return": -1.3,
+      "last_date": "2026-04-24",
+      "avg_return": -2.1,
       "win_rate": 0,
       "items": [
         {
+          "ticker": "V",
+          "company": "Visa Inc",
+          "type": "Sale",
+          "date": "2026-04-24",
+          "amount": "$50,001 - $100,000",
+          "ret": null,
+          "link": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034519.pdf"
+        },
+        {
+          "ticker": "ORLY",
+          "company": "O'Reilly Automotive Inc",
+          "type": "Sale",
+          "date": "2026-04-24",
+          "amount": "$1,001 - $15,000",
+          "ret": null,
+          "link": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034519.pdf"
+        },
+        {
           "ticker": "SPG",
-          "company": "Simon Property Group, Inc.",
+          "company": "Simon Property Group Inc",
           "type": "Purchase",
           "date": "2026-04-20",
-          "amount": "",
-          "ret": -1.3
+          "amount": "$15,001 - $50,000",
+          "ret": -2.1,
+          "link": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034519.pdf"
+        },
+        {
+          "ticker": "THC",
+          "company": "Tenet Healthcare Corp",
+          "type": "Sale",
+          "date": "2026-04-20",
+          "amount": "$15,001 - $50,000",
+          "ret": null,
+          "link": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034519.pdf"
+        },
+        {
+          "ticker": "THC",
+          "company": "Tenet Healthcare Corp",
+          "type": "Sale",
+          "date": "2026-04-15",
+          "amount": "$1,001 - $15,000",
+          "ret": null,
+          "link": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034519.pdf"
         }
       ]
     },
     {
       "name": "Thomas H. Kean",
       "chamber": "House",
-      "trades": 1,
+      "trades": 5,
       "buys": 1,
-      "last_date": "2026-04-14",
-      "avg_return": 40.4,
+      "last_date": "2026-04-29",
+      "avg_return": 33.8,
       "win_rate": 100,
       "items": [
         {
+          "ticker": "ADI",
+          "company": "Analog Devices Inc",
+          "type": "Sale",
+          "date": "2026-04-29",
+          "amount": "$1,001 - $15,000",
+          "ret": null,
+          "link": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034616.pdf"
+        },
+        {
+          "ticker": "TTWO",
+          "company": "Take-Two Interactive Software Inc",
+          "type": "Sale",
+          "date": "2026-04-21",
+          "amount": "$1,001 - $15,000",
+          "ret": null,
+          "link": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034616.pdf"
+        },
+        {
+          "ticker": "NVT",
+          "company": "nVent Electric PLC",
+          "type": "Sale",
+          "date": "2026-04-15",
+          "amount": "$1,001 - $15,000",
+          "ret": null,
+          "link": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034616.pdf"
+        },
+        {
+          "ticker": "FCNCA",
+          "company": "First Citizens BancShares Inc",
+          "type": "Sale",
+          "date": "2026-04-14",
+          "amount": "$1,001 - $15,000",
+          "ret": null,
+          "link": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034616.pdf"
+        },
+        {
           "ticker": "TXN",
-          "company": "Texas Instruments Incorporated",
+          "company": "Texas Instruments Inc",
           "type": "Purchase",
           "date": "2026-04-14",
-          "amount": "",
-          "ret": 40.4
+          "amount": "$1,001 - $15,000",
+          "ret": 33.8,
+          "link": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034616.pdf"
+        }
+      ]
+    },
+    {
+      "name": "Gary Peters",
+      "chamber": "Senate",
+      "trades": 3,
+      "buys": 2,
+      "last_date": "2026-04-23",
+      "avg_return": -1.4,
+      "win_rate": 50,
+      "items": [
+        {
+          "ticker": "PEP",
+          "company": "PepsiCo Inc",
+          "type": "Purchase",
+          "date": "2026-04-23",
+          "amount": "$15,001 - $50,000",
+          "ret": -8.8,
+          "link": "https://efdsearch.senate.gov/search/view/ptr/969f5bc0-89d8-4c76-a55e-944fb03aff0d/"
+        },
+        {
+          "ticker": "CTVA",
+          "company": "Corteva Inc",
+          "type": "Sale",
+          "date": "2026-04-23",
+          "amount": "$15,001 - $50,000",
+          "ret": null,
+          "link": "https://efdsearch.senate.gov/search/view/ptr/969f5bc0-89d8-4c76-a55e-944fb03aff0d/"
+        },
+        {
+          "ticker": "SJM",
+          "company": "The J M Smucker Company",
+          "type": "Purchase",
+          "date": "2026-04-23",
+          "amount": "$1,001 - $15,000",
+          "ret": 6.1,
+          "link": "https://efdsearch.senate.gov/search/view/ptr/969f5bc0-89d8-4c76-a55e-944fb03aff0d/"
+        }
+      ]
+    },
+    {
+      "name": "Shelley Moore Capito",
+      "chamber": "Senate",
+      "trades": 3,
+      "buys": 0,
+      "last_date": "2026-04-17",
+      "avg_return": null,
+      "win_rate": null,
+      "items": [
+        {
+          "ticker": "AAPL",
+          "company": "Apple Inc",
+          "type": "Sale",
+          "date": "2026-04-17",
+          "amount": "$1,001 - $15,000",
+          "ret": null,
+          "link": "https://efdsearch.senate.gov/search/view/ptr/029f67f3-121a-406c-bddf-a9a7e7d6267b/"
+        },
+        {
+          "ticker": "CEG",
+          "company": "CONSTELLATION ENE CORP",
+          "type": "Sale",
+          "date": "2026-04-17",
+          "amount": "$1,001 - $15,000",
+          "ret": null,
+          "link": "https://efdsearch.senate.gov/search/view/ptr/029f67f3-121a-406c-bddf-a9a7e7d6267b/"
+        },
+        {
+          "ticker": "AVGO",
+          "company": "Broadcom Inc",
+          "type": "Sale",
+          "date": "2026-04-13",
+          "amount": "$1,001 - $15,000",
+          "ret": null,
+          "link": "https://efdsearch.senate.gov/search/view/ptr/029f67f3-121a-406c-bddf-a9a7e7d6267b/"
+        }
+      ]
+    },
+    {
+      "name": "Bernie Moreno",
+      "chamber": "Senate",
+      "trades": 1,
+      "buys": 0,
+      "last_date": "2026-05-06",
+      "avg_return": null,
+      "win_rate": null,
+      "items": [
+        {
+          "ticker": "ETOR",
+          "company": "ETORO GROUP LTD",
+          "type": "Sale",
+          "date": "2026-05-06",
+          "amount": "$100,001 - $250,000",
+          "ret": null,
+          "link": "https://efdsearch.senate.gov/search/view/ptr/86810b3e-3dee-4e8e-9b47-6d3822385b7d/"
+        }
+      ]
+    },
+    {
+      "name": "Ed Case",
+      "chamber": "House",
+      "trades": 1,
+      "buys": 1,
+      "last_date": "2026-05-14",
+      "avg_return": 3.0,
+      "win_rate": 100,
+      "items": [
+        {
+          "ticker": "AAPL",
+          "company": "Apple Inc",
+          "type": "Purchase",
+          "date": "2026-05-14",
+          "amount": "$1,001 - $15,000",
+          "ret": 3.0,
+          "link": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034668.pdf"
+        }
+      ]
+    },
+    {
+      "name": "Jake Auchincloss",
+      "chamber": "House",
+      "trades": 1,
+      "buys": 0,
+      "last_date": "2026-05-18",
+      "avg_return": null,
+      "win_rate": null,
+      "items": [
+        {
+          "ticker": "STT",
+          "company": "State Street Corporation",
+          "type": "Sale",
+          "date": "2026-05-18",
+          "amount": "$15,001 - $50,000",
+          "ret": null,
+          "link": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20034622.pdf"
+        }
+      ]
+    },
+    {
+      "name": "John W. Hickenlooper",
+      "chamber": "Senate",
+      "trades": 1,
+      "buys": 0,
+      "last_date": "2025-05-19",
+      "avg_return": null,
+      "win_rate": null,
+      "items": [
+        {
+          "ticker": "LBRDA",
+          "company": "Liberty Broadband Corp",
+          "type": "Sale",
+          "date": "2025-05-19",
+          "amount": "$500,001 - $1,000,000",
+          "ret": null,
+          "link": "https://efdsearch.senate.gov/search/view/ptr/8036348f-2470-41f7-be97-d822d0b17e7c/"
         }
       ]
     }
