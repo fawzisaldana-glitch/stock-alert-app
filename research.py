@@ -168,7 +168,7 @@ def _build_summary(wb, val_data, ticker):
         ws[f"B{r}"].font = NORM_FONT
         if isinstance(value, float) and "margin" in label.lower():
             ws[f"B{r}"].number_format = "+0.0%;-0.0%"
-        elif isinstance(value, (int, float)) and "share" in label.lower() or "price" in label.lower():
+        elif isinstance(value, (int, float)) and ("share" in label.lower() or "price" in label.lower()):
             ws[f"B{r}"].number_format = '"$"#,##0.00'
         elif isinstance(value, float):
             ws[f"B{r}"].number_format = "0.00"

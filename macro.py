@@ -53,16 +53,28 @@ def main():
 
     g = {}
     d, v = fred_latest("T10Y2Y")
-    g["2s10s (curve)"] = dict(value=v, date=d, unit="pp", red=(v is not None and v < 0), trigger="re-inverts < 0")
+    g["2s10s (curve)"] = dict(value=v, date=d, unit="pp",
+                              red=(v is not None and v < 0),
+                              warn=(v is not None and 0 <= v < 0.30),   # nearing inversion
+                              trigger="re-inverts < 0")
     d, s310 = fred_latest("T10Y3M")
-    g["3m10y (curve)"] = dict(value=s310, date=d, unit="pp", red=(s310 is not None and s310 < 0), trigger="re-inverts < 0")
+    g["3m10y (curve)"] = dict(value=s310, date=d, unit="pp",
+                              red=(s310 is not None and s310 < 0),
+                              warn=(s310 is not None and 0 <= s310 < 0.30),  # nearing inversion
+                              trigger="re-inverts < 0")
     rp = round(recession_prob(s310), 1) if s310 is not None else None
-    g["NY Fed recession prob"] = dict(value=rp, unit="%", red=(rp is not None and rp > 30), trigger="> 30%")
+    g["NY Fed recession prob"] = dict(value=rp, unit="%",
+                                      red=(rp is not None and rp > 30),
+                                      warn=(rp is not None and rp > 20),   # approaching danger zone
+                                      trigger="> 30%")
     d, v = fred_latest("BAMLH0A0HYM2")
     g["HY credit spread"] = dict(value=v, date=d, unit="%", red=(v is not None and v > 6),
                                  warn=(v is not None and v > 5), trigger="> 6%")
     d, v = fred_latest("SAHMREALTIME")
-    g["Sahm rule (jobs)"] = dict(value=v, date=d, unit="", red=(v is not None and v >= 0.5), trigger=">= 0.50")
+    g["Sahm rule (jobs)"] = dict(value=v, date=d, unit="",
+                                 red=(v is not None and v >= 0.5),
+                                 warn=(v is not None and v >= 0.3),   # nearing trigger
+                                 trigger=">= 0.50")
 
     reds = sum(1 for x in g.values() if x.get("red"))
     overall = "RED" if reds >= 2 else ("CAUTION" if reds == 1 else "GREEN")

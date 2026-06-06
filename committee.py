@@ -203,7 +203,8 @@ def learn_from_history():
     by_type = {"insider_cluster": [], "contract": []}
     for h in aged:
         try:
-            cur = yf.Ticker(h["ticker"]).fast_info.get("last_price")
+            fi = yf.Ticker(h["ticker"]).fast_info
+            cur = getattr(fi, "last_price", None)  # fast_info.get() returns None for all keys; use attribute access
         except Exception:
             cur = None
         if cur and h["entry_price"]:

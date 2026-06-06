@@ -1,8 +1,11 @@
 name: refresh-and-deploy
 # Runs the data engines on a schedule and publishes the PWA to GitHub Pages — free, always-on.
 on:
-  # Daily driver is now the cloud n8n workflow (SSH → VPS engines). This stays as a
-  # MANUAL fallback only — no schedule, so it won't fight the VPS for git pushes.
+  # SCHEDULE: uncomment the cron lines below to run automatically twice per weekday.
+  # Comment them back out if you're driving refreshes from a VPS/cron instead (avoids conflicts).
+  schedule:
+    - cron: "0 11 * * 1-5"   # ~6 am ET (weekdays)
+    - cron: "0 21 * * 1-5"   # ~4 pm ET (weekdays)
   workflow_dispatch: {}
 permissions:
   contents: write
@@ -22,15 +25,17 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Refresh all data feeds
         env:
-          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}   # REQUIRED secret: "YourApp you@email.com"
-          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}          # optional: enables value gate + Politicians tab
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}          # REQUIRED: "YourApp you@email.com"
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}                 # optional: value gate + Politicians tab
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}  # optional: push top alerts to phone
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}      # optional: your Telegram chat/user id
         run: |
           python macro.py        || echo "macro failed"
-          python run.py          || echo "alerts failed"
+          python run.py --notify || echo "alerts failed"          # --notify sends Telegram if token set
           python billionaires.py || echo "billionaires failed"
           python politicians.py  || echo "politicians failed"
-          python committee.py    || echo "committee failed"   # CEO + 5-investor board -> Top 5 day/month
-          python backtest.py     || echo "backtest failed"    # honest forward + retrospective vs SPY
+          python committee.py    || echo "committee failed"       # CEO + 5-investor board -> Top 5 day/month
+          python backtest.py     || echo "backtest failed"        # honest forward + retrospective vs SPY
       - name: Commit refreshed JSON
         run: |
           git config user.name "alerts-bot"
