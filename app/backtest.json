@@ -1,12 +1,12 @@
 {
-  "updated": 1782512011.3735201,
+  "updated": 1782581858.413639,
   "benchmark": "SPY",
   "forward": {
-    "n": 130,
-    "avg_return": -10.7,
-    "spy_return": -1.6,
-    "excess": -9.1,
-    "hit_rate": 28,
+    "n": 135,
+    "avg_return": -10.4,
+    "spy_return": -1.7,
+    "excess": -8.7,
+    "hit_rate": 30,
     "beat_spy": false,
     "picks": [
       {
@@ -918,16 +918,51 @@
         "ret": -16.4,
         "spy": -1.5,
         "beat": false
+      },
+      {
+        "ticker": "ARDT",
+        "date": "2026-06-13",
+        "ret": 2.4,
+        "spy": -3.2,
+        "beat": true
+      },
+      {
+        "ticker": "ACN",
+        "date": "2026-06-13",
+        "ret": -22.0,
+        "spy": -3.2,
+        "beat": false
+      },
+      {
+        "ticker": "APOG",
+        "date": "2026-06-13",
+        "ret": 22.2,
+        "spy": -3.2,
+        "beat": true
+      },
+      {
+        "ticker": "IGIC",
+        "date": "2026-06-13",
+        "ret": 7.4,
+        "spy": -3.2,
+        "beat": true
+      },
+      {
+        "ticker": "BAH",
+        "date": "2026-06-13",
+        "ret": -16.5,
+        "spy": -3.2,
+        "beat": false
       }
     ],
     "note": "Forward test: picks graded from their LOCKED date to now vs SPY. No lookahead."
   },
   "retrospective": {
     "window_days": 90,
-    "n": 21,
-    "avg_return": -3.0,
+    "n": 19,
+    "avg_return": -5.2,
     "spy_return": 15.6,
-    "excess": -18.6,
+    "excess": -20.8,
     "note": "RETROSPECTIVE & selection-biased: trailing return of names flagged TODAY vs SPY. Not a forward test \u2014 use only as a rough signal-quality smell test."
   }
 }
