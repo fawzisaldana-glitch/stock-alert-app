@@ -1,12 +1,12 @@
 {
-  "updated": 1783030028.1596646,
+  "updated": 1783083909.9337218,
   "benchmark": "SPY",
   "forward": {
-    "n": 196,
-    "avg_return": -9.0,
+    "n": 211,
+    "avg_return": -8.9,
     "spy_return": 0.2,
     "excess": -9.1,
-    "hit_rate": 32,
+    "hit_rate": 35,
     "beat_spy": false,
     "picks": [
       {
@@ -1380,16 +1380,121 @@
         "ret": 5.3,
         "spy": -0.3,
         "beat": true
+      },
+      {
+        "ticker": "AMTM",
+        "date": "2026-06-19",
+        "ret": 0.9,
+        "spy": 0.1,
+        "beat": true
+      },
+      {
+        "ticker": "ESSI",
+        "date": "2026-06-19",
+        "ret": -97.7,
+        "spy": 0.1,
+        "beat": false
+      },
+      {
+        "ticker": "LMT",
+        "date": "2026-06-19",
+        "ret": 10.6,
+        "spy": 0.1,
+        "beat": true
+      },
+      {
+        "ticker": "ACN",
+        "date": "2026-06-19",
+        "ret": 10.0,
+        "spy": 0.1,
+        "beat": true
+      },
+      {
+        "ticker": "NOC",
+        "date": "2026-06-19",
+        "ret": 8.2,
+        "spy": 0.1,
+        "beat": true
+      },
+      {
+        "ticker": "BRID",
+        "date": "2026-06-19",
+        "ret": -3.6,
+        "spy": 0.1,
+        "beat": false
+      },
+      {
+        "ticker": "AMTM",
+        "date": "2026-06-19",
+        "ret": 0.9,
+        "spy": 0.1,
+        "beat": true
+      },
+      {
+        "ticker": "ESSI",
+        "date": "2026-06-19",
+        "ret": -97.7,
+        "spy": 0.1,
+        "beat": false
+      },
+      {
+        "ticker": "BNY",
+        "date": "2026-06-19",
+        "ret": 0.1,
+        "spy": 0.1,
+        "beat": true
+      },
+      {
+        "ticker": "KRNY",
+        "date": "2026-06-19",
+        "ret": 9.0,
+        "spy": 0.1,
+        "beat": true
+      },
+      {
+        "ticker": "AMTM",
+        "date": "2026-06-19",
+        "ret": 0.9,
+        "spy": 0.1,
+        "beat": true
+      },
+      {
+        "ticker": "ACN",
+        "date": "2026-06-19",
+        "ret": 10.0,
+        "spy": 0.1,
+        "beat": true
+      },
+      {
+        "ticker": "LMT",
+        "date": "2026-06-19",
+        "ret": 10.6,
+        "spy": 0.1,
+        "beat": true
+      },
+      {
+        "ticker": "NOC",
+        "date": "2026-06-19",
+        "ret": 8.2,
+        "spy": 0.1,
+        "beat": true
+      },
+      {
+        "ticker": "BAH",
+        "date": "2026-06-19",
+        "ret": -1.4,
+        "spy": 0.1,
+        "beat": false
       }
     ],
     "note": "Forward test: picks graded from their LOCKED date to now vs SPY. No lookahead."
   },
   "retrospective": {
     "window_days": 90,
-    "n": 15,
-    "avg_return": -5.9,
+    "n": 16,
+    "avg_return": -4.9,
     "spy_return": 13.3,
-    "excess": -19.2,
+    "excess": -18.2,
     "note": "RETROSPECTIVE & selection-biased: trailing return of names flagged TODAY vs SPY. Not a forward test \u2014 use only as a rough signal-quality smell test."
   }
 }
