@@ -5,6 +5,8 @@ let RANGE = 90;                    // dashboard date window (days)
 let OPP_FILTER = "open";           // kanban: open | won | lost | all
 let CONV_ID = null, CONV_FILTER = "all", CONTACT_Q = "", CONTACT_TYPE = "all";
 const NOW = Date.now();
+// theme: default = Smart Money charcoal/gold; "ghl" = HighLevel light (persisted per device)
+if (localStorage.getItem("bronco-theme") === "ghl") document.body.classList.add("ghl");
 
 const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const $ = id => document.getElementById(id);
@@ -85,7 +87,7 @@ const NAV = [
   { id: "reporting", label: "Reporting", icon: "report" },
   { id: "apps", label: "App Marketplace", icon: "apps" }
 ];
-const LIVE = { launchpad: 1, dashboard: 1, conversations: 1, calendars: 1, contacts: 1, opportunities: 1 };
+const LIVE = { launchpad: 1, dashboard: 1, conversations: 1, calendars: 1, contacts: 1, opportunities: 1, payments: 1, reputation: 1 };
 const TITLES = { launchpad: "Launchpad", dashboard: "Dashboard", conversations: "Conversations", calendars: "Calendars", contacts: "Contacts", opportunities: "Opportunities", payments: "Payments", marketing: "Marketing", automation: "Automation", sites: "Sites", memberships: "Memberships", media: "Media Storage", reputation: "Reputation", reporting: "Reporting", apps: "App Marketplace", settings: "Settings" };
 
 function renderSidebar(active) {
@@ -139,7 +141,7 @@ function donut(segs, size, stroke, center1, center2) {
 }
 const legend = rows => `<div class="legend">${rows.map(r => `<div class="li"><span class="sw" style="background:${r.c}"></span><span class="ln">${esc(r.n)}</span><span class="lv">${r.v}</span></div>`).join("")}</div>`;
 const wh = (title, sub) => `<div class="wh"><h3>${esc(title)}</h3>${sub ? `<span class="sub">${esc(sub)}</span>` : ""}<button class="kebab" aria-label="Widget menu">${ic("kebab", 15)}</button></div>`;
-const STAGE_C = ["#d8b65e", "#5bbfc9", "#54c08a", "#a58ae0", "#e0a23a", "#e06a63"];
+const STAGE_C = ["var(--st1)", "var(--st2)", "var(--st3)", "var(--st4)", "var(--st5)", "var(--st6)"];
 
 // ---- views ----
 function vDashboard() {
@@ -240,8 +242,8 @@ function vOpportunities() {
   const col = stage => {
     const a = opps.filter(o => o.stage === stage);
     const v = a.reduce((s, o) => s + o.value, 0);
-    return `<div class="col"><div class="colh"><span class="cn">${esc(stage)}</span><span class="cc">${a.length}</span><span class="cv">${moneyK(v)}</span></div>
-      ${a.map(o => `<div class="oc ${o.status}" data-contact="${esc(o.contact_id)}">
+    return `<div class="col" data-stage="${esc(stage)}"><div class="colh"><span class="cn">${esc(stage)}</span><span class="cc">${a.length}</span><span class="cv">${moneyK(v)}</span></div>
+      ${a.map(o => `<div class="oc ${o.status}" data-contact="${esc(o.contact_id)}" ${o.status === "open" ? `draggable="true" data-opp="${esc(o.id)}"` : ""}>
         <div class="ot">${esc(o.title)}</div><div class="ov">${money(o.value)}</div>
         <div class="who">${esc((contacts[o.contact_id] || {}).name || "")}</div>
         <div class="om"><span class="chip">${esc(o.source)}</span>
@@ -256,7 +258,69 @@ function vOpportunities() {
       <span class="sel"><b>${money(m.openV)}</b>&nbsp;open · ${m.open.length} opps</span>
     </div></div>
   <div class="seg" style="margin-bottom:13px">${seg("open", "Open")}${seg("won", "Won")}${seg("lost", "Lost")}${seg("all", "All")}</div>
-  <div class="board">${D.pipeline.stages.map(col).join("")}</div>`;
+  <div class="board">${D.pipeline.stages.map(col).join("")}</div>
+  <div class="mut" style="font-size:11px">Drag a card to another stage to move it — changes stick on this device.</div>`;
+}
+
+function vPayments() {
+  const contacts = Object.fromEntries(D.contacts.map(c => [c.id, c]));
+  const won = D.opportunities.filter(o => o.status === "won").sort((a, b) => a.updated_days_ago - b.updated_days_ago);
+  const inv = won.map((o, i) => ({
+    no: "INV-" + (1052 - i), o,
+    st: o.updated_days_ago <= 7 ? "due" : o.updated_days_ago <= 14 ? "deposit" : "paid"
+  }));
+  const paidV = inv.reduce((s, x) => s + (x.st === "paid" ? x.o.value : x.st === "deposit" ? x.o.value / 2 : 0), 0);
+  const outV = inv.reduce((s, x) => s + x.o.value, 0) - paidV;
+  const stChip = st => st === "paid" ? '<span class="chip g">Paid</span>' : st === "deposit" ? '<span class="chip a">Deposit paid</span>' : '<span class="chip r">Due</span>';
+  return `
+  <div class="dhead"><h2>Payments</h2><div class="dctl"><button class="addw">+ New Invoice</button></div></div>
+  <div class="grid">
+    <div class="w s4">${wh("Collected", "last 90d")}<div class="big" style="color:var(--green)">${money(paidV)}</div><div class="mut" style="font-size:12px">across ${inv.length} invoices</div></div>
+    <div class="w s4">${wh("Outstanding")}<div class="big" style="color:var(--amber)">${money(outV)}</div><div class="mut" style="font-size:12px">deposits &amp; balances due</div></div>
+    <div class="w s4">${wh("Average Job")}<div class="big">${money(won.length ? won.reduce((s, o) => s + o.value, 0) / won.length : 0)}</div><div class="mut" style="font-size:12px">won jobs, trailing 90d</div></div>
+    <div class="w s12">${wh("Invoices", inv.length + " total")}
+      <div class="repwrap"><table class="rep">
+        <tr><th>Invoice</th><th>Customer</th><th>Job</th><th>Issued</th><th>Amount</th><th>Status</th></tr>
+        ${inv.map(x => `<tr><td class="mono">${esc(x.no)}</td>
+          <td style="font-family:var(--sans);text-align:right;color:var(--txt)">${esc((contacts[x.o.contact_id] || {}).name || "—")}</td>
+          <td style="font-family:var(--sans);text-align:right;color:var(--dim);max-width:200px;overflow:hidden;text-overflow:ellipsis">${esc(x.o.title)}</td>
+          <td>${fmtAgo(x.o.updated_days_ago)}</td><td>${money(x.o.value)}</td><td>${stChip(x.st)}</td></tr>`).join("")}
+      </table></div></div>
+  </div>`;
+}
+
+function vReputation() {
+  const rv = (D.reviews || []).slice().sort((a, b) => a.days_ago - b.days_ago);
+  const avg = rv.length ? rv.reduce((s, r) => s + r.rating, 0) / rv.length : 0;
+  const dist = [5, 4, 3, 2, 1].map(n => ({ n, c: rv.filter(r => r.rating === n).length }));
+  const maxD = Math.max(...dist.map(d => d.c), 1);
+  const star = f => `<svg width="13" height="13" viewBox="0 0 24 24" fill="${f ? "var(--gold)" : "none"}" stroke="${f ? "var(--gold)" : "var(--line2)"}" stroke-width="1.5" stroke-linejoin="round">${I.rep}</svg>`;
+  const stars = n => Array.from({ length: 5 }, (_, i) => star(i < n)).join("");
+  return `
+  <div class="dhead"><h2>Reputation</h2><div class="dctl"><button class="addw">Send Review Request</button></div></div>
+  <div class="grid">
+    <div class="w s4">${wh("Average Rating")}
+      <div style="display:flex;align-items:center;gap:12px"><div class="big">${avg.toFixed(1)}</div><div>${stars(Math.round(avg))}<div class="mut" style="font-size:11px;margin-top:3px">${rv.length} reviews · 90d</div></div></div></div>
+    <div class="w s8">${wh("Rating Distribution")}
+      ${dist.map(d => `<div style="display:flex;align-items:center;gap:10px;margin:5px 0">
+        <span class="mono mut" style="font-size:11px;width:22px">${d.n}★</span>
+        <div class="prog" style="flex:1;margin:0"><i style="width:${d.c / maxD * 100}%"></i></div>
+        <span class="mono mut" style="font-size:11px;width:18px;text-align:right">${d.c}</span></div>`).join("")}
+    </div>
+    <div class="w s12">${wh("Latest Reviews")}
+      ${rv.map(r => `
+        <div class="trow" style="align-items:flex-start">
+          <div class="pav" style="flex:0 0 auto">${initials(r.author)}</div>
+          <div class="grow">
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><b style="font-size:12.5px">${esc(r.author)}</b>${stars(r.rating)}
+              <span class="chip">${r.source === "google" ? "Google" : "Facebook"}</span>
+              <span class="fnt mono" style="font-size:10px">${fmtAgo(r.days_ago)}</span></div>
+            <div class="mut" style="font-size:12.5px;line-height:1.55;margin-top:4px">${esc(r.text)}</div>
+          </div>
+          ${r.replied ? '<span class="chip g" style="flex:0 0 auto">Replied</span>' : `<button class="cta ghost" style="flex:0 0 auto;padding:5px 12px;font-size:11px" data-rev="${esc(r.id)}">Reply</button>`}
+        </div>`).join("")}
+    </div>
+  </div>`;
 }
 
 function vConversations() {
@@ -375,7 +439,7 @@ function vPlaceholder(id) {
   return `<div class="empty">
     <div class="eic">${ic(n.icon, 30)}</div>
     <h3>${esc(TITLES[id] || n.label)}</h3>
-    <p>This area mirrors the full platform's <b>${esc(TITLES[id] || n.label)}</b> section. The Bronco demo focuses on Dashboard, Opportunities, Conversations, Contacts and Calendars — this space is reserved for the next build phase.</p>
+    <p>This area mirrors the full platform's <b>${esc(TITLES[id] || n.label)}</b> section. The Bronco demo covers Dashboard, Opportunities, Conversations, Contacts, Calendars, Payments and Reputation — this space is reserved for the next build phase.</p>
     <a class="cta" href="#/dashboard" style="text-decoration:none">Back to Dashboard</a>
   </div>`;
 }
@@ -428,6 +492,8 @@ function render() {
   else if (v === "conversations") el.innerHTML = vConversations();
   else if (v === "contacts") el.innerHTML = vContacts();
   else if (v === "calendars") el.innerHTML = vCalendars();
+  else if (v === "payments") el.innerHTML = vPayments();
+  else if (v === "reputation") el.innerHTML = vReputation();
   else if (v === "launchpad") el.innerHTML = vLaunchpad();
   else el.innerHTML = vPlaceholder(v);
   el.scrollTop = 0;
@@ -448,6 +514,33 @@ function wire(v) {
   if (v === "opportunities") {
     el.querySelectorAll("[data-of]").forEach(b => b.onclick = () => { OPP_FILTER = b.dataset.of; render(); });
     el.querySelectorAll(".oc[data-contact]").forEach(c => c.onclick = () => openContact(c.dataset.contact));
+    // drag & drop between stage columns; the move is kept per-device in localStorage
+    let dragging = false;
+    el.querySelectorAll(".oc[draggable]").forEach(c => {
+      c.addEventListener("dragstart", e => { dragging = true; e.dataTransfer.setData("text/plain", c.dataset.opp); e.dataTransfer.effectAllowed = "move"; c.style.opacity = .4; });
+      c.addEventListener("dragend", () => { c.style.opacity = ""; setTimeout(() => dragging = false, 50); });
+      c.addEventListener("click", e => { if (dragging) e.stopImmediatePropagation(); }, true);
+    });
+    el.querySelectorAll(".col").forEach(colEl => {
+      colEl.addEventListener("dragover", e => { e.preventDefault(); e.dataTransfer.dropEffect = "move"; colEl.classList.add("over"); });
+      colEl.addEventListener("dragleave", () => colEl.classList.remove("over"));
+      colEl.addEventListener("drop", e => {
+        e.preventDefault(); colEl.classList.remove("over");
+        const o = D.opportunities.find(x => x.id === e.dataTransfer.getData("text/plain"));
+        const stage = colEl.dataset.stage;
+        if (!o || !stage || o.stage === stage) return;
+        o.stage = stage; o.updated_days_ago = 0;
+        const ov = JSON.parse(localStorage.getItem("bronco-stages") || "{}");
+        ov[o.id] = stage; localStorage.setItem("bronco-stages", JSON.stringify(ov));
+        render();
+      });
+    });
+  }
+  if (v === "reputation") {
+    el.querySelectorAll("[data-rev]").forEach(b => b.onclick = () => {
+      const r = (D.reviews || []).find(x => x.id === b.dataset.rev);
+      if (r) { r.replied = true; render(); }
+    });
   }
   if (v === "conversations") {
     el.querySelectorAll("[data-cf]").forEach(b => b.onclick = () => { CONV_FILTER = b.dataset.cf; window.__chatOpen = false; render(); });
@@ -482,9 +575,19 @@ function wire(v) {
 async function boot() {
   try { D = await (await fetch("bronco.json?_=" + Date.now(), { cache: "no-store" })).json(); }
   catch (e) { $("view").innerHTML = '<div class="empty"><h3>Couldn\'t load data</h3><p>bronco.json is missing or invalid.</p></div>'; return; }
+  // replay this device's kanban moves (only onto valid, still-open opportunities)
+  try {
+    const ov = JSON.parse(localStorage.getItem("bronco-stages") || "{}");
+    D.opportunities.forEach(o => { if (o.status === "open" && ov[o.id] && D.pipeline.stages.includes(ov[o.id])) o.stage = ov[o.id]; });
+  } catch (e) {}
   render();
 }
 window.addEventListener("hashchange", render);
+$("themeBtn").onclick = () => {
+  const on = document.body.classList.toggle("ghl");
+  localStorage.setItem("bronco-theme", on ? "ghl" : "dark");
+  render();
+};
 $("burger").onclick = () => { $("side").classList.toggle("open"); $("scrim").classList.toggle("on", $("side").classList.contains("open")); };
 $("scrim").onclick = () => { closePanel(); $("side").classList.remove("open"); $("scrim").classList.remove("on"); };
 if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});

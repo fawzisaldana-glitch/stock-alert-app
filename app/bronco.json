@@ -1,270 +1,1710 @@
 {
-  "business": {
-    "name": "Bronco Painting",
-    "city": "Denver, CO",
-    "phone": "(720) 555-0138",
-    "email": "office@broncopainting.example.com"
+ "business": {
+  "name": "Bronco Painting",
+  "city": "Denver, CO",
+  "phone": "(720) 555-0138",
+  "email": "office@broncopainting.example.com"
+ },
+ "staff": [
+  {
+   "id": "u_1",
+   "name": "Fawzi S.",
+   "role": "Admin"
   },
-  "staff": [
-    { "id": "u_1", "name": "Fawzi S.", "role": "Admin" },
-    { "id": "u_2", "name": "Marisol Vega", "role": "Estimator" },
-    { "id": "u_3", "name": "Dustin Kowalski", "role": "Crew Lead" },
-    { "id": "u_4", "name": "Renee Whitaker", "role": "Office" }
-  ],
-  "pipeline": {
-    "name": "Painting Jobs",
-    "stages": ["New Lead", "Estimate Scheduled", "Estimate Sent", "Negotiation", "Job Scheduled", "In Production"]
+  {
+   "id": "u_2",
+   "name": "Marisol Vega",
+   "role": "Estimator"
   },
-  "contacts": [
-    { "id": "c_01", "name": "Daniel Whitfield", "email": "daniel.whitfield@example.com", "phone": "(720) 555-0102", "address": "4172 W Roxbury Pl, Littleton CO 80128", "source": "Google LSA", "tags": ["exterior"], "type": "customer", "created_days_ago": 38, "last_activity_days_ago": 0, "owner": "u_2" },
-    { "id": "c_02", "name": "Priya Patel", "email": "priya.patel@example.com", "phone": "(303) 555-0103", "address": "6690 S Jamaica Ct, Centennial CO 80112", "source": "Google My Business", "tags": ["exterior"], "type": "lead", "created_days_ago": 6, "last_activity_days_ago": 5, "owner": "u_2" },
-    { "id": "c_03", "name": "Minh Nguyen", "email": "minh.nguyen@example.com", "phone": "(720) 555-0104", "address": "1483 S Umatilla St, Denver CO 80223", "source": "Google LSA", "tags": ["interior"], "type": "lead", "created_days_ago": 1, "last_activity_days_ago": 0, "owner": "u_2" },
-    { "id": "c_04", "name": "Elena Castillo", "email": "elena.castillo@example.com", "phone": "(303) 555-0105", "address": "9218 W Floyd Ave, Lakewood CO 80227", "source": "Website Form", "tags": ["exterior"], "type": "lead", "created_days_ago": 2, "last_activity_days_ago": 1, "owner": "u_2" },
-    { "id": "c_05", "name": "Chidi Okafor", "email": "chidi.okafor@example.com", "phone": "(720) 555-0106", "address": "5507 S Biscay Ct, Centennial CO 80015", "source": "Google LSA", "tags": ["cabinets"], "type": "lead", "created_days_ago": 3, "last_activity_days_ago": 2, "owner": "u_2" },
-    { "id": "c_06", "name": "Shannon Brennan", "email": "shannon.brennan@example.com", "phone": "(303) 555-0107", "address": "7734 Eaton St, Arvada CO 80003", "source": "Facebook Ads", "tags": ["deck-fence"], "type": "lead", "created_days_ago": 4, "last_activity_days_ago": 0, "owner": "u_2" },
-    { "id": "c_07", "name": "Mark Yoder", "email": "mark.yoder@example.com", "phone": "(720) 555-0108", "address": "6318 Simms St, Arvada CO 80004", "source": "Angi", "tags": ["interior"], "type": "lead", "created_days_ago": 5, "last_activity_days_ago": 5, "owner": "u_2" },
-    { "id": "c_08", "name": "Grace Tran", "email": "grace.tran@example.com", "phone": "(303) 555-0109", "address": "2247 S Monaco Pkwy, Denver CO 80222", "source": "Google LSA", "tags": ["interior"], "type": "lead", "created_days_ago": 9, "last_activity_days_ago": 0, "owner": "u_2" },
-    { "id": "c_09", "name": "Ruben Gallegos", "email": "ruben.gallegos@example.com", "phone": "(720) 555-0111", "address": "15490 E Radcliff Dr, Aurora CO 80015", "source": "Referral", "tags": ["exterior"], "type": "lead", "created_days_ago": 7, "last_activity_days_ago": 3, "owner": "u_2" },
-    { "id": "c_10", "name": "Janet Pruitt", "email": "janet.pruitt@example.com", "phone": "(303) 555-0112", "address": "5872 S Gallup St, Littleton CO 80120", "source": "Google My Business", "tags": ["cabinets"], "type": "lead", "created_days_ago": 11, "last_activity_days_ago": 4, "owner": "u_2" },
-    { "id": "c_11", "name": "Aaron Feldman", "email": "aaron.feldman@example.com", "phone": "(720) 555-0113", "address": "1290 S Grape St, Denver CO 80246", "source": "Website Form", "tags": ["interior"], "type": "lead", "created_days_ago": 8, "last_activity_days_ago": 1, "owner": "u_2" },
-    { "id": "c_12", "name": "Redline Property Group", "email": "leasing.redline@example.com", "phone": "(303) 555-0114", "address": "1660 S Acoma St, Denver CO 80223", "source": "Website Form", "tags": ["commercial", "exterior"], "type": "lead", "created_days_ago": 21, "last_activity_days_ago": 3, "owner": "u_1" },
-    { "id": "c_13", "name": "Marcus Holloway", "email": "marcus.holloway@example.com", "phone": "(720) 555-0116", "address": "9645 W Warren Dr, Lakewood CO 80227", "source": "Google LSA", "tags": ["exterior"], "type": "lead", "created_days_ago": 16, "last_activity_days_ago": 1, "owner": "u_2" },
-    { "id": "c_14", "name": "Trevor Bishop", "email": "trevor.bishop@example.com", "phone": "(303) 555-0117", "address": "10218 Ravenswood Ln, Highlands Ranch CO 80130", "source": "Angi", "tags": ["interior"], "type": "lead", "created_days_ago": 18, "last_activity_days_ago": 7, "owner": "u_2" },
-    { "id": "c_15", "name": "Summit Ridge HOA", "email": "board.summitridge@example.com", "phone": "(720) 555-0118", "address": "8155 Summit Ridge Pkwy, Highlands Ranch CO 80126", "source": "Referral", "tags": ["hoa", "commercial", "interior"], "type": "lead", "created_days_ago": 34, "last_activity_days_ago": 2, "owner": "u_1" },
-    { "id": "c_16", "name": "Lucia Andrade", "email": "lucia.andrade@example.com", "phone": "(303) 555-0119", "address": "3315 W Center Ave, Denver CO 80219", "source": "Google My Business", "tags": ["exterior"], "type": "lead", "created_days_ago": 24, "last_activity_days_ago": 2, "owner": "u_2" },
-    { "id": "c_17", "name": "Hannah Cho", "email": "hannah.cho@example.com", "phone": "(720) 555-0121", "address": "7421 S Curtice Way, Littleton CO 80120", "source": "Yard Sign", "tags": ["cabinets"], "type": "lead", "created_days_ago": 27, "last_activity_days_ago": 1, "owner": "u_2" },
-    { "id": "c_18", "name": "Sean McAllister", "email": "sean.mcallister@example.com", "phone": "(303) 555-0122", "address": "16233 E Prentice Pl, Centennial CO 80015", "source": "Google LSA", "tags": ["exterior"], "type": "customer", "created_days_ago": 31, "last_activity_days_ago": 2, "owner": "u_2" },
-    { "id": "c_19", "name": "Wendy Zhang", "email": "wendy.zhang@example.com", "phone": "(720) 555-0123", "address": "3874 Utica St, Denver CO 80212", "source": "Website Form", "tags": ["interior"], "type": "customer", "created_days_ago": 19, "last_activity_days_ago": 3, "owner": "u_2" },
-    { "id": "c_20", "name": "Gabriel Lucero", "email": "gabriel.lucero@example.com", "phone": "(303) 555-0124", "address": "4519 W Ponds Cir, Littleton CO 80123", "source": "Google My Business", "tags": ["interior"], "type": "customer", "created_days_ago": 29, "last_activity_days_ago": 2, "owner": "u_3" },
-    { "id": "c_21", "name": "Dana Trujillo", "email": "dana.trujillo@example.com", "phone": "(720) 555-0126", "address": "8827 E Amherst Ave, Denver CO 80231", "source": "Referral", "tags": ["interior"], "type": "customer", "created_days_ago": 26, "last_activity_days_ago": 3, "owner": "u_2" },
-    { "id": "c_22", "name": "Robert Ellison", "email": "robert.ellison@example.com", "phone": "(303) 555-0127", "address": "6483 S Ivy Way, Centennial CO 80111", "source": "Google LSA", "tags": ["exterior"], "type": "customer", "created_days_ago": 33, "last_activity_days_ago": 5, "owner": "u_2" },
-    { "id": "c_23", "name": "Beacon Hill Dental", "email": "frontdesk.beaconhill@example.com", "phone": "(720) 555-0128", "address": "3110 S Wadsworth Blvd, Lakewood CO 80227", "source": "Google My Business", "tags": ["commercial", "interior"], "type": "customer", "created_days_ago": 41, "last_activity_days_ago": 14, "owner": "u_1" },
-    { "id": "c_24", "name": "Chris Novak", "email": "chris.novak@example.com", "phone": "(303) 555-0129", "address": "9757 W Elmhurst Pl, Littleton CO 80128", "source": "Website Form", "tags": ["cabinets", "interior", "repeat-client"], "type": "customer", "created_days_ago": 39, "last_activity_days_ago": 0, "owner": "u_2" },
-    { "id": "c_25", "name": "Amy Chen", "email": "amy.chen@example.com", "phone": "(720) 555-0131", "address": "2695 S Josephine St, Denver CO 80210", "source": "Google LSA", "tags": ["interior", "deck-fence", "repeat-client"], "type": "customer", "created_days_ago": 45, "last_activity_days_ago": 2, "owner": "u_2" },
-    { "id": "c_26", "name": "Miguel Rosales", "email": "miguel.rosales@example.com", "phone": "(303) 555-0132", "address": "1152 Dallas St, Aurora CO 80010", "source": "Google My Business", "tags": ["exterior", "interior", "repeat-client"], "type": "customer", "created_days_ago": 52, "last_activity_days_ago": 4, "owner": "u_2" },
-    { "id": "c_27", "name": "Paul Steiner", "email": "paul.steiner@example.com", "phone": "(720) 555-0133", "address": "7938 S Datura St, Littleton CO 80120", "source": "Angi", "tags": ["deck-fence"], "type": "customer", "created_days_ago": 55, "last_activity_days_ago": 42, "owner": "u_3" },
-    { "id": "c_28", "name": "Teresa Dominguez", "email": "teresa.dominguez@example.com", "phone": "(303) 555-0134", "address": "2210 S Fraser Cir, Aurora CO 80014", "source": "Facebook Ads", "tags": ["interior"], "type": "customer", "created_days_ago": 63, "last_activity_days_ago": 51, "owner": "u_2" },
-    { "id": "c_29", "name": "Alan Frazier", "email": "alan.frazier@example.com", "phone": "(720) 555-0136", "address": "5629 W 66th Ave, Arvada CO 80003", "source": "Repeat Client", "tags": ["exterior", "cabinets", "repeat-client"], "type": "customer", "created_days_ago": 180, "last_activity_days_ago": 6, "owner": "u_2" },
-    { "id": "c_30", "name": "Nicole Sandoval", "email": "nicole.sandoval@example.com", "phone": "(303) 555-0137", "address": "3492 S Kittredge St, Aurora CO 80013", "source": "Google LSA", "tags": ["exterior"], "type": "lead", "created_days_ago": 28, "last_activity_days_ago": 12, "owner": "u_2" },
-    { "id": "c_31", "name": "Doug Beckett", "email": "doug.beckett@example.com", "phone": "(720) 555-0139", "address": "8371 W Mississippi Pl, Lakewood CO 80232", "source": "Facebook Ads", "tags": ["interior"], "type": "lead", "created_days_ago": 40, "last_activity_days_ago": 25, "owner": "u_2" },
-    { "id": "c_32", "name": "Kyle Iverson", "email": "kyle.iverson@example.com", "phone": "(303) 555-0141", "address": "4930 Zuni St, Denver CO 80221", "source": "Website Form", "tags": ["interior"], "type": "lead", "created_days_ago": 32, "last_activity_days_ago": 18, "owner": "u_4" },
-    { "id": "c_33", "name": "Pat Mahoney", "email": "pat.mahoney@example.com", "phone": "(720) 555-0142", "address": "6712 Owens St, Arvada CO 80004", "source": "Google My Business", "tags": ["exterior"], "type": "lead", "created_days_ago": 61, "last_activity_days_ago": 47, "owner": "u_4" },
-    { "id": "c_34", "name": "Sherry Boyd", "email": "sherry.boyd@example.com", "phone": "(303) 555-0143", "address": "2140 S Quebec Way, Denver CO 80231", "source": "Repeat Client", "tags": ["exterior", "repeat-client"], "type": "lead", "created_days_ago": 240, "last_activity_days_ago": 39, "owner": "u_4" }
-  ],
-  "opportunities": [
-    { "id": "o_01", "title": "Nguyen — Interior Bedrooms", "contact_id": "c_03", "stage": "New Lead", "status": "open", "value": 2300, "source": "Google LSA", "owner": "u_2", "created_days_ago": 1, "updated_days_ago": 0 },
-    { "id": "o_02", "title": "Castillo — Exterior Repaint", "contact_id": "c_04", "stage": "New Lead", "status": "open", "value": 5800, "source": "Website Form", "owner": "u_2", "created_days_ago": 2, "updated_days_ago": 1 },
-    { "id": "o_03", "title": "Okafor — Cabinet Refinishing", "contact_id": "c_05", "stage": "New Lead", "status": "open", "value": 3900, "source": "Google LSA", "owner": "u_2", "created_days_ago": 3, "updated_days_ago": 2 },
-    { "id": "o_04", "title": "Brennan — Deck & Fence Stain", "contact_id": "c_06", "stage": "New Lead", "status": "open", "value": 2200, "source": "Facebook Ads", "owner": "u_2", "created_days_ago": 4, "updated_days_ago": 0 },
-    { "id": "o_05", "title": "Yoder — Whole-Home Interior", "contact_id": "c_07", "stage": "New Lead", "status": "open", "value": 4900, "source": "Angi", "owner": "u_2", "created_days_ago": 5, "updated_days_ago": 5 },
-    { "id": "o_06", "title": "Patel — Exterior Repaint", "contact_id": "c_02", "stage": "New Lead", "status": "open", "value": 6400, "source": "Google My Business", "owner": "u_2", "created_days_ago": 6, "updated_days_ago": 5 },
-    { "id": "o_07", "title": "Novak — Basement Repaint", "contact_id": "c_24", "stage": "New Lead", "status": "open", "value": 2600, "source": "Website Form", "owner": "u_2", "created_days_ago": 2, "updated_days_ago": 0 },
-    { "id": "o_08", "title": "Tran — Whole-Home Interior", "contact_id": "c_08", "stage": "Estimate Scheduled", "status": "open", "value": 5200, "source": "Google LSA", "owner": "u_2", "created_days_ago": 9, "updated_days_ago": 0 },
-    { "id": "o_09", "title": "Gallegos — Exterior & Trim", "contact_id": "c_09", "stage": "Estimate Scheduled", "status": "open", "value": 6700, "source": "Referral", "owner": "u_2", "created_days_ago": 7, "updated_days_ago": 3 },
-    { "id": "o_10", "title": "Pruitt — Kitchen Cabinets", "contact_id": "c_10", "stage": "Estimate Scheduled", "status": "open", "value": 3400, "source": "Google My Business", "owner": "u_2", "created_days_ago": 11, "updated_days_ago": 4 },
-    { "id": "o_11", "title": "Feldman — Main Floor Interior", "contact_id": "c_11", "stage": "Estimate Scheduled", "status": "open", "value": 3300, "source": "Website Form", "owner": "u_2", "created_days_ago": 8, "updated_days_ago": 1 },
-    { "id": "o_12", "title": "Chen — Deck Stain", "contact_id": "c_25", "stage": "Estimate Scheduled", "status": "open", "value": 1700, "source": "Google LSA", "owner": "u_2", "created_days_ago": 6, "updated_days_ago": 2 },
-    { "id": "o_13", "title": "Redline Property Group — Building Exteriors", "contact_id": "c_12", "stage": "Estimate Sent", "status": "open", "value": 16400, "source": "Website Form", "owner": "u_1", "created_days_ago": 21, "updated_days_ago": 3 },
-    { "id": "o_14", "title": "Holloway — Exterior Repaint", "contact_id": "c_13", "stage": "Estimate Sent", "status": "open", "value": 7600, "source": "Google LSA", "owner": "u_2", "created_days_ago": 16, "updated_days_ago": 1 },
-    { "id": "o_15", "title": "Rosales — Interior, 3 Rooms", "contact_id": "c_26", "stage": "Estimate Sent", "status": "open", "value": 3200, "source": "Google My Business", "owner": "u_2", "created_days_ago": 12, "updated_days_ago": 4 },
-    { "id": "o_16", "title": "Frazier — Kitchen Cabinets", "contact_id": "c_29", "stage": "Estimate Sent", "status": "open", "value": 4700, "source": "Repeat Client", "owner": "u_2", "created_days_ago": 14, "updated_days_ago": 6 },
-    { "id": "o_17", "title": "Bishop — Whole-Home Interior", "contact_id": "c_14", "stage": "Estimate Sent", "status": "open", "value": 5600, "source": "Angi", "owner": "u_2", "created_days_ago": 18, "updated_days_ago": 7 },
-    { "id": "o_18", "title": "Summit Ridge HOA — Clubhouse Interior", "contact_id": "c_15", "stage": "Negotiation", "status": "open", "value": 13200, "source": "Referral", "owner": "u_1", "created_days_ago": 34, "updated_days_ago": 2 },
-    { "id": "o_19", "title": "Andrade — Exterior Repaint", "contact_id": "c_16", "stage": "Negotiation", "status": "open", "value": 5400, "source": "Google My Business", "owner": "u_2", "created_days_ago": 24, "updated_days_ago": 2 },
-    { "id": "o_20", "title": "Cho — Kitchen Cabinets", "contact_id": "c_17", "stage": "Negotiation", "status": "open", "value": 4100, "source": "Yard Sign", "owner": "u_2", "created_days_ago": 27, "updated_days_ago": 1 },
-    { "id": "o_21", "title": "McAllister — Exterior Repaint", "contact_id": "c_18", "stage": "Job Scheduled", "status": "open", "value": 6800, "source": "Google LSA", "owner": "u_2", "created_days_ago": 31, "updated_days_ago": 2 },
-    { "id": "o_22", "title": "Zhang — Interior Repaint", "contact_id": "c_19", "stage": "Job Scheduled", "status": "open", "value": 3600, "source": "Website Form", "owner": "u_2", "created_days_ago": 19, "updated_days_ago": 3 },
-    { "id": "o_23", "title": "Whitfield — Exterior Repaint", "contact_id": "c_01", "stage": "In Production", "status": "open", "value": 7800, "source": "Google LSA", "owner": "u_2", "created_days_ago": 38, "updated_days_ago": 0 },
-    { "id": "o_24", "title": "Lucero — Whole-Home Interior", "contact_id": "c_20", "stage": "In Production", "status": "open", "value": 5700, "source": "Google My Business", "owner": "u_3", "created_days_ago": 29, "updated_days_ago": 2 },
-    { "id": "o_25", "title": "Trujillo — Whole-Home Interior", "contact_id": "c_21", "stage": "Job Scheduled", "status": "won", "value": 6800, "source": "Referral", "owner": "u_2", "created_days_ago": 26, "updated_days_ago": 3 },
-    { "id": "o_26", "title": "Ellison — Exterior Repaint", "contact_id": "c_22", "stage": "In Production", "status": "won", "value": 8200, "source": "Google LSA", "owner": "u_2", "created_days_ago": 33, "updated_days_ago": 8 },
-    { "id": "o_27", "title": "Beacon Hill Dental — Office Interior", "contact_id": "c_23", "stage": "In Production", "status": "won", "value": 12800, "source": "Google My Business", "owner": "u_1", "created_days_ago": 41, "updated_days_ago": 14 },
-    { "id": "o_28", "title": "Novak — Kitchen Cabinets", "contact_id": "c_24", "stage": "In Production", "status": "won", "value": 5600, "source": "Website Form", "owner": "u_2", "created_days_ago": 39, "updated_days_ago": 21 },
-    { "id": "o_29", "title": "Chen — Interior Repaint", "contact_id": "c_25", "stage": "In Production", "status": "won", "value": 3400, "source": "Google LSA", "owner": "u_2", "created_days_ago": 45, "updated_days_ago": 27 },
-    { "id": "o_30", "title": "Rosales — Exterior Repaint", "contact_id": "c_26", "stage": "In Production", "status": "won", "value": 7300, "source": "Google My Business", "owner": "u_2", "created_days_ago": 52, "updated_days_ago": 34 },
-    { "id": "o_31", "title": "Steiner — Deck & Pergola Stain", "contact_id": "c_27", "stage": "In Production", "status": "won", "value": 2800, "source": "Angi", "owner": "u_3", "created_days_ago": 55, "updated_days_ago": 42 },
-    { "id": "o_32", "title": "Dominguez — Interior & Ceilings", "contact_id": "c_28", "stage": "In Production", "status": "won", "value": 4100, "source": "Facebook Ads", "owner": "u_2", "created_days_ago": 63, "updated_days_ago": 51 },
-    { "id": "o_33", "title": "Frazier — Exterior Trim & Siding", "contact_id": "c_29", "stage": "In Production", "status": "won", "value": 6200, "source": "Repeat Client", "owner": "u_2", "created_days_ago": 71, "updated_days_ago": 58 },
-    { "id": "o_34", "title": "Sandoval — Exterior Repaint", "contact_id": "c_30", "stage": "Negotiation", "status": "lost", "value": 8400, "source": "Google LSA", "owner": "u_2", "created_days_ago": 28, "updated_days_ago": 12, "lost_reason": "Went with cheaper bid" },
-    { "id": "o_35", "title": "Beckett — Whole-Home Interior", "contact_id": "c_31", "stage": "Negotiation", "status": "lost", "value": 5900, "source": "Facebook Ads", "owner": "u_2", "created_days_ago": 40, "updated_days_ago": 25, "lost_reason": "Postponed to next season" },
-    { "id": "o_36", "title": "Iverson — Interior, 2 Rooms", "contact_id": "c_32", "stage": "Estimate Sent", "status": "lost", "value": 2900, "source": "Website Form", "owner": "u_4", "created_days_ago": 32, "updated_days_ago": 18, "lost_reason": "No response after 3 follow-ups" },
-    { "id": "o_37", "title": "Mahoney — Exterior Repaint", "contact_id": "c_33", "stage": "Estimate Sent", "status": "lost", "value": 6700, "source": "Google My Business", "owner": "u_4", "created_days_ago": 61, "updated_days_ago": 47, "lost_reason": "DIY" },
-    { "id": "o_38", "title": "Boyd — Cabin Exterior", "contact_id": "c_34", "stage": "New Lead", "status": "lost", "value": 7500, "source": "Repeat Client", "owner": "u_4", "created_days_ago": 43, "updated_days_ago": 39, "lost_reason": "Out of service area" }
-  ],
-  "conversations": [
+  {
+   "id": "u_3",
+   "name": "Dustin Kowalski",
+   "role": "Crew Lead"
+  },
+  {
+   "id": "u_4",
+   "name": "Renee Whitaker",
+   "role": "Office"
+  }
+ ],
+ "pipeline": {
+  "name": "Painting Jobs",
+  "stages": [
+   "New Lead",
+   "Estimate Scheduled",
+   "Estimate Sent",
+   "Negotiation",
+   "Job Scheduled",
+   "In Production"
+  ]
+ },
+ "contacts": [
+  {
+   "id": "c_01",
+   "name": "Daniel Whitfield",
+   "email": "daniel.whitfield@example.com",
+   "phone": "(720) 555-0102",
+   "address": "4172 W Roxbury Pl, Littleton CO 80128",
+   "source": "Google LSA",
+   "tags": [
+    "exterior"
+   ],
+   "type": "customer",
+   "created_days_ago": 38,
+   "last_activity_days_ago": 0,
+   "owner": "u_2"
+  },
+  {
+   "id": "c_02",
+   "name": "Priya Patel",
+   "email": "priya.patel@example.com",
+   "phone": "(303) 555-0103",
+   "address": "6690 S Jamaica Ct, Centennial CO 80112",
+   "source": "Google My Business",
+   "tags": [
+    "exterior"
+   ],
+   "type": "lead",
+   "created_days_ago": 6,
+   "last_activity_days_ago": 5,
+   "owner": "u_2"
+  },
+  {
+   "id": "c_03",
+   "name": "Minh Nguyen",
+   "email": "minh.nguyen@example.com",
+   "phone": "(720) 555-0104",
+   "address": "1483 S Umatilla St, Denver CO 80223",
+   "source": "Google LSA",
+   "tags": [
+    "interior"
+   ],
+   "type": "lead",
+   "created_days_ago": 1,
+   "last_activity_days_ago": 0,
+   "owner": "u_2"
+  },
+  {
+   "id": "c_04",
+   "name": "Elena Castillo",
+   "email": "elena.castillo@example.com",
+   "phone": "(303) 555-0105",
+   "address": "9218 W Floyd Ave, Lakewood CO 80227",
+   "source": "Website Form",
+   "tags": [
+    "exterior"
+   ],
+   "type": "lead",
+   "created_days_ago": 2,
+   "last_activity_days_ago": 1,
+   "owner": "u_2"
+  },
+  {
+   "id": "c_05",
+   "name": "Chidi Okafor",
+   "email": "chidi.okafor@example.com",
+   "phone": "(720) 555-0106",
+   "address": "5507 S Biscay Ct, Centennial CO 80015",
+   "source": "Google LSA",
+   "tags": [
+    "cabinets"
+   ],
+   "type": "lead",
+   "created_days_ago": 3,
+   "last_activity_days_ago": 2,
+   "owner": "u_2"
+  },
+  {
+   "id": "c_06",
+   "name": "Shannon Brennan",
+   "email": "shannon.brennan@example.com",
+   "phone": "(303) 555-0107",
+   "address": "7734 Eaton St, Arvada CO 80003",
+   "source": "Facebook Ads",
+   "tags": [
+    "deck-fence"
+   ],
+   "type": "lead",
+   "created_days_ago": 4,
+   "last_activity_days_ago": 0,
+   "owner": "u_2"
+  },
+  {
+   "id": "c_07",
+   "name": "Mark Yoder",
+   "email": "mark.yoder@example.com",
+   "phone": "(720) 555-0108",
+   "address": "6318 Simms St, Arvada CO 80004",
+   "source": "Angi",
+   "tags": [
+    "interior"
+   ],
+   "type": "lead",
+   "created_days_ago": 5,
+   "last_activity_days_ago": 5,
+   "owner": "u_2"
+  },
+  {
+   "id": "c_08",
+   "name": "Grace Tran",
+   "email": "grace.tran@example.com",
+   "phone": "(303) 555-0109",
+   "address": "2247 S Monaco Pkwy, Denver CO 80222",
+   "source": "Google LSA",
+   "tags": [
+    "interior"
+   ],
+   "type": "lead",
+   "created_days_ago": 9,
+   "last_activity_days_ago": 0,
+   "owner": "u_2"
+  },
+  {
+   "id": "c_09",
+   "name": "Ruben Gallegos",
+   "email": "ruben.gallegos@example.com",
+   "phone": "(720) 555-0111",
+   "address": "15490 E Radcliff Dr, Aurora CO 80015",
+   "source": "Referral",
+   "tags": [
+    "exterior"
+   ],
+   "type": "lead",
+   "created_days_ago": 7,
+   "last_activity_days_ago": 3,
+   "owner": "u_2"
+  },
+  {
+   "id": "c_10",
+   "name": "Janet Pruitt",
+   "email": "janet.pruitt@example.com",
+   "phone": "(303) 555-0112",
+   "address": "5872 S Gallup St, Littleton CO 80120",
+   "source": "Google My Business",
+   "tags": [
+    "cabinets"
+   ],
+   "type": "lead",
+   "created_days_ago": 11,
+   "last_activity_days_ago": 4,
+   "owner": "u_2"
+  },
+  {
+   "id": "c_11",
+   "name": "Aaron Feldman",
+   "email": "aaron.feldman@example.com",
+   "phone": "(720) 555-0113",
+   "address": "1290 S Grape St, Denver CO 80246",
+   "source": "Website Form",
+   "tags": [
+    "interior"
+   ],
+   "type": "lead",
+   "created_days_ago": 8,
+   "last_activity_days_ago": 1,
+   "owner": "u_2"
+  },
+  {
+   "id": "c_12",
+   "name": "Redline Property Group",
+   "email": "leasing.redline@example.com",
+   "phone": "(303) 555-0114",
+   "address": "1660 S Acoma St, Denver CO 80223",
+   "source": "Website Form",
+   "tags": [
+    "commercial",
+    "exterior"
+   ],
+   "type": "lead",
+   "created_days_ago": 21,
+   "last_activity_days_ago": 3,
+   "owner": "u_1"
+  },
+  {
+   "id": "c_13",
+   "name": "Marcus Holloway",
+   "email": "marcus.holloway@example.com",
+   "phone": "(720) 555-0116",
+   "address": "9645 W Warren Dr, Lakewood CO 80227",
+   "source": "Google LSA",
+   "tags": [
+    "exterior"
+   ],
+   "type": "lead",
+   "created_days_ago": 16,
+   "last_activity_days_ago": 1,
+   "owner": "u_2"
+  },
+  {
+   "id": "c_14",
+   "name": "Trevor Bishop",
+   "email": "trevor.bishop@example.com",
+   "phone": "(303) 555-0117",
+   "address": "10218 Ravenswood Ln, Highlands Ranch CO 80130",
+   "source": "Angi",
+   "tags": [
+    "interior"
+   ],
+   "type": "lead",
+   "created_days_ago": 18,
+   "last_activity_days_ago": 7,
+   "owner": "u_2"
+  },
+  {
+   "id": "c_15",
+   "name": "Summit Ridge HOA",
+   "email": "board.summitridge@example.com",
+   "phone": "(720) 555-0118",
+   "address": "8155 Summit Ridge Pkwy, Highlands Ranch CO 80126",
+   "source": "Referral",
+   "tags": [
+    "hoa",
+    "commercial",
+    "interior"
+   ],
+   "type": "lead",
+   "created_days_ago": 34,
+   "last_activity_days_ago": 2,
+   "owner": "u_1"
+  },
+  {
+   "id": "c_16",
+   "name": "Lucia Andrade",
+   "email": "lucia.andrade@example.com",
+   "phone": "(303) 555-0119",
+   "address": "3315 W Center Ave, Denver CO 80219",
+   "source": "Google My Business",
+   "tags": [
+    "exterior"
+   ],
+   "type": "lead",
+   "created_days_ago": 24,
+   "last_activity_days_ago": 2,
+   "owner": "u_2"
+  },
+  {
+   "id": "c_17",
+   "name": "Hannah Cho",
+   "email": "hannah.cho@example.com",
+   "phone": "(720) 555-0121",
+   "address": "7421 S Curtice Way, Littleton CO 80120",
+   "source": "Yard Sign",
+   "tags": [
+    "cabinets"
+   ],
+   "type": "lead",
+   "created_days_ago": 27,
+   "last_activity_days_ago": 1,
+   "owner": "u_2"
+  },
+  {
+   "id": "c_18",
+   "name": "Sean McAllister",
+   "email": "sean.mcallister@example.com",
+   "phone": "(303) 555-0122",
+   "address": "16233 E Prentice Pl, Centennial CO 80015",
+   "source": "Google LSA",
+   "tags": [
+    "exterior"
+   ],
+   "type": "customer",
+   "created_days_ago": 31,
+   "last_activity_days_ago": 2,
+   "owner": "u_2"
+  },
+  {
+   "id": "c_19",
+   "name": "Wendy Zhang",
+   "email": "wendy.zhang@example.com",
+   "phone": "(720) 555-0123",
+   "address": "3874 Utica St, Denver CO 80212",
+   "source": "Website Form",
+   "tags": [
+    "interior"
+   ],
+   "type": "customer",
+   "created_days_ago": 19,
+   "last_activity_days_ago": 3,
+   "owner": "u_2"
+  },
+  {
+   "id": "c_20",
+   "name": "Gabriel Lucero",
+   "email": "gabriel.lucero@example.com",
+   "phone": "(303) 555-0124",
+   "address": "4519 W Ponds Cir, Littleton CO 80123",
+   "source": "Google My Business",
+   "tags": [
+    "interior"
+   ],
+   "type": "customer",
+   "created_days_ago": 29,
+   "last_activity_days_ago": 2,
+   "owner": "u_3"
+  },
+  {
+   "id": "c_21",
+   "name": "Dana Trujillo",
+   "email": "dana.trujillo@example.com",
+   "phone": "(720) 555-0126",
+   "address": "8827 E Amherst Ave, Denver CO 80231",
+   "source": "Referral",
+   "tags": [
+    "interior"
+   ],
+   "type": "customer",
+   "created_days_ago": 26,
+   "last_activity_days_ago": 3,
+   "owner": "u_2"
+  },
+  {
+   "id": "c_22",
+   "name": "Robert Ellison",
+   "email": "robert.ellison@example.com",
+   "phone": "(303) 555-0127",
+   "address": "6483 S Ivy Way, Centennial CO 80111",
+   "source": "Google LSA",
+   "tags": [
+    "exterior"
+   ],
+   "type": "customer",
+   "created_days_ago": 33,
+   "last_activity_days_ago": 5,
+   "owner": "u_2"
+  },
+  {
+   "id": "c_23",
+   "name": "Beacon Hill Dental",
+   "email": "frontdesk.beaconhill@example.com",
+   "phone": "(720) 555-0128",
+   "address": "3110 S Wadsworth Blvd, Lakewood CO 80227",
+   "source": "Google My Business",
+   "tags": [
+    "commercial",
+    "interior"
+   ],
+   "type": "customer",
+   "created_days_ago": 41,
+   "last_activity_days_ago": 14,
+   "owner": "u_1"
+  },
+  {
+   "id": "c_24",
+   "name": "Chris Novak",
+   "email": "chris.novak@example.com",
+   "phone": "(303) 555-0129",
+   "address": "9757 W Elmhurst Pl, Littleton CO 80128",
+   "source": "Website Form",
+   "tags": [
+    "cabinets",
+    "interior",
+    "repeat-client"
+   ],
+   "type": "customer",
+   "created_days_ago": 39,
+   "last_activity_days_ago": 0,
+   "owner": "u_2"
+  },
+  {
+   "id": "c_25",
+   "name": "Amy Chen",
+   "email": "amy.chen@example.com",
+   "phone": "(720) 555-0131",
+   "address": "2695 S Josephine St, Denver CO 80210",
+   "source": "Google LSA",
+   "tags": [
+    "interior",
+    "deck-fence",
+    "repeat-client"
+   ],
+   "type": "customer",
+   "created_days_ago": 45,
+   "last_activity_days_ago": 2,
+   "owner": "u_2"
+  },
+  {
+   "id": "c_26",
+   "name": "Miguel Rosales",
+   "email": "miguel.rosales@example.com",
+   "phone": "(303) 555-0132",
+   "address": "1152 Dallas St, Aurora CO 80010",
+   "source": "Google My Business",
+   "tags": [
+    "exterior",
+    "interior",
+    "repeat-client"
+   ],
+   "type": "customer",
+   "created_days_ago": 52,
+   "last_activity_days_ago": 4,
+   "owner": "u_2"
+  },
+  {
+   "id": "c_27",
+   "name": "Paul Steiner",
+   "email": "paul.steiner@example.com",
+   "phone": "(720) 555-0133",
+   "address": "7938 S Datura St, Littleton CO 80120",
+   "source": "Angi",
+   "tags": [
+    "deck-fence"
+   ],
+   "type": "customer",
+   "created_days_ago": 55,
+   "last_activity_days_ago": 42,
+   "owner": "u_3"
+  },
+  {
+   "id": "c_28",
+   "name": "Teresa Dominguez",
+   "email": "teresa.dominguez@example.com",
+   "phone": "(303) 555-0134",
+   "address": "2210 S Fraser Cir, Aurora CO 80014",
+   "source": "Facebook Ads",
+   "tags": [
+    "interior"
+   ],
+   "type": "customer",
+   "created_days_ago": 63,
+   "last_activity_days_ago": 51,
+   "owner": "u_2"
+  },
+  {
+   "id": "c_29",
+   "name": "Alan Frazier",
+   "email": "alan.frazier@example.com",
+   "phone": "(720) 555-0136",
+   "address": "5629 W 66th Ave, Arvada CO 80003",
+   "source": "Repeat Client",
+   "tags": [
+    "exterior",
+    "cabinets",
+    "repeat-client"
+   ],
+   "type": "customer",
+   "created_days_ago": 180,
+   "last_activity_days_ago": 6,
+   "owner": "u_2"
+  },
+  {
+   "id": "c_30",
+   "name": "Nicole Sandoval",
+   "email": "nicole.sandoval@example.com",
+   "phone": "(303) 555-0137",
+   "address": "3492 S Kittredge St, Aurora CO 80013",
+   "source": "Google LSA",
+   "tags": [
+    "exterior"
+   ],
+   "type": "lead",
+   "created_days_ago": 28,
+   "last_activity_days_ago": 12,
+   "owner": "u_2"
+  },
+  {
+   "id": "c_31",
+   "name": "Doug Beckett",
+   "email": "doug.beckett@example.com",
+   "phone": "(720) 555-0139",
+   "address": "8371 W Mississippi Pl, Lakewood CO 80232",
+   "source": "Facebook Ads",
+   "tags": [
+    "interior"
+   ],
+   "type": "lead",
+   "created_days_ago": 40,
+   "last_activity_days_ago": 25,
+   "owner": "u_2"
+  },
+  {
+   "id": "c_32",
+   "name": "Kyle Iverson",
+   "email": "kyle.iverson@example.com",
+   "phone": "(303) 555-0141",
+   "address": "4930 Zuni St, Denver CO 80221",
+   "source": "Website Form",
+   "tags": [
+    "interior"
+   ],
+   "type": "lead",
+   "created_days_ago": 32,
+   "last_activity_days_ago": 18,
+   "owner": "u_4"
+  },
+  {
+   "id": "c_33",
+   "name": "Pat Mahoney",
+   "email": "pat.mahoney@example.com",
+   "phone": "(720) 555-0142",
+   "address": "6712 Owens St, Arvada CO 80004",
+   "source": "Google My Business",
+   "tags": [
+    "exterior"
+   ],
+   "type": "lead",
+   "created_days_ago": 61,
+   "last_activity_days_ago": 47,
+   "owner": "u_4"
+  },
+  {
+   "id": "c_34",
+   "name": "Sherry Boyd",
+   "email": "sherry.boyd@example.com",
+   "phone": "(303) 555-0143",
+   "address": "2140 S Quebec Way, Denver CO 80231",
+   "source": "Repeat Client",
+   "tags": [
+    "exterior",
+    "repeat-client"
+   ],
+   "type": "lead",
+   "created_days_ago": 240,
+   "last_activity_days_ago": 39,
+   "owner": "u_4"
+  }
+ ],
+ "opportunities": [
+  {
+   "id": "o_01",
+   "title": "Nguyen \u2014 Interior Bedrooms",
+   "contact_id": "c_03",
+   "stage": "New Lead",
+   "status": "open",
+   "value": 2300,
+   "source": "Google LSA",
+   "owner": "u_2",
+   "created_days_ago": 1,
+   "updated_days_ago": 0
+  },
+  {
+   "id": "o_02",
+   "title": "Castillo \u2014 Exterior Repaint",
+   "contact_id": "c_04",
+   "stage": "New Lead",
+   "status": "open",
+   "value": 5800,
+   "source": "Website Form",
+   "owner": "u_2",
+   "created_days_ago": 2,
+   "updated_days_ago": 1
+  },
+  {
+   "id": "o_03",
+   "title": "Okafor \u2014 Cabinet Refinishing",
+   "contact_id": "c_05",
+   "stage": "New Lead",
+   "status": "open",
+   "value": 3900,
+   "source": "Google LSA",
+   "owner": "u_2",
+   "created_days_ago": 3,
+   "updated_days_ago": 2
+  },
+  {
+   "id": "o_04",
+   "title": "Brennan \u2014 Deck & Fence Stain",
+   "contact_id": "c_06",
+   "stage": "New Lead",
+   "status": "open",
+   "value": 2200,
+   "source": "Facebook Ads",
+   "owner": "u_2",
+   "created_days_ago": 4,
+   "updated_days_ago": 0
+  },
+  {
+   "id": "o_05",
+   "title": "Yoder \u2014 Whole-Home Interior",
+   "contact_id": "c_07",
+   "stage": "New Lead",
+   "status": "open",
+   "value": 4900,
+   "source": "Angi",
+   "owner": "u_2",
+   "created_days_ago": 5,
+   "updated_days_ago": 5
+  },
+  {
+   "id": "o_06",
+   "title": "Patel \u2014 Exterior Repaint",
+   "contact_id": "c_02",
+   "stage": "New Lead",
+   "status": "open",
+   "value": 6400,
+   "source": "Google My Business",
+   "owner": "u_2",
+   "created_days_ago": 6,
+   "updated_days_ago": 5
+  },
+  {
+   "id": "o_07",
+   "title": "Novak \u2014 Basement Repaint",
+   "contact_id": "c_24",
+   "stage": "New Lead",
+   "status": "open",
+   "value": 2600,
+   "source": "Website Form",
+   "owner": "u_2",
+   "created_days_ago": 2,
+   "updated_days_ago": 0
+  },
+  {
+   "id": "o_08",
+   "title": "Tran \u2014 Whole-Home Interior",
+   "contact_id": "c_08",
+   "stage": "Estimate Scheduled",
+   "status": "open",
+   "value": 5200,
+   "source": "Google LSA",
+   "owner": "u_2",
+   "created_days_ago": 9,
+   "updated_days_ago": 0
+  },
+  {
+   "id": "o_09",
+   "title": "Gallegos \u2014 Exterior & Trim",
+   "contact_id": "c_09",
+   "stage": "Estimate Scheduled",
+   "status": "open",
+   "value": 6700,
+   "source": "Referral",
+   "owner": "u_2",
+   "created_days_ago": 7,
+   "updated_days_ago": 3
+  },
+  {
+   "id": "o_10",
+   "title": "Pruitt \u2014 Kitchen Cabinets",
+   "contact_id": "c_10",
+   "stage": "Estimate Scheduled",
+   "status": "open",
+   "value": 3400,
+   "source": "Google My Business",
+   "owner": "u_2",
+   "created_days_ago": 11,
+   "updated_days_ago": 4
+  },
+  {
+   "id": "o_11",
+   "title": "Feldman \u2014 Main Floor Interior",
+   "contact_id": "c_11",
+   "stage": "Estimate Scheduled",
+   "status": "open",
+   "value": 3300,
+   "source": "Website Form",
+   "owner": "u_2",
+   "created_days_ago": 8,
+   "updated_days_ago": 1
+  },
+  {
+   "id": "o_12",
+   "title": "Chen \u2014 Deck Stain",
+   "contact_id": "c_25",
+   "stage": "Estimate Scheduled",
+   "status": "open",
+   "value": 1700,
+   "source": "Google LSA",
+   "owner": "u_2",
+   "created_days_ago": 6,
+   "updated_days_ago": 2
+  },
+  {
+   "id": "o_13",
+   "title": "Redline Property Group \u2014 Building Exteriors",
+   "contact_id": "c_12",
+   "stage": "Estimate Sent",
+   "status": "open",
+   "value": 16400,
+   "source": "Website Form",
+   "owner": "u_1",
+   "created_days_ago": 21,
+   "updated_days_ago": 3
+  },
+  {
+   "id": "o_14",
+   "title": "Holloway \u2014 Exterior Repaint",
+   "contact_id": "c_13",
+   "stage": "Estimate Sent",
+   "status": "open",
+   "value": 7600,
+   "source": "Google LSA",
+   "owner": "u_2",
+   "created_days_ago": 16,
+   "updated_days_ago": 1
+  },
+  {
+   "id": "o_15",
+   "title": "Rosales \u2014 Interior, 3 Rooms",
+   "contact_id": "c_26",
+   "stage": "Estimate Sent",
+   "status": "open",
+   "value": 3200,
+   "source": "Google My Business",
+   "owner": "u_2",
+   "created_days_ago": 12,
+   "updated_days_ago": 4
+  },
+  {
+   "id": "o_16",
+   "title": "Frazier \u2014 Kitchen Cabinets",
+   "contact_id": "c_29",
+   "stage": "Estimate Sent",
+   "status": "open",
+   "value": 4700,
+   "source": "Repeat Client",
+   "owner": "u_2",
+   "created_days_ago": 14,
+   "updated_days_ago": 6
+  },
+  {
+   "id": "o_17",
+   "title": "Bishop \u2014 Whole-Home Interior",
+   "contact_id": "c_14",
+   "stage": "Estimate Sent",
+   "status": "open",
+   "value": 5600,
+   "source": "Angi",
+   "owner": "u_2",
+   "created_days_ago": 18,
+   "updated_days_ago": 7
+  },
+  {
+   "id": "o_18",
+   "title": "Summit Ridge HOA \u2014 Clubhouse Interior",
+   "contact_id": "c_15",
+   "stage": "Negotiation",
+   "status": "open",
+   "value": 13200,
+   "source": "Referral",
+   "owner": "u_1",
+   "created_days_ago": 34,
+   "updated_days_ago": 2
+  },
+  {
+   "id": "o_19",
+   "title": "Andrade \u2014 Exterior Repaint",
+   "contact_id": "c_16",
+   "stage": "Negotiation",
+   "status": "open",
+   "value": 5400,
+   "source": "Google My Business",
+   "owner": "u_2",
+   "created_days_ago": 24,
+   "updated_days_ago": 2
+  },
+  {
+   "id": "o_20",
+   "title": "Cho \u2014 Kitchen Cabinets",
+   "contact_id": "c_17",
+   "stage": "Negotiation",
+   "status": "open",
+   "value": 4100,
+   "source": "Yard Sign",
+   "owner": "u_2",
+   "created_days_ago": 27,
+   "updated_days_ago": 1
+  },
+  {
+   "id": "o_21",
+   "title": "McAllister \u2014 Exterior Repaint",
+   "contact_id": "c_18",
+   "stage": "Job Scheduled",
+   "status": "open",
+   "value": 6800,
+   "source": "Google LSA",
+   "owner": "u_2",
+   "created_days_ago": 31,
+   "updated_days_ago": 2
+  },
+  {
+   "id": "o_22",
+   "title": "Zhang \u2014 Interior Repaint",
+   "contact_id": "c_19",
+   "stage": "Job Scheduled",
+   "status": "open",
+   "value": 3600,
+   "source": "Website Form",
+   "owner": "u_2",
+   "created_days_ago": 19,
+   "updated_days_ago": 3
+  },
+  {
+   "id": "o_23",
+   "title": "Whitfield \u2014 Exterior Repaint",
+   "contact_id": "c_01",
+   "stage": "In Production",
+   "status": "open",
+   "value": 7800,
+   "source": "Google LSA",
+   "owner": "u_2",
+   "created_days_ago": 38,
+   "updated_days_ago": 0
+  },
+  {
+   "id": "o_24",
+   "title": "Lucero \u2014 Whole-Home Interior",
+   "contact_id": "c_20",
+   "stage": "In Production",
+   "status": "open",
+   "value": 5700,
+   "source": "Google My Business",
+   "owner": "u_3",
+   "created_days_ago": 29,
+   "updated_days_ago": 2
+  },
+  {
+   "id": "o_25",
+   "title": "Trujillo \u2014 Whole-Home Interior",
+   "contact_id": "c_21",
+   "stage": "Job Scheduled",
+   "status": "won",
+   "value": 6800,
+   "source": "Referral",
+   "owner": "u_2",
+   "created_days_ago": 26,
+   "updated_days_ago": 3
+  },
+  {
+   "id": "o_26",
+   "title": "Ellison \u2014 Exterior Repaint",
+   "contact_id": "c_22",
+   "stage": "In Production",
+   "status": "won",
+   "value": 8200,
+   "source": "Google LSA",
+   "owner": "u_2",
+   "created_days_ago": 33,
+   "updated_days_ago": 8
+  },
+  {
+   "id": "o_27",
+   "title": "Beacon Hill Dental \u2014 Office Interior",
+   "contact_id": "c_23",
+   "stage": "In Production",
+   "status": "won",
+   "value": 12800,
+   "source": "Google My Business",
+   "owner": "u_1",
+   "created_days_ago": 41,
+   "updated_days_ago": 14
+  },
+  {
+   "id": "o_28",
+   "title": "Novak \u2014 Kitchen Cabinets",
+   "contact_id": "c_24",
+   "stage": "In Production",
+   "status": "won",
+   "value": 5600,
+   "source": "Website Form",
+   "owner": "u_2",
+   "created_days_ago": 39,
+   "updated_days_ago": 21
+  },
+  {
+   "id": "o_29",
+   "title": "Chen \u2014 Interior Repaint",
+   "contact_id": "c_25",
+   "stage": "In Production",
+   "status": "won",
+   "value": 3400,
+   "source": "Google LSA",
+   "owner": "u_2",
+   "created_days_ago": 45,
+   "updated_days_ago": 27
+  },
+  {
+   "id": "o_30",
+   "title": "Rosales \u2014 Exterior Repaint",
+   "contact_id": "c_26",
+   "stage": "In Production",
+   "status": "won",
+   "value": 7300,
+   "source": "Google My Business",
+   "owner": "u_2",
+   "created_days_ago": 52,
+   "updated_days_ago": 34
+  },
+  {
+   "id": "o_31",
+   "title": "Steiner \u2014 Deck & Pergola Stain",
+   "contact_id": "c_27",
+   "stage": "In Production",
+   "status": "won",
+   "value": 2800,
+   "source": "Angi",
+   "owner": "u_3",
+   "created_days_ago": 55,
+   "updated_days_ago": 42
+  },
+  {
+   "id": "o_32",
+   "title": "Dominguez \u2014 Interior & Ceilings",
+   "contact_id": "c_28",
+   "stage": "In Production",
+   "status": "won",
+   "value": 4100,
+   "source": "Facebook Ads",
+   "owner": "u_2",
+   "created_days_ago": 63,
+   "updated_days_ago": 51
+  },
+  {
+   "id": "o_33",
+   "title": "Frazier \u2014 Exterior Trim & Siding",
+   "contact_id": "c_29",
+   "stage": "In Production",
+   "status": "won",
+   "value": 6200,
+   "source": "Repeat Client",
+   "owner": "u_2",
+   "created_days_ago": 71,
+   "updated_days_ago": 58
+  },
+  {
+   "id": "o_34",
+   "title": "Sandoval \u2014 Exterior Repaint",
+   "contact_id": "c_30",
+   "stage": "Negotiation",
+   "status": "lost",
+   "value": 8400,
+   "source": "Google LSA",
+   "owner": "u_2",
+   "created_days_ago": 28,
+   "updated_days_ago": 12,
+   "lost_reason": "Went with cheaper bid"
+  },
+  {
+   "id": "o_35",
+   "title": "Beckett \u2014 Whole-Home Interior",
+   "contact_id": "c_31",
+   "stage": "Negotiation",
+   "status": "lost",
+   "value": 5900,
+   "source": "Facebook Ads",
+   "owner": "u_2",
+   "created_days_ago": 40,
+   "updated_days_ago": 25,
+   "lost_reason": "Postponed to next season"
+  },
+  {
+   "id": "o_36",
+   "title": "Iverson \u2014 Interior, 2 Rooms",
+   "contact_id": "c_32",
+   "stage": "Estimate Sent",
+   "status": "lost",
+   "value": 2900,
+   "source": "Website Form",
+   "owner": "u_4",
+   "created_days_ago": 32,
+   "updated_days_ago": 18,
+   "lost_reason": "No response after 3 follow-ups"
+  },
+  {
+   "id": "o_37",
+   "title": "Mahoney \u2014 Exterior Repaint",
+   "contact_id": "c_33",
+   "stage": "Estimate Sent",
+   "status": "lost",
+   "value": 6700,
+   "source": "Google My Business",
+   "owner": "u_4",
+   "created_days_ago": 61,
+   "updated_days_ago": 47,
+   "lost_reason": "DIY"
+  },
+  {
+   "id": "o_38",
+   "title": "Boyd \u2014 Cabin Exterior",
+   "contact_id": "c_34",
+   "stage": "New Lead",
+   "status": "lost",
+   "value": 7500,
+   "source": "Repeat Client",
+   "owner": "u_4",
+   "created_days_ago": 43,
+   "updated_days_ago": 39,
+   "lost_reason": "Out of service area"
+  }
+ ],
+ "conversations": [
+  {
+   "id": "cv_01",
+   "contact_id": "c_03",
+   "channel": "sms",
+   "unread": 2,
+   "messages": [
     {
-      "id": "cv_01",
-      "contact_id": "c_03",
-      "channel": "sms",
-      "unread": 2,
-      "messages": [
-        { "dir": "in", "text": "Hi, I found Bronco Painting on Google. Looking to get 2 bedrooms and a hallway painted at our place in Denver. Can I get a quote?", "days_ago": 1, "hours_ago": 16 },
-        { "dir": "out", "text": "Hi Minh, thanks for reaching out! Happy to help. What's the address, and are we doing walls, ceilings, and trim?", "days_ago": 1, "hours_ago": 14 },
-        { "dir": "in", "text": "1483 S Umatilla St. Walls and ceilings, trim is fine. One bedroom has wallpaper on a single wall.", "days_ago": 1, "hours_ago": 13 },
-        { "dir": "out", "text": "Got it — we handle wallpaper removal too. We have free estimate slots later this week, want me to book one for you?", "days_ago": 1, "hours_ago": 12 },
-        { "dir": "in", "text": "Friday after 3 works. Also, do you guys do accent walls? Thinking something dark like Iron Ore SW 7069 behind the bed.", "days_ago": 0, "hours_ago": 3 },
-        { "dir": "in", "text": "Oh and is the estimate free?", "days_ago": 0, "hours_ago": 1 }
-      ]
+     "dir": "in",
+     "text": "Hi, I found Bronco Painting on Google. Looking to get 2 bedrooms and a hallway painted at our place in Denver. Can I get a quote?",
+     "days_ago": 1,
+     "hours_ago": 16
     },
     {
-      "id": "cv_02",
-      "contact_id": "c_08",
-      "channel": "sms",
-      "unread": 0,
-      "messages": [
-        { "dir": "in", "text": "Hi, this is Grace Tran. We just bought a house on S Monaco Pkwy and want the whole interior repainted before we move in.", "days_ago": 3, "hours_ago": 10 },
-        { "dir": "out", "text": "Congrats on the new house, Grace! We'd love to take a look. Are you available this week for a free estimate?", "days_ago": 3, "hours_ago": 9 },
-        { "dir": "in", "text": "Yes! Mornings are best. The house is empty so any day works.", "days_ago": 2, "hours_ago": 15 },
-        { "dir": "out", "text": "Perfect — does Thursday at 10:00 AM work? Our estimator Marisol will walk the house with you.", "days_ago": 2, "hours_ago": 14 },
-        { "dir": "in", "text": "Thursday 10am works. See you then!", "days_ago": 2, "hours_ago": 13 },
-        { "dir": "out", "text": "Hi Grace, quick reminder about your estimate tomorrow at 10:00 AM. Reply C to confirm.", "days_ago": 0, "hours_ago": 4 },
-        { "dir": "in", "text": "C — thanks!", "days_ago": 0, "hours_ago": 2 },
-        { "dir": "out", "text": "You're all set. See you tomorrow at 10:00!", "days_ago": 0, "hours_ago": 2 }
-      ]
+     "dir": "out",
+     "text": "Hi Minh, thanks for reaching out! Happy to help. What's the address, and are we doing walls, ceilings, and trim?",
+     "days_ago": 1,
+     "hours_ago": 14
     },
     {
-      "id": "cv_03",
-      "contact_id": "c_13",
-      "channel": "email",
-      "unread": 1,
-      "messages": [
-        { "dir": "out", "text": "Hi Marcus, attached is your exterior repaint estimate — $7,600 including power wash, scrape and prime, two coats of SW Duration on body and trim, and full caulking. Let me know if you have any questions!", "days_ago": 5, "hours_ago": 11 },
-        { "dir": "in", "text": "Thanks. Price is a bit higher than another bid we got. What paint do they use vs yours?", "days_ago": 4, "hours_ago": 9 },
-        { "dir": "out", "text": "Great question — we spec Sherwin-Williams Duration, a lifetime-warranty exterior paint. Lower bids usually mean SuperPaint or contractor grade, which typically needs repainting 3-4 years sooner. Our labor warranty is 3 years.", "days_ago": 4, "hours_ago": 8 },
-        { "dir": "in", "text": "OK, that helps. Can you break out the detached garage as a separate line item? We might phase it.", "days_ago": 1, "hours_ago": 10 }
-      ]
+     "dir": "in",
+     "text": "1483 S Umatilla St. Walls and ceilings, trim is fine. One bedroom has wallpaper on a single wall.",
+     "days_ago": 1,
+     "hours_ago": 13
     },
     {
-      "id": "cv_04",
-      "contact_id": "c_15",
-      "channel": "email",
-      "unread": 0,
-      "messages": [
-        { "dir": "in", "text": "Hello, this is Carol with the Summit Ridge HOA board. We received your proposal for the clubhouse interior. The board meets next week — can you send a certificate of insurance and two HOA references?", "days_ago": 9, "hours_ago": 10 },
-        { "dir": "out", "text": "Hi Carol, absolutely — COI and two HOA references attached. Happy to attend the board meeting if that would help.", "days_ago": 9, "hours_ago": 8 },
-        { "dir": "in", "text": "The board reviewed your proposal. We'd like to move forward pending one item: can you include the fitness room ceiling at the same price?", "days_ago": 3, "hours_ago": 14 },
-        { "dir": "out", "text": "We can include the fitness room ceiling if we schedule during your low-traffic window. Updated proposal attached, still at $13,200.", "days_ago": 2, "hours_ago": 10 },
-        { "dir": "in", "text": "That works. Our board president signs next week — please pencil us in.", "days_ago": 2, "hours_ago": 9 }
-      ]
+     "dir": "out",
+     "text": "Got it \u2014 we handle wallpaper removal too. We have free estimate slots later this week, want me to book one for you?",
+     "days_ago": 1,
+     "hours_ago": 12
     },
     {
-      "id": "cv_05",
-      "contact_id": "c_17",
-      "channel": "sms",
-      "unread": 0,
-      "messages": [
-        { "dir": "in", "text": "Hi! Following up on the cabinet quote. I'm torn on colors — thinking Naval SW 6244 for the island and Alabaster SW 7008 for the perimeter cabinets. Too trendy?", "days_ago": 8, "hours_ago": 12 },
-        { "dir": "out", "text": "Honestly a classic combo — Naval island with Alabaster perimeter is timeless. We'd spray Emerald Urethane Trim Enamel in satin, very durable.", "days_ago": 8, "hours_ago": 11 },
-        { "dir": "in", "text": "Ok good. My sister keeps pushing Agreeable Gray SW 7029 for the walls too.", "days_ago": 7, "hours_ago": 15 },
-        { "dir": "out", "text": "Agreeable Gray pairs great with both. Want to book a free color consult? We bring drawdown samples so you can see them in your own light.", "days_ago": 7, "hours_ago": 14 },
-        { "dir": "in", "text": "Yes please! Sometime later this week?", "days_ago": 6, "hours_ago": 10 },
-        { "dir": "out", "text": "You're booked — we'll text a confirmation. Have your countertop sample handy if you can!", "days_ago": 6, "hours_ago": 9 }
-      ]
+     "dir": "in",
+     "text": "Friday after 3 works. Also, do you guys do accent walls? Thinking something dark like Iron Ore SW 7069 behind the bed.",
+     "days_ago": 0,
+     "hours_ago": 3
     },
     {
-      "id": "cv_06",
-      "contact_id": "c_01",
-      "channel": "sms",
-      "unread": 1,
-      "messages": [
-        { "dir": "out", "text": "Hi Daniel — crew update: south and west walls are done. Weather looks iffy tomorrow morning, so we may start after lunch.", "days_ago": 2, "hours_ago": 9 },
-        { "dir": "in", "text": "No problem. Looks great so far.", "days_ago": 2, "hours_ago": 8 },
-        { "dir": "out", "text": "Crew is on site — finishing trim in Snowbound SW 7004 today, then we'll do the final walkthrough with you.", "days_ago": 0, "hours_ago": 6 },
-        { "dir": "in", "text": "Great. Quick thing — can they touch up the downspout by the garage before they wrap? Small scuff.", "days_ago": 0, "hours_ago": 2 }
-      ]
-    },
-    {
-      "id": "cv_07",
-      "contact_id": "c_22",
-      "channel": "sms",
-      "unread": 0,
-      "messages": [
-        { "dir": "out", "text": "Hi Robert, the crew wrapped up your exterior yesterday. How does everything look?", "days_ago": 6, "hours_ago": 10 },
-        { "dir": "in", "text": "House looks brand new. The crew was awesome and left everything spotless.", "days_ago": 6, "hours_ago": 8 },
-        { "dir": "out", "text": "That's what we love to hear! If you have 2 minutes, a Google review helps our small business a ton — broncopainting.example.com/review", "days_ago": 5, "hours_ago": 9 },
-        { "dir": "in", "text": "Done — 5 stars posted. We may have you back for the basement next year.", "days_ago": 5, "hours_ago": 7 }
-      ]
-    },
-    {
-      "id": "cv_08",
-      "contact_id": "c_12",
-      "channel": "email",
-      "unread": 0,
-      "messages": [
-        { "dir": "in", "text": "Hi, I manage a small portfolio for Redline Property Group. Two of our buildings on S Acoma need full exterior repaints. Can you bid from photos or do you need a site visit?", "days_ago": 21, "hours_ago": 11 },
-        { "dir": "out", "text": "Thanks for reaching out! We'd want a quick site walk — about 45 minutes per building. We can also provide a COI naming Redline as additional insured.", "days_ago": 20, "hours_ago": 9 },
-        { "dir": "in", "text": "Site walk went well per our super. Send the proposal when ready.", "days_ago": 15, "hours_ago": 13 },
-        { "dir": "out", "text": "Proposal attached: $16,400 for both buildings — elastomeric on the stucco, Duration on siding and trim, lift rental included. Pricing valid 30 days.", "days_ago": 3, "hours_ago": 10 }
-      ]
-    },
-    {
-      "id": "cv_09",
-      "contact_id": "c_06",
-      "channel": "fb",
-      "unread": 1,
-      "messages": [
-        { "dir": "in", "text": "Hi, saw your ad — do you stain fences or just houses? Our cedar fence and deck are pretty faded.", "days_ago": 4, "hours_ago": 12 },
-        { "dir": "out", "text": "We do both! Solid or semi-transparent stain — we use SW SuperDeck. Estimates are free. What's the address?", "days_ago": 4, "hours_ago": 11 },
-        { "dir": "in", "text": "7734 Eaton St in Arvada. Could someone come by this weekend?", "days_ago": 0, "hours_ago": 4 }
-      ]
-    },
-    {
-      "id": "cv_10",
-      "contact_id": "c_24",
-      "channel": "sms",
-      "unread": 0,
-      "messages": [
-        { "dir": "in", "text": "Hey, it's Chris Novak — you guys painted our kitchen cabinets last month. They still look incredible.", "days_ago": 1, "hours_ago": 18 },
-        { "dir": "out", "text": "Thanks Chris, that makes our day! Anything else we can help with?", "days_ago": 1, "hours_ago": 17 },
-        { "dir": "in", "text": "Actually yes — we want the basement painted before the holidays. Same deal as before?", "days_ago": 1, "hours_ago": 16 },
-        { "dir": "out", "text": "We'd love to. Marisol will call you today to set up a quick estimate — basements usually run $2,200-$3,000 depending on ceilings.", "days_ago": 0, "hours_ago": 5 }
-      ]
-    },
-    {
-      "id": "cv_11",
-      "contact_id": "c_18",
-      "channel": "call",
-      "unread": 0,
-      "messages": [
-        { "dir": "in", "text": "Inbound call, 6 min — Sean confirmed body color Gauntlet Gray SW 7019 with Snowbound SW 7004 trim and a Tricorn Black SW 6258 front door. Asked about deposit and start date.", "days_ago": 4, "hours_ago": 15 },
-        { "dir": "out", "text": "Outbound call, 3 min — Confirmed crew start in about two weeks, weather permitting. Emailed the 30% deposit invoice.", "days_ago": 3, "hours_ago": 10 },
-        { "dir": "in", "text": "Inbound call, 2 min — Deposit paid online. Asked that the crew keep the side gate closed (dog).", "days_ago": 2, "hours_ago": 11 },
-        { "dir": "out", "text": "Outbound call, 1 min — Left voicemail confirming deposit received; gate note added to the job file.", "days_ago": 2, "hours_ago": 10 }
-      ]
-    },
-    {
-      "id": "cv_12",
-      "contact_id": "c_16",
-      "channel": "gmb",
-      "unread": 0,
-      "messages": [
-        { "dir": "in", "text": "Hi, do you price exterior painting by square foot? Found you on Google. Our house is about 2,100 sq ft in southwest Denver.", "days_ago": 6, "hours_ago": 13 },
-        { "dir": "out", "text": "Hi Lucia! We price per project after a walk-around — siding condition and prep matter more than square footage. Ballpark for 2,100 sq ft is $4,500-$6,500.", "days_ago": 6, "hours_ago": 11 },
-        { "dir": "in", "text": "Your quote came in at $5,400. Another company said $4,800. Any flexibility?", "days_ago": 3, "hours_ago": 12 },
-        { "dir": "out", "text": "We can meet you at $5,100 if we can get you on the schedule in the next 3 weeks — that keeps the 3-year labor warranty and Duration paint.", "days_ago": 2, "hours_ago": 9 },
-        { "dir": "in", "text": "Let me talk to my husband — I'll let you know this week.", "days_ago": 2, "hours_ago": 8 }
-      ]
+     "dir": "in",
+     "text": "Oh and is the estimate free?",
+     "days_ago": 0,
+     "hours_ago": 1
     }
-  ],
-  "tasks": [
-    { "id": "t_01", "title": "Send updated proposal — Summit Ridge HOA clubhouse", "contact_id": "c_15", "due_in_days": -2, "done": false, "owner": "u_1" },
-    { "id": "t_02", "title": "Follow up on proposal — Marcus Holloway", "contact_id": "c_13", "due_in_days": -1, "done": false, "owner": "u_2" },
-    { "id": "t_03", "title": "Order 12 gal SW Duration (Gauntlet Gray) — Whitfield exterior", "contact_id": "c_01", "due_in_days": 0, "done": false, "owner": "u_3" },
-    { "id": "t_04", "title": "Collect deposit — Zhang interior", "contact_id": "c_19", "due_in_days": 0, "done": false, "owner": "u_4" },
-    { "id": "t_05", "title": "Schedule crew — Trujillo whole-home interior", "contact_id": "c_21", "due_in_days": 1, "done": false, "owner": "u_3" },
-    { "id": "t_06", "title": "Ask for Google review — Robert Ellison", "contact_id": "c_22", "due_in_days": 1, "done": true, "owner": "u_4" },
-    { "id": "t_07", "title": "Follow up — Redline Property Group exterior bid", "contact_id": "c_12", "due_in_days": 3, "done": false, "owner": "u_1" },
-    { "id": "t_08", "title": "Collect final payment — Lucero whole-home interior", "contact_id": "c_20", "due_in_days": 4, "done": false, "owner": "u_4" },
-    { "id": "t_09", "title": "Restock sprayer tips and masking supplies", "contact_id": null, "due_in_days": 6, "done": false, "owner": "u_3" }
-  ],
-  "appointments": [
-    { "id": "a_01", "title": "Estimate — Tran", "contact_id": "c_08", "calendar": "Estimates", "in_days": 1, "time": "10:00", "duration_min": 90, "status": "confirmed" },
-    { "id": "a_02", "title": "Estimate — Gallegos", "contact_id": "c_09", "calendar": "Estimates", "in_days": 2, "time": "09:30", "duration_min": 60, "status": "confirmed" },
-    { "id": "a_03", "title": "Estimate — Feldman", "contact_id": "c_11", "calendar": "Estimates", "in_days": 2, "time": "15:00", "duration_min": 60, "status": "new" },
-    { "id": "a_04", "title": "Estimate — Pruitt", "contact_id": "c_10", "calendar": "Estimates", "in_days": 3, "time": "13:30", "duration_min": 60, "status": "confirmed" },
-    { "id": "a_05", "title": "Color Consult — Cho", "contact_id": "c_17", "calendar": "Color Consult", "in_days": 3, "time": "11:00", "duration_min": 60, "status": "confirmed" },
-    { "id": "a_06", "title": "Estimate — Chen", "contact_id": "c_25", "calendar": "Estimates", "in_days": 4, "time": "10:30", "duration_min": 60, "status": "confirmed" },
-    { "id": "a_07", "title": "Job Walkthrough — Summit Ridge HOA", "contact_id": "c_15", "calendar": "Job Walkthrough", "in_days": 6, "time": "08:30", "duration_min": 90, "status": "new" }
-  ],
-  "manual_actions": { "pending": 6 }
+   ]
+  },
+  {
+   "id": "cv_02",
+   "contact_id": "c_08",
+   "channel": "sms",
+   "unread": 0,
+   "messages": [
+    {
+     "dir": "in",
+     "text": "Hi, this is Grace Tran. We just bought a house on S Monaco Pkwy and want the whole interior repainted before we move in.",
+     "days_ago": 3,
+     "hours_ago": 10
+    },
+    {
+     "dir": "out",
+     "text": "Congrats on the new house, Grace! We'd love to take a look. Are you available this week for a free estimate?",
+     "days_ago": 3,
+     "hours_ago": 9
+    },
+    {
+     "dir": "in",
+     "text": "Yes! Mornings are best. The house is empty so any day works.",
+     "days_ago": 2,
+     "hours_ago": 15
+    },
+    {
+     "dir": "out",
+     "text": "Perfect \u2014 does Thursday at 10:00 AM work? Our estimator Marisol will walk the house with you.",
+     "days_ago": 2,
+     "hours_ago": 14
+    },
+    {
+     "dir": "in",
+     "text": "Thursday 10am works. See you then!",
+     "days_ago": 2,
+     "hours_ago": 13
+    },
+    {
+     "dir": "out",
+     "text": "Hi Grace, quick reminder about your estimate tomorrow at 10:00 AM. Reply C to confirm.",
+     "days_ago": 0,
+     "hours_ago": 4
+    },
+    {
+     "dir": "in",
+     "text": "C \u2014 thanks!",
+     "days_ago": 0,
+     "hours_ago": 2
+    },
+    {
+     "dir": "out",
+     "text": "You're all set. See you tomorrow at 10:00!",
+     "days_ago": 0,
+     "hours_ago": 2
+    }
+   ]
+  },
+  {
+   "id": "cv_03",
+   "contact_id": "c_13",
+   "channel": "email",
+   "unread": 1,
+   "messages": [
+    {
+     "dir": "out",
+     "text": "Hi Marcus, attached is your exterior repaint estimate \u2014 $7,600 including power wash, scrape and prime, two coats of SW Duration on body and trim, and full caulking. Let me know if you have any questions!",
+     "days_ago": 5,
+     "hours_ago": 11
+    },
+    {
+     "dir": "in",
+     "text": "Thanks. Price is a bit higher than another bid we got. What paint do they use vs yours?",
+     "days_ago": 4,
+     "hours_ago": 9
+    },
+    {
+     "dir": "out",
+     "text": "Great question \u2014 we spec Sherwin-Williams Duration, a lifetime-warranty exterior paint. Lower bids usually mean SuperPaint or contractor grade, which typically needs repainting 3-4 years sooner. Our labor warranty is 3 years.",
+     "days_ago": 4,
+     "hours_ago": 8
+    },
+    {
+     "dir": "in",
+     "text": "OK, that helps. Can you break out the detached garage as a separate line item? We might phase it.",
+     "days_ago": 1,
+     "hours_ago": 10
+    }
+   ]
+  },
+  {
+   "id": "cv_04",
+   "contact_id": "c_15",
+   "channel": "email",
+   "unread": 0,
+   "messages": [
+    {
+     "dir": "in",
+     "text": "Hello, this is Carol with the Summit Ridge HOA board. We received your proposal for the clubhouse interior. The board meets next week \u2014 can you send a certificate of insurance and two HOA references?",
+     "days_ago": 9,
+     "hours_ago": 10
+    },
+    {
+     "dir": "out",
+     "text": "Hi Carol, absolutely \u2014 COI and two HOA references attached. Happy to attend the board meeting if that would help.",
+     "days_ago": 9,
+     "hours_ago": 8
+    },
+    {
+     "dir": "in",
+     "text": "The board reviewed your proposal. We'd like to move forward pending one item: can you include the fitness room ceiling at the same price?",
+     "days_ago": 3,
+     "hours_ago": 14
+    },
+    {
+     "dir": "out",
+     "text": "We can include the fitness room ceiling if we schedule during your low-traffic window. Updated proposal attached, still at $13,200.",
+     "days_ago": 2,
+     "hours_ago": 10
+    },
+    {
+     "dir": "in",
+     "text": "That works. Our board president signs next week \u2014 please pencil us in.",
+     "days_ago": 2,
+     "hours_ago": 9
+    }
+   ]
+  },
+  {
+   "id": "cv_05",
+   "contact_id": "c_17",
+   "channel": "sms",
+   "unread": 0,
+   "messages": [
+    {
+     "dir": "in",
+     "text": "Hi! Following up on the cabinet quote. I'm torn on colors \u2014 thinking Naval SW 6244 for the island and Alabaster SW 7008 for the perimeter cabinets. Too trendy?",
+     "days_ago": 8,
+     "hours_ago": 12
+    },
+    {
+     "dir": "out",
+     "text": "Honestly a classic combo \u2014 Naval island with Alabaster perimeter is timeless. We'd spray Emerald Urethane Trim Enamel in satin, very durable.",
+     "days_ago": 8,
+     "hours_ago": 11
+    },
+    {
+     "dir": "in",
+     "text": "Ok good. My sister keeps pushing Agreeable Gray SW 7029 for the walls too.",
+     "days_ago": 7,
+     "hours_ago": 15
+    },
+    {
+     "dir": "out",
+     "text": "Agreeable Gray pairs great with both. Want to book a free color consult? We bring drawdown samples so you can see them in your own light.",
+     "days_ago": 7,
+     "hours_ago": 14
+    },
+    {
+     "dir": "in",
+     "text": "Yes please! Sometime later this week?",
+     "days_ago": 6,
+     "hours_ago": 10
+    },
+    {
+     "dir": "out",
+     "text": "You're booked \u2014 we'll text a confirmation. Have your countertop sample handy if you can!",
+     "days_ago": 6,
+     "hours_ago": 9
+    }
+   ]
+  },
+  {
+   "id": "cv_06",
+   "contact_id": "c_01",
+   "channel": "sms",
+   "unread": 1,
+   "messages": [
+    {
+     "dir": "out",
+     "text": "Hi Daniel \u2014 crew update: south and west walls are done. Weather looks iffy tomorrow morning, so we may start after lunch.",
+     "days_ago": 2,
+     "hours_ago": 9
+    },
+    {
+     "dir": "in",
+     "text": "No problem. Looks great so far.",
+     "days_ago": 2,
+     "hours_ago": 8
+    },
+    {
+     "dir": "out",
+     "text": "Crew is on site \u2014 finishing trim in Snowbound SW 7004 today, then we'll do the final walkthrough with you.",
+     "days_ago": 0,
+     "hours_ago": 6
+    },
+    {
+     "dir": "in",
+     "text": "Great. Quick thing \u2014 can they touch up the downspout by the garage before they wrap? Small scuff.",
+     "days_ago": 0,
+     "hours_ago": 2
+    }
+   ]
+  },
+  {
+   "id": "cv_07",
+   "contact_id": "c_22",
+   "channel": "sms",
+   "unread": 0,
+   "messages": [
+    {
+     "dir": "out",
+     "text": "Hi Robert, the crew wrapped up your exterior yesterday. How does everything look?",
+     "days_ago": 6,
+     "hours_ago": 10
+    },
+    {
+     "dir": "in",
+     "text": "House looks brand new. The crew was awesome and left everything spotless.",
+     "days_ago": 6,
+     "hours_ago": 8
+    },
+    {
+     "dir": "out",
+     "text": "That's what we love to hear! If you have 2 minutes, a Google review helps our small business a ton \u2014 broncopainting.example.com/review",
+     "days_ago": 5,
+     "hours_ago": 9
+    },
+    {
+     "dir": "in",
+     "text": "Done \u2014 5 stars posted. We may have you back for the basement next year.",
+     "days_ago": 5,
+     "hours_ago": 7
+    }
+   ]
+  },
+  {
+   "id": "cv_08",
+   "contact_id": "c_12",
+   "channel": "email",
+   "unread": 0,
+   "messages": [
+    {
+     "dir": "in",
+     "text": "Hi, I manage a small portfolio for Redline Property Group. Two of our buildings on S Acoma need full exterior repaints. Can you bid from photos or do you need a site visit?",
+     "days_ago": 21,
+     "hours_ago": 11
+    },
+    {
+     "dir": "out",
+     "text": "Thanks for reaching out! We'd want a quick site walk \u2014 about 45 minutes per building. We can also provide a COI naming Redline as additional insured.",
+     "days_ago": 20,
+     "hours_ago": 9
+    },
+    {
+     "dir": "in",
+     "text": "Site walk went well per our super. Send the proposal when ready.",
+     "days_ago": 15,
+     "hours_ago": 13
+    },
+    {
+     "dir": "out",
+     "text": "Proposal attached: $16,400 for both buildings \u2014 elastomeric on the stucco, Duration on siding and trim, lift rental included. Pricing valid 30 days.",
+     "days_ago": 3,
+     "hours_ago": 10
+    }
+   ]
+  },
+  {
+   "id": "cv_09",
+   "contact_id": "c_06",
+   "channel": "fb",
+   "unread": 1,
+   "messages": [
+    {
+     "dir": "in",
+     "text": "Hi, saw your ad \u2014 do you stain fences or just houses? Our cedar fence and deck are pretty faded.",
+     "days_ago": 4,
+     "hours_ago": 12
+    },
+    {
+     "dir": "out",
+     "text": "We do both! Solid or semi-transparent stain \u2014 we use SW SuperDeck. Estimates are free. What's the address?",
+     "days_ago": 4,
+     "hours_ago": 11
+    },
+    {
+     "dir": "in",
+     "text": "7734 Eaton St in Arvada. Could someone come by this weekend?",
+     "days_ago": 0,
+     "hours_ago": 4
+    }
+   ]
+  },
+  {
+   "id": "cv_10",
+   "contact_id": "c_24",
+   "channel": "sms",
+   "unread": 0,
+   "messages": [
+    {
+     "dir": "in",
+     "text": "Hey, it's Chris Novak \u2014 you guys painted our kitchen cabinets last month. They still look incredible.",
+     "days_ago": 1,
+     "hours_ago": 18
+    },
+    {
+     "dir": "out",
+     "text": "Thanks Chris, that makes our day! Anything else we can help with?",
+     "days_ago": 1,
+     "hours_ago": 17
+    },
+    {
+     "dir": "in",
+     "text": "Actually yes \u2014 we want the basement painted before the holidays. Same deal as before?",
+     "days_ago": 1,
+     "hours_ago": 16
+    },
+    {
+     "dir": "out",
+     "text": "We'd love to. Marisol will call you today to set up a quick estimate \u2014 basements usually run $2,200-$3,000 depending on ceilings.",
+     "days_ago": 0,
+     "hours_ago": 5
+    }
+   ]
+  },
+  {
+   "id": "cv_11",
+   "contact_id": "c_18",
+   "channel": "call",
+   "unread": 0,
+   "messages": [
+    {
+     "dir": "in",
+     "text": "Inbound call, 6 min \u2014 Sean confirmed body color Gauntlet Gray SW 7019 with Snowbound SW 7004 trim and a Tricorn Black SW 6258 front door. Asked about deposit and start date.",
+     "days_ago": 4,
+     "hours_ago": 15
+    },
+    {
+     "dir": "out",
+     "text": "Outbound call, 3 min \u2014 Confirmed crew start in about two weeks, weather permitting. Emailed the 30% deposit invoice.",
+     "days_ago": 3,
+     "hours_ago": 10
+    },
+    {
+     "dir": "in",
+     "text": "Inbound call, 2 min \u2014 Deposit paid online. Asked that the crew keep the side gate closed (dog).",
+     "days_ago": 2,
+     "hours_ago": 11
+    },
+    {
+     "dir": "out",
+     "text": "Outbound call, 1 min \u2014 Left voicemail confirming deposit received; gate note added to the job file.",
+     "days_ago": 2,
+     "hours_ago": 10
+    }
+   ]
+  },
+  {
+   "id": "cv_12",
+   "contact_id": "c_16",
+   "channel": "gmb",
+   "unread": 0,
+   "messages": [
+    {
+     "dir": "in",
+     "text": "Hi, do you price exterior painting by square foot? Found you on Google. Our house is about 2,100 sq ft in southwest Denver.",
+     "days_ago": 6,
+     "hours_ago": 13
+    },
+    {
+     "dir": "out",
+     "text": "Hi Lucia! We price per project after a walk-around \u2014 siding condition and prep matter more than square footage. Ballpark for 2,100 sq ft is $4,500-$6,500.",
+     "days_ago": 6,
+     "hours_ago": 11
+    },
+    {
+     "dir": "in",
+     "text": "Your quote came in at $5,400. Another company said $4,800. Any flexibility?",
+     "days_ago": 3,
+     "hours_ago": 12
+    },
+    {
+     "dir": "out",
+     "text": "We can meet you at $5,100 if we can get you on the schedule in the next 3 weeks \u2014 that keeps the 3-year labor warranty and Duration paint.",
+     "days_ago": 2,
+     "hours_ago": 9
+    },
+    {
+     "dir": "in",
+     "text": "Let me talk to my husband \u2014 I'll let you know this week.",
+     "days_ago": 2,
+     "hours_ago": 8
+    }
+   ]
+  }
+ ],
+ "tasks": [
+  {
+   "id": "t_01",
+   "title": "Send updated proposal \u2014 Summit Ridge HOA clubhouse",
+   "contact_id": "c_15",
+   "due_in_days": -2,
+   "done": false,
+   "owner": "u_1"
+  },
+  {
+   "id": "t_02",
+   "title": "Follow up on proposal \u2014 Marcus Holloway",
+   "contact_id": "c_13",
+   "due_in_days": -1,
+   "done": false,
+   "owner": "u_2"
+  },
+  {
+   "id": "t_03",
+   "title": "Order 12 gal SW Duration (Gauntlet Gray) \u2014 Whitfield exterior",
+   "contact_id": "c_01",
+   "due_in_days": 0,
+   "done": false,
+   "owner": "u_3"
+  },
+  {
+   "id": "t_04",
+   "title": "Collect deposit \u2014 Zhang interior",
+   "contact_id": "c_19",
+   "due_in_days": 0,
+   "done": false,
+   "owner": "u_4"
+  },
+  {
+   "id": "t_05",
+   "title": "Schedule crew \u2014 Trujillo whole-home interior",
+   "contact_id": "c_21",
+   "due_in_days": 1,
+   "done": false,
+   "owner": "u_3"
+  },
+  {
+   "id": "t_06",
+   "title": "Ask for Google review \u2014 Robert Ellison",
+   "contact_id": "c_22",
+   "due_in_days": 1,
+   "done": true,
+   "owner": "u_4"
+  },
+  {
+   "id": "t_07",
+   "title": "Follow up \u2014 Redline Property Group exterior bid",
+   "contact_id": "c_12",
+   "due_in_days": 3,
+   "done": false,
+   "owner": "u_1"
+  },
+  {
+   "id": "t_08",
+   "title": "Collect final payment \u2014 Lucero whole-home interior",
+   "contact_id": "c_20",
+   "due_in_days": 4,
+   "done": false,
+   "owner": "u_4"
+  },
+  {
+   "id": "t_09",
+   "title": "Restock sprayer tips and masking supplies",
+   "contact_id": null,
+   "due_in_days": 6,
+   "done": false,
+   "owner": "u_3"
+  }
+ ],
+ "appointments": [
+  {
+   "id": "a_01",
+   "title": "Estimate \u2014 Tran",
+   "contact_id": "c_08",
+   "calendar": "Estimates",
+   "in_days": 1,
+   "time": "10:00",
+   "duration_min": 90,
+   "status": "confirmed"
+  },
+  {
+   "id": "a_02",
+   "title": "Estimate \u2014 Gallegos",
+   "contact_id": "c_09",
+   "calendar": "Estimates",
+   "in_days": 2,
+   "time": "09:30",
+   "duration_min": 60,
+   "status": "confirmed"
+  },
+  {
+   "id": "a_03",
+   "title": "Estimate \u2014 Feldman",
+   "contact_id": "c_11",
+   "calendar": "Estimates",
+   "in_days": 2,
+   "time": "15:00",
+   "duration_min": 60,
+   "status": "new"
+  },
+  {
+   "id": "a_04",
+   "title": "Estimate \u2014 Pruitt",
+   "contact_id": "c_10",
+   "calendar": "Estimates",
+   "in_days": 3,
+   "time": "13:30",
+   "duration_min": 60,
+   "status": "confirmed"
+  },
+  {
+   "id": "a_05",
+   "title": "Color Consult \u2014 Cho",
+   "contact_id": "c_17",
+   "calendar": "Color Consult",
+   "in_days": 3,
+   "time": "11:00",
+   "duration_min": 60,
+   "status": "confirmed"
+  },
+  {
+   "id": "a_06",
+   "title": "Estimate \u2014 Chen",
+   "contact_id": "c_25",
+   "calendar": "Estimates",
+   "in_days": 4,
+   "time": "10:30",
+   "duration_min": 60,
+   "status": "confirmed"
+  },
+  {
+   "id": "a_07",
+   "title": "Job Walkthrough \u2014 Summit Ridge HOA",
+   "contact_id": "c_15",
+   "calendar": "Job Walkthrough",
+   "in_days": 6,
+   "time": "08:30",
+   "duration_min": 90,
+   "status": "new"
+  }
+ ],
+ "manual_actions": {
+  "pending": 6
+ },
+ "reviews": [
+  {
+   "id": "r_01",
+   "author": "Grace Tran",
+   "rating": 5,
+   "source": "google",
+   "days_ago": 2,
+   "replied": false,
+   "text": "Bronco painted our whole main floor in two days. Crew was on time, tidy, and the Agreeable Gray looks amazing. Already booked them for the basement."
+  },
+  {
+   "id": "r_02",
+   "author": "Chidi Okafor",
+   "rating": 5,
+   "source": "google",
+   "days_ago": 6,
+   "replied": true,
+   "text": "Cabinet refinishing came out better than new. Sprayed finish, zero brush marks, and they wrapped the whole kitchen in plastic like surgeons."
+  },
+  {
+   "id": "r_03",
+   "author": "Renee Whitaker",
+   "rating": 5,
+   "source": "google",
+   "days_ago": 11,
+   "replied": true,
+   "text": "Interior repaint of three bedrooms. Fair price, clean lines, moved all the furniture back. Would hire again."
+  },
+  {
+   "id": "r_04",
+   "author": "Marcus Holloway",
+   "rating": 4,
+   "source": "google",
+   "days_ago": 16,
+   "replied": true,
+   "text": "Exterior repaint looks great. One day of weather delay, but they communicated early and finished strong."
+  },
+  {
+   "id": "r_05",
+   "author": "Priya Raman",
+   "rating": 5,
+   "source": "facebook",
+   "days_ago": 21,
+   "replied": false,
+   "text": "They color-matched our HOA requirements perfectly and handled the approval paperwork. Painless."
+  },
+  {
+   "id": "r_06",
+   "author": "Tom Gallegos",
+   "rating": 5,
+   "source": "google",
+   "days_ago": 27,
+   "replied": true,
+   "text": "Second house Bronco has done for us. Same crew both times, which says a lot."
+  },
+  {
+   "id": "r_07",
+   "author": "Dana Ellison",
+   "rating": 5,
+   "source": "google",
+   "days_ago": 33,
+   "replied": true,
+   "text": "Deck stain and fence \u2014 looks brand new. They even fixed two loose boards without being asked."
+  },
+  {
+   "id": "r_08",
+   "author": "Beacon Hill Dental",
+   "rating": 5,
+   "source": "google",
+   "days_ago": 41,
+   "replied": true,
+   "text": "Office repaint done over a weekend so we never closed. Zero smell by Monday thanks to the low-VOC paint they recommended."
+  },
+  {
+   "id": "r_09",
+   "author": "Kelly Novak",
+   "rating": 4,
+   "source": "facebook",
+   "days_ago": 52,
+   "replied": true,
+   "text": "Kitchen cabinets in Naval blue \u2014 stunning. Docked one star because scheduling took a couple of tries, but the work itself is flawless."
+  },
+  {
+   "id": "r_10",
+   "author": "Summit Ridge HOA",
+   "rating": 5,
+   "source": "google",
+   "days_ago": 63,
+   "replied": true,
+   "text": "Clubhouse interior on schedule and under budget. Board approved them for the exterior phase next season."
+  }
+ ]
 }
