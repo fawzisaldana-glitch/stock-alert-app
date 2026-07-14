@@ -4,6 +4,7 @@ name: deploy-pages
 # The deploy-key push from the VPS is a normal push, so it triggers this automatically.
 on:
   push:
+    branches: [main]        # feature branches must not deploy to the live site
     paths: ["app/**"]
   workflow_dispatch: {}
 permissions:
