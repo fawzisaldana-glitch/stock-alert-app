@@ -1,11 +1,11 @@
 {
-  "updated": 1784396291.7409384,
+  "updated": 1784482702.1610186,
   "benchmark": "SPY",
   "forward": {
-    "n": 380,
+    "n": 384,
     "avg_return": -5.0,
     "spy_return": 0.1,
-    "excess": -5.2,
+    "excess": -5.1,
     "hit_rate": 36,
     "beat_spy": false,
     "picks": [
@@ -2668,16 +2668,44 @@
         "ret": -2.7,
         "spy": -1.1,
         "beat": false
+      },
+      {
+        "ticker": "FNWD",
+        "date": "2026-07-05",
+        "ret": -2.1,
+        "spy": -1.1,
+        "beat": false
+      },
+      {
+        "ticker": "ACN",
+        "date": "2026-07-05",
+        "ret": 6.1,
+        "spy": -1.1,
+        "beat": true
+      },
+      {
+        "ticker": "AMTM",
+        "date": "2026-07-05",
+        "ret": -7.1,
+        "spy": -1.1,
+        "beat": false
+      },
+      {
+        "ticker": "III",
+        "date": "2026-07-05",
+        "ret": -2.7,
+        "spy": -1.1,
+        "beat": false
       }
     ],
     "note": "Forward test: picks graded from their LOCKED date to now vs SPY. No lookahead."
   },
   "retrospective": {
     "window_days": 90,
-    "n": 21,
-    "avg_return": -4.8,
+    "n": 24,
+    "avg_return": -6.8,
     "spy_return": 5.1,
-    "excess": -10.0,
+    "excess": -12.0,
     "note": "RETROSPECTIVE & selection-biased: trailing return of names flagged TODAY vs SPY. Not a forward test \u2014 use only as a rough signal-quality smell test."
   }
 }
