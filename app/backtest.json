@@ -1,9 +1,9 @@
 {
-  "updated": 1785001132.2012038,
+  "updated": 1785087527.3020024,
   "benchmark": "SPY",
   "forward": {
-    "n": 459,
-    "avg_return": 0.0,
+    "n": 463,
+    "avg_return": -0.0,
     "spy_return": -0.6,
     "excess": 0.6,
     "hit_rate": 54,
@@ -3221,16 +3221,44 @@
         "ret": 5.7,
         "spy": -1.4,
         "beat": true
+      },
+      {
+        "ticker": "TSM",
+        "date": "2026-07-12",
+        "ret": -4.3,
+        "spy": -1.4,
+        "beat": false
+      },
+      {
+        "ticker": "CPOP",
+        "date": "2026-07-12",
+        "ret": -16.8,
+        "spy": -1.4,
+        "beat": false
+      },
+      {
+        "ticker": "ARLP",
+        "date": "2026-07-12",
+        "ret": 0.1,
+        "spy": -1.4,
+        "beat": true
+      },
+      {
+        "ticker": "CZNC",
+        "date": "2026-07-12",
+        "ret": 5.7,
+        "spy": -1.4,
+        "beat": true
       }
     ],
     "note": "Forward test: picks graded from their LOCKED date to now vs SPY. No lookahead."
   },
   "retrospective": {
     "window_days": 90,
-    "n": 17,
-    "avg_return": 0.5,
+    "n": 19,
+    "avg_return": -3.6,
     "spy_return": 3.6,
-    "excess": -3.1,
+    "excess": -7.2,
     "note": "RETROSPECTIVE & selection-biased: trailing return of names flagged TODAY vs SPY. Not a forward test \u2014 use only as a rough signal-quality smell test."
   }
 }
