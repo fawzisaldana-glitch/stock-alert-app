@@ -88,3 +88,10 @@ SEC submissions (sector/SIC)   ┘                                              
 `scoring.py` is the knob. The deep-research found **no** verified scoring recipe, so the
 default weights are a starting point to **back-test**, not gospel. Edit the weights and the
 "why it matters" wording to match how you want to trade and learn.
+
+---
+
+## Also in this repo: Franco Roofing alert bot
+
+`franco_bot.py` — a separate multi-recipient Telegram bot for Franco Roofing business
+alerts (own token, own recipient list, phone-number verification). Guide: **FRANCO_BOT.md**.
