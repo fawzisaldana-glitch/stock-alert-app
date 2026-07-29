@@ -91,7 +91,9 @@ default weights are a starting point to **back-test**, not gospel. Edit the weig
 
 ---
 
-## Also in this repo: Franco Roofing alert bot
+## Also in this repo: Franco Roofing update hub
 
-`franco_bot.py` — a separate multi-recipient Telegram bot for Franco Roofing business
-alerts (own token, own recipient list, phone-number verification). Guide: **FRANCO_BOT.md**.
+`franco_bot.py` — a separate Telegram bot dedicated to Franco Roofing: members post
+updates by messaging the bot, scripts/n8n queue notes, and it sends a daily digest and
+Monday weekly recap (own token, own recipient list, phone-number verification).
+Guide: **FRANCO_BOT.md**.
