@@ -1,0 +1,26 @@
+name: franco-meta
+# Meta Marketing API bridge for Franco Roofing ads ops.
+# The agent's sandbox cannot reach graph.facebook.com, so Meta calls run here.
+# Requires repo secret META_ACCESS_TOKEN (never echoed; only sanitized reports are printed).
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "What to run"
+        type: choice
+        default: audit
+        options: [validate, audit]
+permissions:
+  contents: read
+jobs:
+  bridge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run Meta bridge
+        env:
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+        run: python franco_ads/meta_bridge.py "${{ inputs.action }}"
