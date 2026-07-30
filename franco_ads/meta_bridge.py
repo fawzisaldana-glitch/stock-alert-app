@@ -41,6 +41,23 @@ def get(path, **params):
         return {"error": {"message": str(e), "type": "transport"}}
 
 
+def post(path, **params):
+    """POST to a Graph API path; returns parsed JSON (error responses included)."""
+    params["access_token"] = os.environ["META_ACCESS_TOKEN"]
+    data = urllib.parse.urlencode(params).encode()
+    req = urllib.request.Request(f"{API}/{path}", data=data, method="POST")
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            return json.load(r)
+    except urllib.error.HTTPError as e:
+        try:
+            return json.load(e)
+        except Exception:
+            return {"error": {"message": f"HTTP {e.code}", "type": "http"}}
+    except Exception as e:
+        return {"error": {"message": str(e), "type": "transport"}}
+
+
 def err_text(resp):
     e = resp.get("error")
     if not e:
@@ -166,7 +183,7 @@ def deep(out):
         if not rows:
             out.append("- no events recorded in window")
         for s in rows:
-            out.append(f"- {s.get('aggregation') or s.get('value') or json.dumps(s)[:200]}")
+            out.append(f"- {json.dumps(s)[:300]}")
 
     out.append("\n## Franco page ads eligibility")
     page = get("1266258446566929", fields="name,is_published,link,fan_count")
@@ -175,6 +192,22 @@ def deep(out):
     else:
         out.append(f"- {page.get('name')}: published={page.get('is_published')}, "
                    f"fans={page.get('fan_count')}, {page.get('link')}")
+
+
+FRC_CAMPAIGN = "52641835287524"
+
+
+def pause_franco_campaign(out):
+    """License gate (pack 09, R-LIC-4): campaign stays paused until CSLB #841613
+    is verifiably Active and ads carry the license line. Reversible one-call."""
+    out.append("\n## Pause FRC campaign (license gate, R-LIC-4)")
+    res = post(FRC_CAMPAIGN, status="PAUSED")
+    if err_text(res):
+        out.append(f"❌ {err_text(res)}")
+        return
+    check = get(FRC_CAMPAIGN, fields="name,status,effective_status")
+    out.append(f"- {check.get('name')}: status={check.get('status')}, "
+               f"effective={check.get('effective_status')}")
 
 
 def main():
@@ -191,6 +224,8 @@ def main():
         audit(out)
     if ok and action == "deep":
         deep(out)
+    if ok and action == "pause_franco_campaign":
+        pause_franco_campaign(out)
     report = "\n".join(out)
     print(report)
     summary = os.environ.get("GITHUB_STEP_SUMMARY")
