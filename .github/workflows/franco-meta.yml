@@ -9,7 +9,7 @@ on:
         description: "What to run"
         type: choice
         default: audit
-        options: [validate, audit]
+        options: [validate, audit, deep]
   # workflow_dispatch is unavailable until this file lands on the default branch,
   # so the agent triggers runs by committing to franco_ads/run-request.txt.
   push:

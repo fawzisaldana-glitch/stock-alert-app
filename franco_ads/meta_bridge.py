@@ -124,6 +124,59 @@ def audit(out):
                "· upload creatives once files are provided. Nothing is created by this audit.")
 
 
+FRANCO_ACCOUNT = "act_2166218730589990"
+FRANCO_PIXEL = "1707330867197445"
+
+
+def deep(out):
+    out.append("\n## Franco ad account detail")
+    acct = get(FRANCO_ACCOUNT, fields="name,account_status,disable_reason,balance,currency,"
+                                      "funding_source_details,amount_spent,created_time")
+    if err_text(acct):
+        out.append(f"❌ {err_text(acct)}")
+    else:
+        status = ACCOUNT_STATUS.get(acct.get("account_status"), acct.get("account_status"))
+        out.append(f"- Status: **{status}** (disable_reason: {acct.get('disable_reason')})")
+        out.append(f"- Outstanding balance: {int(acct.get('balance', 0)) / 100:.2f} {acct.get('currency')}")
+        out.append(f"- Lifetime spend: {int(acct.get('amount_spent', 0)) / 100:.2f} {acct.get('currency')}")
+        fs = acct.get("funding_source_details") or {}
+        out.append(f"- Funding source: {fs.get('display_string', 'none on file')}")
+        out.append(f"- Created: {acct.get('created_time')}")
+
+    out.append("\n## Franco campaigns (existing)")
+    camps = get(f"{FRANCO_ACCOUNT}/campaigns", fields="name,status,effective_status,objective,"
+                                                      "daily_budget,created_time", limit="25")
+    if err_text(camps):
+        out.append(f"- {err_text(camps)}")
+    else:
+        rows = camps.get("data", [])
+        for c in rows:
+            budget = int(c.get("daily_budget", 0)) / 100 if c.get("daily_budget") else "-"
+            out.append(f"- **{c.get('name')}** ({c['id']}) — {c.get('effective_status')}, "
+                       f"objective {c.get('objective')}, daily ${budget}, created {c.get('created_time')}")
+        if not rows:
+            out.append("- none — account is empty, campaign gets built fresh per pack file 02")
+
+    out.append("\n## Franco pixel events (last 7 days)")
+    stats = get(f"{FRANCO_PIXEL}/stats", aggregation="event")
+    if err_text(stats):
+        out.append(f"- {err_text(stats)}")
+    else:
+        rows = stats.get("data", [])
+        if not rows:
+            out.append("- no events recorded in window")
+        for s in rows:
+            out.append(f"- {s.get('aggregation') or s.get('value') or json.dumps(s)[:200]}")
+
+    out.append("\n## Franco page ads eligibility")
+    page = get("1266258446566929", fields="name,is_published,link,fan_count")
+    if err_text(page):
+        out.append(f"- {err_text(page)}")
+    else:
+        out.append(f"- {page.get('name')}: published={page.get('is_published')}, "
+                   f"fans={page.get('fan_count')}, {page.get('link')}")
+
+
 def main():
     action = sys.argv[1] if len(sys.argv) > 1 else "audit"
     if not os.environ.get("META_ACCESS_TOKEN"):
@@ -134,8 +187,10 @@ def main():
         sys.exit(0)
     out = ["# Franco Meta bridge — " + action]
     ok = validate(out)
-    if ok and action == "audit":
+    if ok and action in ("audit", "deep"):
         audit(out)
+    if ok and action == "deep":
+        deep(out)
     report = "\n".join(out)
     print(report)
     summary = os.environ.get("GITHUB_STEP_SUMMARY")
