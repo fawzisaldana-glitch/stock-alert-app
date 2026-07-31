@@ -210,6 +210,18 @@ def pause_franco_campaign(out):
                f"effective={check.get('effective_status')}")
 
 
+def resume_franco_campaign(out):
+    """User directive 2026-07-31: restore the campaign to ACTIVE (undo pause)."""
+    out.append("\n## Resume FRC campaign (user directive)")
+    res = post(FRC_CAMPAIGN, status="ACTIVE")
+    if err_text(res):
+        out.append(f"❌ {err_text(res)}")
+        return
+    check = get(FRC_CAMPAIGN, fields="name,status,effective_status")
+    out.append(f"- {check.get('name')}: status={check.get('status')}, "
+               f"effective={check.get('effective_status')}")
+
+
 def main():
     action = sys.argv[1] if len(sys.argv) > 1 else "audit"
     if not os.environ.get("META_ACCESS_TOKEN"):
@@ -226,6 +238,8 @@ def main():
         deep(out)
     if ok and action == "pause_franco_campaign":
         pause_franco_campaign(out)
+    if ok and action == "resume_franco_campaign":
+        resume_franco_campaign(out)
     report = "\n".join(out)
     print(report)
     summary = os.environ.get("GITHUB_STEP_SUMMARY")
