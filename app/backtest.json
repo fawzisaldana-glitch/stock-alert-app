@@ -1,9 +1,9 @@
 {
-  "updated": 1785605939.4723587,
+  "updated": 1785692310.6236694,
   "benchmark": "SPY",
   "forward": {
-    "n": 535,
-    "avg_return": 2.8,
+    "n": 538,
+    "avg_return": 2.9,
     "spy_return": 0.3,
     "excess": 2.5,
     "hit_rate": 66,
@@ -3753,16 +3753,37 @@
         "ret": 7.6,
         "spy": 0.7,
         "beat": true
+      },
+      {
+        "ticker": "ACN",
+        "date": "2026-07-19",
+        "ret": 14.6,
+        "spy": 0.7,
+        "beat": true
+      },
+      {
+        "ticker": "III",
+        "date": "2026-07-19",
+        "ret": 3.0,
+        "spy": 0.7,
+        "beat": true
+      },
+      {
+        "ticker": "SRCE",
+        "date": "2026-07-19",
+        "ret": 7.6,
+        "spy": 0.7,
+        "beat": true
       }
     ],
     "note": "Forward test: picks graded from their LOCKED date to now vs SPY. No lookahead."
   },
   "retrospective": {
     "window_days": 90,
-    "n": 19,
-    "avg_return": 334.2,
+    "n": 10,
+    "avg_return": 635.3,
     "spy_return": 4.3,
-    "excess": 329.9,
+    "excess": 631.0,
     "note": "RETROSPECTIVE & selection-biased: trailing return of names flagged TODAY vs SPY. Not a forward test \u2014 use only as a rough signal-quality smell test."
   }
 }
