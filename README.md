@@ -97,3 +97,12 @@ default weights are a starting point to **back-test**, not gospel. Edit the weig
 updates by messaging the bot, scripts/n8n queue notes, and it sends a daily digest and
 Monday weekly recap (own token, own recipient list, phone-number verification).
 Guide: **FRANCO_BOT.md**.
+
+## Also in this repo: Bronco Painting ads bridge
+
+`bronco_ads/` — a **read-only** Meta Marketing API bridge for the Bronco Painting ad
+account, run from GitHub Actions because the agent sandbox can't reach `graph.facebook.com`.
+Actions: `preflight` (what's still unconfigured — needs no token), `discover` (find the
+`act_…` account ID), `audit` (account + campaigns), `report` (spend and quality-weighted
+CPL), `selftest` (offline). It has no ability to pause ads or change budgets by design.
+Status and launch steps: **bronco/BRONCO_ADS_LAUNCH.md**.
