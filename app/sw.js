@@ -1,8 +1,9 @@
 // Service worker — NETWORK-FIRST so the installed home-screen app always shows the latest
 // (code + data) when online, and falls back to cache only when offline. This fixes the
 // "PWA stuck on old version" problem caused by cache-first shells.
-const CACHE = "sma-v11";
-const SHELL = ["./", "index.html", "app.js", "manifest.webmanifest", "icon-192.png", "icon-512.png"];
+const CACHE = "sma-v12";
+const SHELL = ["./", "index.html", "app.js", "manifest.webmanifest", "icon-192.png", "icon-512.png",
+  "bronco.html", "bronco.js", "bronco.json"];
 
 self.addEventListener("install", e => {
   // Pre-cache the shell for offline, then take over immediately (no waiting for old tabs to close).

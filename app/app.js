@@ -70,6 +70,8 @@ function renderHome() {
     h += `<div class="c tap" onclick="go('alerts')"><div class="c-h"><span class="name">Top catalyst alert</span><span class="pill ${bc}">${Math.round(top.score)}/100</span></div>
       <div class="line"><b>${esc(top.ticker)}</b> — ${esc(top.headline)}</div><div class="hint">${esc(bw)} signal · all catalyst alerts →</div></div>`;
   }
+  h += `<div class="c tap" onclick="location.href='bronco.html'"><div class="c-h"><span class="name">Bronco Painting CRM</span><span class="pill">open →</span></div>
+    <div class="line">The business OS — pipeline, conversations, contacts &amp; estimates in a HighLevel-style dashboard.</div></div>`;
   $("list").innerHTML = h;
 }
 
@@ -340,7 +342,7 @@ async function boot() {
   route();
 }
 
-$("tabs").addEventListener("click", e => { if (e.target.classList.contains("tab")) go(e.target.dataset.view); });
+$("tabs").addEventListener("click", e => { if (e.target.classList.contains("tab") && e.target.dataset.view) go(e.target.dataset.view); });
 // PWA auto-update: register, check for new versions on open + refocus, and reload ONCE when
 // a new worker takes over — so the home-screen app stays current instead of stuck on an old build.
 if ("serviceWorker" in navigator) {
