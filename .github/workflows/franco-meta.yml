@@ -1,0 +1,38 @@
+name: franco-meta
+# Meta Marketing API bridge for Franco Roofing ads ops.
+# The agent's sandbox cannot reach graph.facebook.com, so Meta calls run here.
+# Requires repo secret META_ACCESS_TOKEN (never echoed; only sanitized reports are printed).
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "What to run"
+        type: choice
+        default: audit
+        options: [validate, audit, deep]
+  # workflow_dispatch is unavailable until this file lands on the default branch,
+  # so the agent triggers runs by committing to franco_ads/run-request.txt.
+  push:
+    paths: ["franco_ads/run-request.txt"]
+permissions:
+  contents: read
+jobs:
+  bridge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Resolve action
+        id: act
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "action=${{ inputs.action }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "action=$(head -1 franco_ads/run-request.txt | tr -d '[:space:]')" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Run Meta bridge
+        env:
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+        run: python franco_ads/meta_bridge.py "${{ steps.act.outputs.action }}"
