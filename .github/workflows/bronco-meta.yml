@@ -1,0 +1,53 @@
+name: bronco-meta
+# Read-only Meta Marketing API bridge for Bronco Painting.
+# The agent sandbox cannot reach graph.facebook.com, so Meta calls run here.
+#
+# Config: the real bronco/.bronco-meta-config.md is gitignored and therefore absent in CI,
+# so values come from repository variables instead (Settings → Secrets and variables →
+# Actions → Variables). The token is a secret, never a variable, and is never echoed.
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "What to run"
+        type: choice
+        default: preflight
+        options: [preflight, discover, audit, report, selftest]
+  # workflow_dispatch is unavailable until this file reaches the default branch, so runs
+  # can also be triggered by committing to bronco_ads/run-request.txt.
+  push:
+    paths: ["bronco_ads/run-request.txt"]
+  pull_request:
+    paths: ["bronco_ads/**", ".github/workflows/bronco-meta.yml"]
+permissions:
+  contents: read
+jobs:
+  bridge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Resolve action
+        id: act
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "action=${{ inputs.action }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "action=selftest" >> "$GITHUB_OUTPUT"
+          else
+            echo "action=$(head -1 bronco_ads/run-request.txt | tr -d '[:space:]')" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Run bridge
+        env:
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          BRONCO_META_AD_ACCOUNT_ID: ${{ vars.BRONCO_META_AD_ACCOUNT_ID }}
+          BRONCO_CAMPAIGN_ID: ${{ vars.BRONCO_CAMPAIGN_ID }}
+          BRONCO_DAILY_BUDGET: ${{ vars.BRONCO_DAILY_BUDGET }}
+          BRONCO_DAILY_BUDGET_HARD_CAP: ${{ vars.BRONCO_DAILY_BUDGET_HARD_CAP }}
+          BRONCO_LEAD_ENDPOINT: ${{ vars.BRONCO_LEAD_ENDPOINT }}
+          BRONCO_LEAD_ENDPOINT_AUTH_ENV: BRONCO_LEADS_TOKEN
+          BRONCO_LEADS_TOKEN: ${{ secrets.BRONCO_LEADS_TOKEN }}
+          BRONCO_CURRENCY: ${{ vars.BRONCO_CURRENCY }}
+        run: python bronco_ads/meta_bridge.py "${{ steps.act.outputs.action }}"
