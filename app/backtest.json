@@ -1,12 +1,12 @@
 {
-  "updated": 1788629977.6806598,
+  "updated": 1788716385.0835078,
   "benchmark": "SPY",
   "forward": {
-    "n": 928,
+    "n": 933,
     "avg_return": 5.4,
     "spy_return": 2.7,
-    "excess": 2.8,
-    "hit_rate": 61,
+    "excess": 2.7,
+    "hit_rate": 60,
     "beat_spy": true,
     "picks": [
       {
@@ -6504,16 +6504,51 @@
         "ret": -2.0,
         "spy": 0.9,
         "beat": false
+      },
+      {
+        "ticker": "LDOS",
+        "date": "2026-08-23",
+        "ret": -3.9,
+        "spy": 0.9,
+        "beat": false
+      },
+      {
+        "ticker": "SAIC",
+        "date": "2026-08-23",
+        "ret": -0.1,
+        "spy": 0.9,
+        "beat": false
+      },
+      {
+        "ticker": "CACI",
+        "date": "2026-08-23",
+        "ret": -2.0,
+        "spy": 0.9,
+        "beat": false
+      },
+      {
+        "ticker": "MLAB",
+        "date": "2026-08-23",
+        "ret": 2.9,
+        "spy": 0.9,
+        "beat": true
+      },
+      {
+        "ticker": "VG",
+        "date": "2026-08-23",
+        "ret": 0.2,
+        "spy": 0.9,
+        "beat": false
       }
     ],
     "note": "Forward test: picks graded from their LOCKED date to now vs SPY. No lookahead."
   },
   "retrospective": {
     "window_days": 90,
-    "n": 10,
-    "avg_return": -1.5,
+    "n": 9,
+    "avg_return": 3.1,
     "spy_return": 4.5,
-    "excess": -6.0,
+    "excess": -1.4,
     "note": "RETROSPECTIVE & selection-biased: trailing return of names flagged TODAY vs SPY. Not a forward test \u2014 use only as a rough signal-quality smell test."
   }
 }
