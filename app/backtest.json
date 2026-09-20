@@ -1,9 +1,9 @@
 {
-  "updated": 1789839638.275401,
+  "updated": 1789926053.0508873,
   "benchmark": "SPY",
   "forward": {
-    "n": 1050,
-    "avg_return": 5.9,
+    "n": 1054,
+    "avg_return": 5.8,
     "spy_return": 1.5,
     "excess": 4.3,
     "hit_rate": 61,
@@ -7358,16 +7358,44 @@
         "ret": 2.0,
         "spy": -0.3,
         "beat": true
+      },
+      {
+        "ticker": "ENOV",
+        "date": "2026-09-06",
+        "ret": -9.7,
+        "spy": -0.3,
+        "beat": false
+      },
+      {
+        "ticker": "LDOS",
+        "date": "2026-09-06",
+        "ret": -0.9,
+        "spy": -0.3,
+        "beat": false
+      },
+      {
+        "ticker": "BAH",
+        "date": "2026-09-06",
+        "ret": 6.9,
+        "spy": -0.3,
+        "beat": true
+      },
+      {
+        "ticker": "III",
+        "date": "2026-09-06",
+        "ret": 2.0,
+        "spy": -0.3,
+        "beat": true
       }
     ],
     "note": "Forward test: picks graded from their LOCKED date to now vs SPY. No lookahead."
   },
   "retrospective": {
     "window_days": 90,
-    "n": 13,
-    "avg_return": 6.1,
+    "n": 12,
+    "avg_return": 10.0,
     "spy_return": 2.6,
-    "excess": 3.5,
+    "excess": 7.4,
     "note": "RETROSPECTIVE & selection-biased: trailing return of names flagged TODAY vs SPY. Not a forward test \u2014 use only as a rough signal-quality smell test."
   }
 }
