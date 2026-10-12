@@ -1,10 +1,44 @@
 {
-  "updated": 1791740176.284558,
-  "count": 25,
+  "updated": 1791826571.550795,
+  "count": 22,
   "valuations": {
+    "TSM": {
+      "ticker": "TSM",
+      "computed_at": 1791826529.9339807,
+      "source": "cache",
+      "cheapness": 0.651,
+      "factors": {
+        "value_score": 0.064,
+        "comps_percentile": 0.944
+      },
+      "intrinsic_value": null,
+      "market_price": 446.56,
+      "margin_of_safety": null,
+      "peer_pct": {
+        "pe": 0.167,
+        "ev_ebitda": 0.0,
+        "ev_rev": 0.0
+      },
+      "confidence": "medium",
+      "notes": [
+        "dcf-unreliable: |margin|=+756% implausible (likely small/illiquid/cyclical FCF) \u2192 intrinsic suppressed & factor dropped; name leans on value_score"
+      ],
+      "assumptions": {
+        "horizon_yrs": 5,
+        "terminal_g": 0.025,
+        "erp": 0.05,
+        "tax_rate": 0.21,
+        "equity_weight": 0.7
+      },
+      "my_metrics": {
+        "pe": 32.45,
+        "ev_ebitda": 5.18,
+        "ev_rev": 3.69
+      }
+    },
     "NONE": {
       "ticker": "NONE",
-      "computed_at": 1791740129.8408184,
+      "computed_at": 1791826531.5800407,
       "source": "cache",
       "cheapness": null,
       "factors": {},
@@ -29,50 +63,16 @@
         "ev_rev": null
       }
     },
-    "TSM": {
-      "ticker": "TSM",
-      "computed_at": 1791740132.8686414,
-      "source": "cache",
-      "cheapness": 0.646,
-      "factors": {
-        "value_score": 0.051,
-        "comps_percentile": 0.944
-      },
-      "intrinsic_value": null,
-      "market_price": 453.31,
-      "margin_of_safety": null,
-      "peer_pct": {
-        "pe": 0.167,
-        "ev_ebitda": 0.0,
-        "ev_rev": 0.0
-      },
-      "confidence": "medium",
-      "notes": [
-        "dcf-unreliable: |margin|=+743% implausible (likely small/illiquid/cyclical FCF) \u2192 intrinsic suppressed & factor dropped; name leans on value_score"
-      ],
-      "assumptions": {
-        "horizon_yrs": 5,
-        "terminal_g": 0.025,
-        "erp": 0.05,
-        "tax_rate": 0.21,
-        "equity_weight": 0.7
-      },
-      "my_metrics": {
-        "pe": 32.94,
-        "ev_ebitda": 5.18,
-        "ev_rev": 3.69
-      }
-    },
     "AGMB": {
       "ticker": "AGMB",
-      "computed_at": 1791740130.8797438,
+      "computed_at": 1791826528.1826117,
       "source": "cache",
-      "cheapness": 0.543,
+      "cheapness": 0.523,
       "factors": {
-        "value_score": 0.543
+        "value_score": 0.523
       },
       "intrinsic_value": null,
-      "market_price": 9.08,
+      "market_price": 9.3,
       "margin_of_safety": null,
       "peer_pct": {
         "pe": null,
@@ -98,26 +98,26 @@
     },
     "SFDL": {
       "ticker": "SFDL",
-      "computed_at": 1791740137.4093435,
+      "computed_at": 1791826534.7270267,
       "source": "cache",
-      "cheapness": 0.833,
+      "cheapness": 0.767,
       "factors": {
         "value_score": 1.0,
-        "comps_percentile": 0.583,
+        "comps_percentile": 0.417,
         "dcf_margin": 1.0
       },
-      "intrinsic_value": 86.58,
-      "market_price": 44.5,
-      "margin_of_safety": 0.946,
+      "intrinsic_value": 86.63,
+      "market_price": 45.99,
+      "margin_of_safety": 0.884,
       "peer_pct": {
-        "pe": 0.333,
+        "pe": 0.667,
         "ev_ebitda": null,
         "ev_rev": 0.5
       },
       "confidence": "high",
       "notes": [
         "dcf-beta: raw beta=0.423 out of [0.7,2.5] \u2192 clamped/defaulted",
-        "dcf: wacc=7.84%, g0=12.00%\u2192termg, terminal_g=2.50%, beta=0.70, net_debt=$-0.1B"
+        "dcf: wacc=7.83%, g0=12.00%\u2192termg, terminal_g=2.50%, beta=0.70, net_debt=$-0.1B"
       ],
       "assumptions": {
         "horizon_yrs": 5,
@@ -127,21 +127,21 @@
         "equity_weight": 0.7
       },
       "my_metrics": {
-        "pe": 11.8,
+        "pe": 12.2,
         "ev_ebitda": null,
         "ev_rev": 2.63
       }
     },
     "SY": {
       "ticker": "SY",
-      "computed_at": 1791740143.6438005,
+      "computed_at": 1791826541.4644837,
       "source": "cache",
       "cheapness": 1.0,
       "factors": {
         "value_score": 1.0
       },
       "intrinsic_value": null,
-      "market_price": 2.49,
+      "market_price": 2.535,
       "margin_of_safety": null,
       "peer_pct": {
         "pe": null,
@@ -167,14 +167,14 @@
     },
     "REF": {
       "ticker": "REF",
-      "computed_at": 1791740129.2368867,
+      "computed_at": 1791826526.9725673,
       "source": "cache",
-      "cheapness": 0.5,
+      "cheapness": 0.495,
       "factors": {
-        "value_score": 0.5
+        "value_score": 0.495
       },
       "intrinsic_value": null,
-      "market_price": 13.66,
+      "market_price": 14.07,
       "margin_of_safety": null,
       "peer_pct": {},
       "confidence": "low",
@@ -189,24 +189,24 @@
         "equity_weight": 0.7
       },
       "my_metrics": {
-        "pe": 68.3,
+        "pe": 70.35,
         "ev_ebitda": 37.79,
         "ev_rev": 2.07
       }
     },
     "HCA": {
       "ticker": "HCA",
-      "computed_at": 1791740134.98827,
+      "computed_at": 1791826532.5017676,
       "source": "cache",
-      "cheapness": 0.514,
+      "cheapness": 0.508,
       "factors": {
-        "value_score": 0.994,
+        "value_score": 0.984,
         "comps_percentile": 0.333,
-        "dcf_margin": 0.456
+        "dcf_margin": 0.444
       },
-      "intrinsic_value": 431.15,
-      "market_price": 451.09,
-      "margin_of_safety": -0.044,
+      "intrinsic_value": 431.53,
+      "market_price": 457.21,
+      "margin_of_safety": -0.056,
       "peer_pct": {
         "pe": 0.5,
         "ev_ebitda": 0.5,
@@ -224,41 +224,14 @@
         "equity_weight": 0.7
       },
       "my_metrics": {
-        "pe": 15.12,
+        "pe": 15.33,
         "ev_ebitda": 9.62,
         "ev_rev": 1.94
       }
     },
-    "RWAX": {
-      "ticker": "RWAX",
-      "computed_at": 1791740169.6076689,
-      "source": "cache",
-      "cheapness": null,
-      "factors": {},
-      "intrinsic_value": null,
-      "market_price": 0.0002,
-      "margin_of_safety": null,
-      "peer_pct": {},
-      "confidence": "low",
-      "notes": [
-        "dcf-skipped: latest FCF not positive (lite DCF can't price money-losers)"
-      ],
-      "assumptions": {
-        "horizon_yrs": 5,
-        "terminal_g": 0.025,
-        "erp": 0.05,
-        "tax_rate": 0.21,
-        "equity_weight": 0.7
-      },
-      "my_metrics": {
-        "pe": null,
-        "ev_ebitda": null,
-        "ev_rev": null
-      }
-    },
     "BAH": {
       "ticker": "BAH",
-      "computed_at": 1791740151.7554812,
+      "computed_at": 1791826549.7932935,
       "source": "cache",
       "cheapness": 0.851,
       "factors": {
@@ -266,9 +239,9 @@
         "comps_percentile": 0.878,
         "dcf_margin": 1.0
       },
-      "intrinsic_value": 157.89,
-      "market_price": 73.94,
-      "margin_of_safety": 1.135,
+      "intrinsic_value": 158.02,
+      "market_price": 74.1299,
+      "margin_of_safety": 1.132,
       "peer_pct": {
         "pe": 0.0,
         "ev_ebitda": 0.2,
@@ -277,7 +250,7 @@
       "confidence": "high",
       "notes": [
         "dcf-beta: raw beta=0.368 out of [0.7,2.5] \u2192 clamped/defaulted",
-        "dcf: wacc=7.84%, g0=12.00%\u2192termg, terminal_g=2.50%, beta=0.70, net_debt=$3.6B"
+        "dcf: wacc=7.83%, g0=12.00%\u2192termg, terminal_g=2.50%, beta=0.70, net_debt=$3.6B"
       ],
       "assumptions": {
         "horizon_yrs": 5,
@@ -287,22 +260,22 @@
         "equity_weight": 0.7
       },
       "my_metrics": {
-        "pe": 11.63,
+        "pe": 11.66,
         "ev_ebitda": 9.97,
         "ev_rev": 1.13
       }
     },
     "FLY": {
       "ticker": "FLY",
-      "computed_at": 1791740141.3408055,
+      "computed_at": 1791826539.1562216,
       "source": "cache",
-      "cheapness": 0.688,
+      "cheapness": 0.691,
       "factors": {
-        "value_score": 0.729,
+        "value_score": 0.739,
         "comps_percentile": 0.667
       },
       "intrinsic_value": null,
-      "market_price": 20.0,
+      "market_price": 19.69,
       "margin_of_safety": null,
       "peer_pct": {
         "pe": null,
@@ -326,53 +299,19 @@
         "ev_rev": 9.64
       }
     },
-    "BBD": {
-      "ticker": "BBD",
-      "computed_at": 1791740126.5190597,
-      "source": "cache",
-      "cheapness": 0.555,
-      "factors": {
-        "value_score": 1.0,
-        "comps_percentile": 0.333
-      },
-      "intrinsic_value": null,
-      "market_price": 4.3,
-      "margin_of_safety": null,
-      "peer_pct": {
-        "pe": 0.667,
-        "ev_ebitda": null,
-        "ev_rev": 0.667
-      },
-      "confidence": "medium",
-      "notes": [
-        "dcf-skipped: latest FCF not positive (lite DCF can't price money-losers)"
-      ],
-      "assumptions": {
-        "horizon_yrs": 5,
-        "terminal_g": 0.025,
-        "erp": 0.05,
-        "tax_rate": 0.21,
-        "equity_weight": 0.7
-      },
-      "my_metrics": {
-        "pe": 13.87,
-        "ev_ebitda": null,
-        "ev_rev": 6.49
-      }
-    },
     "SAIC": {
       "ticker": "SAIC",
-      "computed_at": 1791740153.8625908,
+      "computed_at": 1791826551.7085361,
       "source": "cache",
-      "cheapness": 0.739,
+      "cheapness": 0.74,
       "factors": {
-        "value_score": 0.697,
+        "value_score": 0.699,
         "comps_percentile": 0.5,
         "dcf_margin": 1.0
       },
-      "intrinsic_value": 235.72,
-      "market_price": 134.66,
-      "margin_of_safety": 0.75,
+      "intrinsic_value": 235.93,
+      "market_price": 134.34,
+      "margin_of_safety": 0.756,
       "peer_pct": {
         "pe": 0.333,
         "ev_ebitda": 0.667,
@@ -381,7 +320,7 @@
       "confidence": "high",
       "notes": [
         "dcf-beta: raw beta=0.309 out of [0.7,2.5] \u2192 clamped/defaulted",
-        "dcf: wacc=7.84%, g0=7.63%\u2192termg, terminal_g=2.50%, beta=0.70, net_debt=$2.6B"
+        "dcf: wacc=7.83%, g0=7.63%\u2192termg, terminal_g=2.50%, beta=0.70, net_debt=$2.6B"
       ],
       "assumptions": {
         "horizon_yrs": 5,
@@ -391,14 +330,14 @@
         "equity_weight": 0.7
       },
       "my_metrics": {
-        "pe": 15.71,
+        "pe": 15.68,
         "ev_ebitda": 10.92,
         "ev_rev": 1.11
       }
     },
     "DDC": {
       "ticker": "DDC",
-      "computed_at": 1791740159.443691,
+      "computed_at": 1791826559.8066013,
       "source": "cache",
       "cheapness": 0.778,
       "factors": {
@@ -406,7 +345,7 @@
         "comps_percentile": 0.667
       },
       "intrinsic_value": null,
-      "market_price": 0.2043,
+      "market_price": 0.1901,
       "margin_of_safety": null,
       "peer_pct": {
         "pe": null,
@@ -432,17 +371,17 @@
     },
     "OWL": {
       "ticker": "OWL",
-      "computed_at": 1791740161.8001463,
+      "computed_at": 1791826563.9883773,
       "source": "cache",
       "cheapness": 0.628,
       "factors": {
-        "value_score": 0.305,
+        "value_score": 0.308,
         "comps_percentile": 0.417,
         "dcf_margin": 1.0
       },
-      "intrinsic_value": 23.22,
-      "market_price": 9.49,
-      "margin_of_safety": 1.447,
+      "intrinsic_value": 23.23,
+      "market_price": 9.415,
+      "margin_of_safety": 1.467,
       "peer_pct": {
         "pe": 1.0,
         "ev_ebitda": null,
@@ -460,56 +399,22 @@
         "equity_weight": 0.7
       },
       "my_metrics": {
-        "pe": 79.08,
+        "pe": 78.46,
         "ev_ebitda": 11.36,
         "ev_rev": 4.78
       }
     },
-    "VG": {
-      "ticker": "VG",
-      "computed_at": 1791740170.441658,
-      "source": "cache",
-      "cheapness": 0.654,
-      "factors": {
-        "value_score": 0.741,
-        "comps_percentile": 0.611
-      },
-      "intrinsic_value": null,
-      "market_price": 13.16,
-      "margin_of_safety": null,
-      "peer_pct": {
-        "pe": 0.167,
-        "ev_ebitda": 0.5,
-        "ev_rev": 0.5
-      },
-      "confidence": "medium",
-      "notes": [
-        "dcf-skipped: latest FCF not positive (lite DCF can't price money-losers)"
-      ],
-      "assumptions": {
-        "horizon_yrs": 5,
-        "terminal_g": 0.025,
-        "erp": 0.05,
-        "tax_rate": 0.21,
-        "equity_weight": 0.7
-      },
-      "my_metrics": {
-        "pe": 10.36,
-        "ev_ebitda": 10.36,
-        "ev_rev": 4.49
-      }
-    },
     "SWX": {
       "ticker": "SWX",
-      "computed_at": 1791740139.525523,
+      "computed_at": 1791826536.9889715,
       "source": "cache",
-      "cheapness": 0.394,
+      "cheapness": 0.393,
       "factors": {
-        "value_score": 0.849,
+        "value_score": 0.844,
         "comps_percentile": 0.167
       },
       "intrinsic_value": null,
-      "market_price": 84.14,
+      "market_price": 84.96,
       "margin_of_safety": null,
       "peer_pct": {
         "pe": 1.0,
@@ -528,24 +433,24 @@
         "equity_weight": 0.7
       },
       "my_metrics": {
-        "pe": 21.04,
+        "pe": 21.24,
         "ev_ebitda": 10.88,
         "ev_rev": 5.36
       }
     },
     "SOBO": {
       "ticker": "SOBO",
-      "computed_at": 1791740149.5539923,
+      "computed_at": 1791826547.8583536,
       "source": "cache",
       "cheapness": 0.486,
       "factors": {
-        "value_score": 0.875,
+        "value_score": 0.872,
         "comps_percentile": 0.778,
         "dcf_margin": 0.0
       },
-      "intrinsic_value": 10.81,
-      "market_price": 33.22,
-      "margin_of_safety": -0.675,
+      "intrinsic_value": 10.83,
+      "market_price": 33.395,
+      "margin_of_safety": -0.676,
       "peer_pct": {
         "pe": 0.0,
         "ev_ebitda": 0.0,
@@ -563,60 +468,24 @@
         "equity_weight": 0.7
       },
       "my_metrics": {
-        "pe": 15.1,
+        "pe": 15.18,
         "ev_ebitda": 11.95,
         "ev_rev": 5.98
       }
     },
-    "EOG": {
-      "ticker": "EOG",
-      "computed_at": 1791740167.0344346,
-      "source": "cache",
-      "cheapness": 0.469,
-      "factors": {
-        "value_score": 0.895,
-        "comps_percentile": 0.556,
-        "dcf_margin": 0.17
-      },
-      "intrinsic_value": 99.25,
-      "market_price": 148.16,
-      "margin_of_safety": -0.33,
-      "peer_pct": {
-        "pe": 0.333,
-        "ev_ebitda": 0.333,
-        "ev_rev": 0.667
-      },
-      "confidence": "high",
-      "notes": [
-        "dcf-beta: raw beta=0.371 out of [0.7,2.5] \u2192 clamped/defaulted",
-        "dcf: wacc=7.84%, g0=-5.00%\u2192termg, terminal_g=2.50%, beta=0.70, net_debt=$3.3B"
-      ],
-      "assumptions": {
-        "horizon_yrs": 5,
-        "terminal_g": 0.025,
-        "erp": 0.05,
-        "tax_rate": 0.21,
-        "equity_weight": 0.7
-      },
-      "my_metrics": {
-        "pe": 11.53,
-        "ev_ebitda": 5.59,
-        "ev_rev": 3.03
-      }
-    },
     "ABT": {
       "ticker": "ABT",
-      "computed_at": 1791740145.5831957,
+      "computed_at": 1791826543.373361,
       "source": "cache",
-      "cheapness": 0.338,
+      "cheapness": 0.328,
       "factors": {
-        "value_score": 0.364,
+        "value_score": 0.341,
         "comps_percentile": 0.5,
-        "dcf_margin": 0.162
+        "dcf_margin": 0.15
       },
-      "intrinsic_value": 65.95,
-      "market_price": 99.6,
-      "margin_of_safety": -0.338,
+      "intrinsic_value": 66.01,
+      "market_price": 101.505,
+      "margin_of_safety": -0.35,
       "peer_pct": {
         "pe": 0.5,
         "ev_ebitda": 0.5,
@@ -625,7 +494,7 @@
       "confidence": "high",
       "notes": [
         "dcf-beta: raw beta=0.583 out of [0.7,2.5] \u2192 clamped/defaulted",
-        "dcf: wacc=7.84%, g0=2.27%\u2192termg, terminal_g=2.50%, beta=0.70, net_debt=$27.1B"
+        "dcf: wacc=7.83%, g0=2.27%\u2192termg, terminal_g=2.50%, beta=0.70, net_debt=$27.1B"
       ],
       "assumptions": {
         "horizon_yrs": 5,
@@ -635,14 +504,50 @@
         "equity_weight": 0.7
       },
       "my_metrics": {
-        "pe": 32.13,
+        "pe": 32.74,
         "ev_ebitda": 17.13,
         "ev_rev": 4.3
       }
     },
+    "FCN": {
+      "ticker": "FCN",
+      "computed_at": 1791826562.032678,
+      "source": "cache",
+      "cheapness": 0.385,
+      "factors": {
+        "value_score": 0.813,
+        "comps_percentile": 0.556,
+        "dcf_margin": 0.0
+      },
+      "intrinsic_value": 41.59,
+      "market_price": 138.17,
+      "margin_of_safety": -0.699,
+      "peer_pct": {
+        "pe": 0.5,
+        "ev_ebitda": 0.667,
+        "ev_rev": 0.167
+      },
+      "confidence": "high",
+      "notes": [
+        "dcf-beta: raw beta=-0.063 out of [0.7,2.5] \u2192 clamped/defaulted",
+        "dcf: wacc=7.83%, g0=12.00%\u2192termg, terminal_g=2.50%, beta=0.70, net_debt=$1.1B"
+      ],
+      "assumptions": {
+        "horizon_yrs": 5,
+        "terminal_g": 0.025,
+        "erp": 0.05,
+        "tax_rate": 0.21,
+        "equity_weight": 0.7
+      },
+      "my_metrics": {
+        "pe": 16.65,
+        "ev_ebitda": 10.87,
+        "ev_rev": 1.21
+      }
+    },
     "AMRC": {
       "ticker": "AMRC",
-      "computed_at": 1791740155.4588928,
+      "computed_at": 1791826555.9048939,
       "source": "cache",
       "cheapness": 0.315,
       "factors": {
@@ -650,7 +555,7 @@
         "comps_percentile": 0.222
       },
       "intrinsic_value": null,
-      "market_price": 21.33,
+      "market_price": 20.96,
       "margin_of_safety": null,
       "peer_pct": {
         "pe": 1.0,
@@ -669,24 +574,24 @@
         "equity_weight": 0.7
       },
       "my_metrics": {
-        "pe": 40.25,
+        "pe": 39.55,
         "ev_ebitda": 14.51,
         "ev_rev": 1.82
       }
     },
     "CVS": {
       "ticker": "CVS",
-      "computed_at": 1791740165.021862,
+      "computed_at": 1791826567.912248,
       "source": "cache",
-      "cheapness": 0.337,
+      "cheapness": 0.335,
       "factors": {
-        "value_score": 0.808,
+        "value_score": 0.803,
         "comps_percentile": 0.367,
-        "dcf_margin": 0.072
+        "dcf_margin": 0.068
       },
-      "intrinsic_value": 49.28,
-      "market_price": 86.16,
-      "margin_of_safety": -0.428,
+      "intrinsic_value": 49.35,
+      "market_price": 86.94,
+      "margin_of_safety": -0.432,
       "peer_pct": {
         "pe": 0.4,
         "ev_ebitda": 0.5,
@@ -695,7 +600,7 @@
       "confidence": "high",
       "notes": [
         "dcf-beta: raw beta=0.596 out of [0.7,2.5] \u2192 clamped/defaulted",
-        "dcf: wacc=7.84%, g0=-5.00%\u2192termg, terminal_g=2.50%, beta=0.70, net_debt=$62.3B"
+        "dcf: wacc=7.83%, g0=-5.00%\u2192termg, terminal_g=2.50%, beta=0.70, net_debt=$62.3B"
       ],
       "assumptions": {
         "horizon_yrs": 5,
@@ -705,14 +610,14 @@
         "equity_weight": 0.7
       },
       "my_metrics": {
-        "pe": 22.67,
+        "pe": 22.88,
         "ev_ebitda": 10.36,
         "ev_rev": 0.42
       }
     },
     "LRCX": {
       "ticker": "LRCX",
-      "computed_at": 1791740147.6044967,
+      "computed_at": 1791826545.5211484,
       "source": "cache",
       "cheapness": 0.222,
       "factors": {
@@ -720,9 +625,9 @@
         "comps_percentile": 0.556,
         "dcf_margin": 0.0
       },
-      "intrinsic_value": 44.23,
-      "market_price": 318.84,
-      "margin_of_safety": -0.861,
+      "intrinsic_value": 44.24,
+      "market_price": 311.065,
+      "margin_of_safety": -0.858,
       "peer_pct": {
         "pe": 0.5,
         "ev_ebitda": 0.333,
@@ -730,7 +635,7 @@
       },
       "confidence": "high",
       "notes": [
-        "dcf: wacc=11.88%, g0=2.85%\u2192termg, terminal_g=2.50%, beta=1.85, net_debt=$-1.5B"
+        "dcf: wacc=11.87%, g0=2.85%\u2192termg, terminal_g=2.50%, beta=1.85, net_debt=$-1.5B"
       ],
       "assumptions": {
         "horizon_yrs": 5,
@@ -740,24 +645,24 @@
         "equity_weight": 0.7
       },
       "my_metrics": {
-        "pe": 55.64,
+        "pe": 54.0,
         "ev_ebitda": 46.0,
         "ev_rev": 17.11
       }
     },
     "CARR": {
       "ticker": "CARR",
-      "computed_at": 1791740157.4157233,
+      "computed_at": 1791826557.69299,
       "source": "cache",
-      "cheapness": 0.276,
+      "cheapness": 0.275,
       "factors": {
-        "value_score": 0.279,
+        "value_score": 0.278,
         "comps_percentile": 0.5,
-        "dcf_margin": 0.051
+        "dcf_margin": 0.049
       },
-      "intrinsic_value": 30.59,
-      "market_price": 55.56,
-      "margin_of_safety": -0.449,
+      "intrinsic_value": 30.61,
+      "market_price": 55.79,
+      "margin_of_safety": -0.451,
       "peer_pct": {
         "pe": 0.667,
         "ev_ebitda": 0.5,
@@ -765,7 +670,7 @@
       },
       "confidence": "high",
       "notes": [
-        "dcf: wacc=9.90%, g0=12.00%\u2192termg, terminal_g=2.50%, beta=1.29, net_debt=$11.1B"
+        "dcf: wacc=9.89%, g0=12.00%\u2192termg, terminal_g=2.50%, beta=1.29, net_debt=$11.1B"
       ],
       "assumptions": {
         "horizon_yrs": 5,
@@ -775,32 +680,30 @@
         "equity_weight": 0.7
       },
       "my_metrics": {
-        "pe": 40.26,
+        "pe": 40.43,
         "ev_ebitda": 18.48,
         "ev_rev": 2.59
       }
     },
-    "ROAD": {
-      "ticker": "ROAD",
-      "computed_at": 1791740172.6180956,
+    "BDCI": {
+      "ticker": "BDCI",
+      "computed_at": 1791826553.8705273,
       "source": "cache",
-      "cheapness": 0.225,
+      "cheapness": 0.0,
       "factors": {
-        "value_score": 0.167,
-        "comps_percentile": 0.478,
-        "dcf_margin": 0.0
+        "value_score": 0.0
       },
-      "intrinsic_value": 28.32,
-      "market_price": 86.81,
-      "margin_of_safety": -0.674,
+      "intrinsic_value": null,
+      "market_price": 10.15,
+      "margin_of_safety": null,
       "peer_pct": {
-        "pe": 0.5,
-        "ev_ebitda": 0.4,
-        "ev_rev": 0.667
+        "pe": null,
+        "ev_ebitda": null,
+        "ev_rev": null
       },
-      "confidence": "high",
+      "confidence": "low",
       "notes": [
-        "dcf: wacc=8.65%, g0=12.00%\u2192termg, terminal_g=2.50%, beta=0.93, net_debt=$1.8B"
+        "dcf-skipped: <3y FCF history"
       ],
       "assumptions": {
         "horizon_yrs": 5,
@@ -810,14 +713,14 @@
         "equity_weight": 0.7
       },
       "my_metrics": {
-        "pe": 34.04,
-        "ev_ebitda": 13.26,
-        "ev_rev": 1.93
+        "pe": 67.67,
+        "ev_ebitda": null,
+        "ev_rev": null
       }
     },
     "SPCX": {
       "ticker": "SPCX",
-      "computed_at": 1791740163.7203615,
+      "computed_at": 1791826565.9059427,
       "source": "cache",
       "cheapness": 0.0,
       "factors": {
@@ -825,7 +728,7 @@
         "comps_percentile": 0.0
       },
       "intrinsic_value": null,
-      "market_price": 162.57,
+      "market_price": 163.77,
       "margin_of_safety": null,
       "peer_pct": {
         "pe": null,
@@ -851,8 +754,8 @@
     }
   },
   "reports": {
-    "NONE": "reports/NONE_research.xlsx",
     "TSM": "reports/TSM_research.xlsx",
+    "NONE": "reports/NONE_research.xlsx",
     "AGMB": "reports/AGMB_research.xlsx",
     "SFDL": "reports/SFDL_research.xlsx",
     "SY": "reports/SY_research.xlsx"
