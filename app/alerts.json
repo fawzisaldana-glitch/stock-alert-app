@@ -1,6 +1,6 @@
 {
-  "updated": 1794159362.687689,
-  "count": 21,
+  "updated": 1794245786.9677992,
+  "count": 31,
   "alerts": [
     {
       "ticker": "LBTY",
@@ -18,7 +18,25 @@
         "cheapness": null
       },
       "link": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=LBTY&type=4&owner=only&output=atom",
-      "created_at": 1794159331.0318253
+      "created_at": 1794245727.664786
+    },
+    {
+      "ticker": "NONE",
+      "type": "insider_cluster",
+      "score": 72.0,
+      "sector": "Unknown",
+      "headline": "2 insiders bought NONE ($0.0M)",
+      "why": "2 insiders put personal cash into NONE (Unknown). Clustered open-market buys are the strongest documented edge \u2014 insiders sell for many reasons but buy for only one.",
+      "details": {
+        "insiders": 2,
+        "total_value": 1500,
+        "owners": "Booth Richard Whitaker,Hall Bjorn",
+        "issuer": "Fundrise Real Estate Interval Fund, LLC",
+        "officer": true,
+        "cheapness": null
+      },
+      "link": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=NONE&type=4&owner=only&output=atom",
+      "created_at": 1794245733.2216551
     },
     {
       "ticker": "N/A",
@@ -36,7 +54,7 @@
         "cheapness": null
       },
       "link": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=N/A&type=4&owner=only&output=atom",
-      "created_at": 1794159330.052623
+      "created_at": 1794245726.5229204
     },
     {
       "ticker": "BCBP",
@@ -54,12 +72,12 @@
         "cheapness": 1.0
       },
       "link": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=BCBP&type=4&owner=only&output=atom",
-      "created_at": 1794159334.8215415
+      "created_at": 1794245735.7901537
     },
     {
       "ticker": "VG",
       "type": "contract",
-      "score": 55.3,
+      "score": 55.1,
       "sector": "Natural Gas Distribution",
       "headline": "$390M contract \u2014 BCCG A JOINT VENTURE",
       "why": "$390M is the award's LIFETIME total to BCCG A JOINT VENTURE (Natural Gas Distribution) \u2014 USAspending lists award vehicles, not just fresh signings, so VERIFY recency before acting. (v2 will use SEC 8-K 'material agreement' filings for true fresh-deal catalysts.)",
@@ -69,28 +87,64 @@
         "action_date": "2025-09-25",
         "recipient": "BCCG A JOINT VENTURE",
         "matched_ticker": true,
-        "cheapness": 0.672
+        "cheapness": 0.667
       },
       "link": "https://www.usaspending.gov/search",
-      "created_at": 1794159338.5851715
+      "created_at": 1794245740.7866962
     },
     {
-      "ticker": "III",
+      "ticker": "BAH",
       "type": "contract",
-      "score": 52.8,
+      "score": 54.6,
       "sector": "Services-Management Consulting Services",
-      "headline": "$123M contract \u2014 GENERAL DYNAMICS INFORMATION TECHNOLOGY,",
-      "why": "$123M is the award's LIFETIME total to GENERAL DYNAMICS INFORMATION TECHNOLOGY, (Services-Management Consulting Services) \u2014 USAspending lists award vehicles, not just fresh signings, so VERIFY recency before acting. (v2 will use SEC 8-K 'material agreement' filings for true fresh-deal catalysts.)",
+      "headline": "$99M contract \u2014 BOOZ ALLEN HAMILTON INC",
+      "why": "$99M is the award's LIFETIME total to BOOZ ALLEN HAMILTON INC (Services-Management Consulting Services) \u2014 USAspending lists award vehicles, not just fresh signings, so VERIFY recency before acting. (v2 will use SEC 8-K 'material agreement' filings for true fresh-deal catalysts.)",
       "details": {
-        "amount": 122817425.33,
-        "agency": "Department of the Interior",
-        "action_date": "2025-08-27",
-        "recipient": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+        "amount": 99268730.71,
+        "agency": "General Services Administration",
+        "action_date": "2015-09-30",
+        "recipient": "BOOZ ALLEN HAMILTON INC",
         "matched_ticker": true,
-        "cheapness": 0.757
+        "cheapness": 0.851
       },
       "link": "https://www.usaspending.gov/search",
-      "created_at": 1794159347.570079
+      "created_at": 1794245752.289834
+    },
+    {
+      "ticker": "LDOS",
+      "type": "contract",
+      "score": 54.3,
+      "sector": "Services-Computer Integrated Systems Design",
+      "headline": "$72M contract \u2014 LEIDOS, INC.",
+      "why": "$72M is the award's LIFETIME total to LEIDOS, INC. (Services-Computer Integrated Systems Design) \u2014 USAspending lists award vehicles, not just fresh signings, so VERIFY recency before acting. (v2 will use SEC 8-K 'material agreement' filings for true fresh-deal catalysts.)",
+      "details": {
+        "amount": 71660509.32,
+        "agency": "General Services Administration",
+        "action_date": "2021-12-20",
+        "recipient": "LEIDOS, INC.",
+        "matched_ticker": true,
+        "cheapness": 0.895
+      },
+      "link": "https://www.usaspending.gov/search",
+      "created_at": 1794245758.526681
+    },
+    {
+      "ticker": "LGSXY",
+      "type": "contract",
+      "score": 54.1,
+      "sector": "American Depositary Receipts",
+      "headline": "$82M contract \u2014 BY LIGHT PROFESSIONAL IT SERVICES LLC",
+      "why": "$82M is the award's LIFETIME total to BY LIGHT PROFESSIONAL IT SERVICES LLC (American Depositary Receipts) \u2014 USAspending lists award vehicles, not just fresh signings, so VERIFY recency before acting. (v2 will use SEC 8-K 'material agreement' filings for true fresh-deal catalysts.)",
+      "details": {
+        "amount": 81686401.71,
+        "agency": "Department of Veterans Affairs",
+        "action_date": "2024-07-05",
+        "recipient": "BY LIGHT PROFESSIONAL IT SERVICES LLC",
+        "matched_ticker": true,
+        "cheapness": 0.867
+      },
+      "link": "https://www.usaspending.gov/search",
+      "created_at": 1794245756.7627976
     },
     {
       "ticker": "SFDL",
@@ -108,25 +162,7 @@
         "cheapness": 0.867
       },
       "link": "https://www.usaspending.gov/search",
-      "created_at": 1794159351.3799794
-    },
-    {
-      "ticker": "SAIC",
-      "type": "contract",
-      "score": 51.9,
-      "sector": "Services-Computer Integrated Systems Design",
-      "headline": "$197M contract \u2014 SCIENCE APPLICATIONS INTERNATIONAL CORPO",
-      "why": "$197M is the award's LIFETIME total to SCIENCE APPLICATIONS INTERNATIONAL CORPO (Services-Computer Integrated Systems Design) \u2014 USAspending lists award vehicles, not just fresh signings, so VERIFY recency before acting. (v2 will use SEC 8-K 'material agreement' filings for true fresh-deal catalysts.)",
-      "details": {
-        "amount": 196941603.19,
-        "agency": "Department of Veterans Affairs",
-        "action_date": "2020-01-22",
-        "recipient": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
-        "matched_ticker": true,
-        "cheapness": 0.661
-      },
-      "link": "https://www.usaspending.gov/search",
-      "created_at": 1794159340.596596
+      "created_at": 1794245763.9943168
     },
     {
       "ticker": "SFDL",
@@ -144,12 +180,30 @@
         "cheapness": 0.867
       },
       "link": "https://www.usaspending.gov/search",
-      "created_at": 1794159358.6071398
+      "created_at": 1794245773.557826
+    },
+    {
+      "ticker": "GXXM",
+      "type": "contract",
+      "score": 50.1,
+      "sector": "Services-Management Consulting Services",
+      "headline": "$72M contract \u2014 MANAGEMENT & TRAINING CORPORATION",
+      "why": "$72M is the award's LIFETIME total to MANAGEMENT & TRAINING CORPORATION (Services-Management Consulting Services) \u2014 USAspending lists award vehicles, not just fresh signings, so VERIFY recency before acting. (v2 will use SEC 8-K 'material agreement' filings for true fresh-deal catalysts.)",
+      "details": {
+        "amount": 71608859.78,
+        "agency": "Department of Labor",
+        "action_date": "2023-12-22",
+        "recipient": "MANAGEMENT & TRAINING CORPORATION",
+        "matched_ticker": true,
+        "cheapness": 0.75
+      },
+      "link": "https://www.usaspending.gov/search",
+      "created_at": 1794245760.97616
     },
     {
       "ticker": "ACN",
       "type": "contract",
-      "score": 49.5,
+      "score": 49.6,
       "sector": "Services-Business Services, Nec",
       "headline": "$185M contract \u2014 ACCENTURE FEDERAL SERVICES LLC",
       "why": "$185M is the award's LIFETIME total to ACCENTURE FEDERAL SERVICES LLC (Services-Business Services, Nec) \u2014 USAspending lists award vehicles, not just fresh signings, so VERIFY recency before acting. (v2 will use SEC 8-K 'material agreement' filings for true fresh-deal catalysts.)",
@@ -159,10 +213,64 @@
         "action_date": "2026-02-26",
         "recipient": "ACCENTURE FEDERAL SERVICES LLC",
         "matched_ticker": true,
-        "cheapness": 0.592
+        "cheapness": 0.594
       },
       "link": "https://www.usaspending.gov/search",
-      "created_at": 1794159342.1563048
+      "created_at": 1794245743.3885128
+    },
+    {
+      "ticker": "CPOP",
+      "type": "contract",
+      "score": 46.7,
+      "sector": "Services-Amusement & Recreation Services",
+      "headline": "$89M contract \u2014 AMERICAN TYPE CULTURE COLLECTION",
+      "why": "$89M is the award's LIFETIME total to AMERICAN TYPE CULTURE COLLECTION (Services-Amusement & Recreation Services) \u2014 USAspending lists award vehicles, not just fresh signings, so VERIFY recency before acting. (v2 will use SEC 8-K 'material agreement' filings for true fresh-deal catalysts.)",
+      "details": {
+        "amount": 88943568.0,
+        "agency": "Department of Health and Human Services",
+        "action_date": "2021-09-30",
+        "recipient": "AMERICAN TYPE CULTURE COLLECTION",
+        "matched_ticker": true,
+        "cheapness": 0.6
+      },
+      "link": "https://www.usaspending.gov/search",
+      "created_at": 1794245754.6712816
+    },
+    {
+      "ticker": "CZNC",
+      "type": "insider_cluster",
+      "score": 46.3,
+      "sector": "State Commercial Banks",
+      "headline": "2 insiders bought CZNC ($0.0M)",
+      "why": "2 insiders put personal cash into CZNC (State Commercial Banks). Clustered open-market buys are the strongest documented edge \u2014 insiders sell for many reasons but buy for only one. Valuation gate: fair (0.49).",
+      "details": {
+        "insiders": 2,
+        "total_value": 7365,
+        "owners": "Pellegrino Frank G,Shattuck Katherine W",
+        "issuer": "CITIZENS & NORTHERN CORP",
+        "officer": false,
+        "cheapness": 0.494
+      },
+      "link": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=CZNC&type=4&owner=only&output=atom",
+      "created_at": 1794245732.54505
+    },
+    {
+      "ticker": "III",
+      "type": "contract",
+      "score": 46.1,
+      "sector": "Services-Management Consulting Services",
+      "headline": "$29M contract \u2014 GENERAL DYNAMICS INFORMATION TECHNOLOGY,",
+      "why": "$29M is the award's LIFETIME total to GENERAL DYNAMICS INFORMATION TECHNOLOGY, (Services-Management Consulting Services) \u2014 USAspending lists award vehicles, not just fresh signings, so VERIFY recency before acting. (v2 will use SEC 8-K 'material agreement' filings for true fresh-deal catalysts.)",
+      "details": {
+        "amount": 28736317.13,
+        "agency": "Department of Homeland Security",
+        "action_date": "2025-11-05",
+        "recipient": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+        "matched_ticker": true,
+        "cheapness": 0.755
+      },
+      "link": "https://www.usaspending.gov/search",
+      "created_at": 1794245785.0828116
     },
     {
       "ticker": "ACN",
@@ -177,15 +285,15 @@
         "action_date": "2021-01-01",
         "recipient": "ACCENTURE FEDERAL SERVICES LLC",
         "matched_ticker": true,
-        "cheapness": 0.592
+        "cheapness": 0.594
       },
       "link": "https://www.usaspending.gov/search",
-      "created_at": 1794159349.3541386
+      "created_at": 1794245756.7629213
     },
     {
       "ticker": "ROAD",
       "type": "contract",
-      "score": 44.7,
+      "score": 43.8,
       "sector": "Heavy Construction Other Than Bldg Const - Contractors",
       "headline": "$960M contract \u2014 BARNARD CONSTRUCTION COMPANY, INCORPORAT",
       "why": "$960M is the award's LIFETIME total to BARNARD CONSTRUCTION COMPANY, INCORPORAT (Heavy Construction Other Than Bldg Const - Contractors) \u2014 USAspending lists award vehicles, not just fresh signings, so VERIFY recency before acting. (v2 will use SEC 8-K 'material agreement' filings for true fresh-deal catalysts.)",
@@ -195,15 +303,15 @@
         "action_date": "2026-03-05",
         "recipient": "BARNARD CONSTRUCTION COMPANY, INCORPORATED",
         "matched_ticker": true,
-        "cheapness": 0.262
+        "cheapness": 0.237
       },
       "link": "https://www.usaspending.gov/search",
-      "created_at": 1794159336.752414
+      "created_at": 1794245738.1862316
     },
     {
       "ticker": "EOG",
       "type": "contract",
-      "score": 42.3,
+      "score": 42.2,
       "sector": "Crude Petroleum & Natural Gas",
       "headline": "$59M contract \u2014 EDUCATION & TRAINING RESOURCES LLC",
       "why": "$59M is the award's LIFETIME total to EDUCATION & TRAINING RESOURCES LLC (Crude Petroleum & Natural Gas) \u2014 USAspending lists award vehicles, not just fresh signings, so VERIFY recency before acting. (v2 will use SEC 8-K 'material agreement' filings for true fresh-deal catalysts.)",
@@ -213,15 +321,15 @@
         "action_date": "2021-01-08",
         "recipient": "EDUCATION & TRAINING RESOURCES LLC",
         "matched_ticker": true,
-        "cheapness": 0.503
+        "cheapness": 0.499
       },
       "link": "https://www.usaspending.gov/search",
-      "created_at": 1794159356.8358393
+      "created_at": 1794245771.2223644
     },
     {
       "ticker": "ICUI",
       "type": "contract",
-      "score": 42.2,
+      "score": 42.1,
       "sector": "Surgical & Medical Instruments & Apparatus",
       "headline": "$159M contract \u2014 QTC MEDICAL SERVICES INC",
       "why": "$159M is the award's LIFETIME total to QTC MEDICAL SERVICES INC (Surgical & Medical Instruments & Apparatus) \u2014 USAspending lists award vehicles, not just fresh signings, so VERIFY recency before acting. (v2 will use SEC 8-K 'material agreement' filings for true fresh-deal catalysts.)",
@@ -231,15 +339,15 @@
         "action_date": "2026-10-01",
         "recipient": "QTC MEDICAL SERVICES INC",
         "matched_ticker": true,
-        "cheapness": 0.373
+        "cheapness": 0.371
       },
       "link": "https://www.usaspending.gov/search",
-      "created_at": 1794159345.7624574
+      "created_at": 1794245747.6779213
     },
     {
       "ticker": "LRCX",
       "type": "contract",
-      "score": 39.9,
+      "score": 39.5,
       "sector": "Special Industry Machinery, Nec",
       "headline": "$169M contract \u2014 SOUTHWEST RESEARCH INSTITUTE",
       "why": "$169M is the award's LIFETIME total to SOUTHWEST RESEARCH INSTITUTE (Special Industry Machinery, Nec) \u2014 USAspending lists award vehicles, not just fresh signings, so VERIFY recency before acting. (v2 will use SEC 8-K 'material agreement' filings for true fresh-deal catalysts.)",
@@ -249,15 +357,15 @@
         "action_date": "2002-03-15",
         "recipient": "SOUTHWEST RESEARCH INSTITUTE",
         "matched_ticker": true,
-        "cheapness": 0.292
+        "cheapness": 0.279
       },
       "link": "https://www.usaspending.gov/search",
-      "created_at": 1794159344.2425785
+      "created_at": 1794245745.699298
     },
     {
       "ticker": "MMCP",
       "type": "contract",
-      "score": 39.4,
+      "score": 39.3,
       "sector": "Industrial Process Furnaces & Ovens",
       "headline": "$47M contract \u2014 MILE TWO LLC",
       "why": "$47M is the award's LIFETIME total to MILE TWO LLC (Industrial Process Furnaces & Ovens) \u2014 USAspending lists award vehicles, not just fresh signings, so VERIFY recency before acting. (v2 will use SEC 8-K 'material agreement' filings for true fresh-deal catalysts.)",
@@ -267,28 +375,28 @@
         "action_date": "2023-09-30",
         "recipient": "MILE TWO LLC",
         "matched_ticker": true,
-        "cheapness": 0.434
+        "cheapness": 0.43
       },
       "link": "https://www.usaspending.gov/search",
-      "created_at": 1794159359.3682113
+      "created_at": 1794245774.8435092
     },
     {
-      "ticker": "AEIS",
+      "ticker": "IBM",
       "type": "contract",
-      "score": 38.0,
-      "sector": "Electronic Components, Nec",
-      "headline": "$61M contract \u2014 MANTECH ADVANCED SYSTEMS INTERNATIONAL, ",
-      "why": "$61M is the award's LIFETIME total to MANTECH ADVANCED SYSTEMS INTERNATIONAL,  (Electronic Components, Nec) \u2014 USAspending lists award vehicles, not just fresh signings, so VERIFY recency before acting. (v2 will use SEC 8-K 'material agreement' filings for true fresh-deal catalysts.)",
+      "score": 38.5,
+      "sector": "Computer & Office Equipment",
+      "headline": "$46M contract \u2014 INTERNATIONAL BUSINESS MACHINES CORPORAT",
+      "why": "$46M is the award's LIFETIME total to INTERNATIONAL BUSINESS MACHINES CORPORAT (Computer & Office Equipment) \u2014 USAspending lists award vehicles, not just fresh signings, so VERIFY recency before acting. (v2 will use SEC 8-K 'material agreement' filings for true fresh-deal catalysts.)",
       "details": {
-        "amount": 60829484.39,
-        "agency": "Department of Homeland Security",
-        "action_date": "2026-09-26",
-        "recipient": "MANTECH ADVANCED SYSTEMS INTERNATIONAL, INC.",
+        "amount": 46496715.87,
+        "agency": "General Services Administration",
+        "action_date": "2025-03-27",
+        "recipient": "INTERNATIONAL BUSINESS MACHINES CORPORATION",
         "matched_ticker": true,
-        "cheapness": 0.346
+        "cheapness": 0.4
       },
       "link": "https://www.usaspending.gov/search",
-      "created_at": 1794159353.361582
+      "created_at": 1794245776.1072893
     },
     {
       "ticker": "FCN",
@@ -306,7 +414,43 @@
         "cheapness": 0.254
       },
       "link": "https://www.usaspending.gov/search",
-      "created_at": 1794159349.354021
+      "created_at": 1794245750.4950526
+    },
+    {
+      "ticker": "AEIS",
+      "type": "contract",
+      "score": 37.2,
+      "sector": "Electronic Components, Nec",
+      "headline": "$61M contract \u2014 MANTECH ADVANCED SYSTEMS INTERNATIONAL, ",
+      "why": "$61M is the award's LIFETIME total to MANTECH ADVANCED SYSTEMS INTERNATIONAL,  (Electronic Components, Nec) \u2014 USAspending lists award vehicles, not just fresh signings, so VERIFY recency before acting. (v2 will use SEC 8-K 'material agreement' filings for true fresh-deal catalysts.)",
+      "details": {
+        "amount": 60829484.39,
+        "agency": "Department of Homeland Security",
+        "action_date": "2026-09-26",
+        "recipient": "MANTECH ADVANCED SYSTEMS INTERNATIONAL, INC.",
+        "matched_ticker": true,
+        "cheapness": 0.319
+      },
+      "link": "https://www.usaspending.gov/search",
+      "created_at": 1794245766.155864
+    },
+    {
+      "ticker": "UVV",
+      "type": "contract",
+      "score": 34.4,
+      "sector": "Wholesale-Farm Product Raw Materials",
+      "headline": "$39M contract \u2014 UNIVERSAL PROTECTION SERVICE, LIMITED PA",
+      "why": "$39M is the award's LIFETIME total to UNIVERSAL PROTECTION SERVICE, LIMITED PA (Wholesale-Farm Product Raw Materials) \u2014 USAspending lists award vehicles, not just fresh signings, so VERIFY recency before acting. (v2 will use SEC 8-K 'material agreement' filings for true fresh-deal catalysts.)",
+      "details": {
+        "amount": 39007003.46,
+        "agency": "Department of Homeland Security",
+        "action_date": "2025-01-01",
+        "recipient": "UNIVERSAL PROTECTION SERVICE, LIMITED PARTNERSHIP",
+        "matched_ticker": true,
+        "cheapness": 0.273
+      },
+      "link": "https://www.usaspending.gov/search",
+      "created_at": 1794245779.4305222
     },
     {
       "ticker": "UMH",
@@ -324,12 +468,30 @@
         "cheapness": 0.108
       },
       "link": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=UMH&type=4&owner=only&output=atom",
-      "created_at": 1794159332.9134881
+      "created_at": 1794245730.107694
+    },
+    {
+      "ticker": "LRCX",
+      "type": "contract",
+      "score": 34.1,
+      "sector": "Special Industry Machinery, Nec",
+      "headline": "$34M contract \u2014 SCIENTIFIC RESEARCH CORPORATION",
+      "why": "$34M is the award's LIFETIME total to SCIENTIFIC RESEARCH CORPORATION (Special Industry Machinery, Nec) \u2014 USAspending lists award vehicles, not just fresh signings, so VERIFY recency before acting. (v2 will use SEC 8-K 'material agreement' filings for true fresh-deal catalysts.)",
+      "details": {
+        "amount": 33720304.91,
+        "agency": "General Services Administration",
+        "action_date": "2020-05-15",
+        "recipient": "SCIENTIFIC RESEARCH CORPORATION",
+        "matched_ticker": true,
+        "cheapness": 0.279
+      },
+      "link": "https://www.usaspending.gov/search",
+      "created_at": 1794245779.4306514
     },
     {
       "ticker": "TTEK",
       "type": "contract",
-      "score": 34.2,
+      "score": 33.9,
       "sector": "Services-Engineering Services",
       "headline": "$61M contract \u2014 TETRA TECH, INC.",
       "why": "$61M is the award's LIFETIME total to TETRA TECH, INC. (Services-Engineering Services) \u2014 USAspending lists award vehicles, not just fresh signings, so VERIFY recency before acting. (v2 will use SEC 8-K 'material agreement' filings for true fresh-deal catalysts.)",
@@ -339,15 +501,15 @@
         "action_date": "2023-11-05",
         "recipient": "TETRA TECH, INC.",
         "matched_ticker": true,
-        "cheapness": 0.214
+        "cheapness": 0.201
       },
       "link": "https://www.usaspending.gov/search",
-      "created_at": 1794159355.101774
+      "created_at": 1794245768.791712
     },
     {
       "ticker": "J",
       "type": "contract",
-      "score": 31.7,
+      "score": 32.0,
       "sector": "Heavy Construction Other Than Bldg Const - Contractors",
       "headline": "$40M contract \u2014 JACOBS PROJECT MANAGEMENT CO",
       "why": "$40M is the award's LIFETIME total to JACOBS PROJECT MANAGEMENT CO (Heavy Construction Other Than Bldg Const - Contractors) \u2014 USAspending lists award vehicles, not just fresh signings, so VERIFY recency before acting. (v2 will use SEC 8-K 'material agreement' filings for true fresh-deal catalysts.)",
@@ -357,10 +519,28 @@
         "action_date": "2022-01-01",
         "recipient": "JACOBS PROJECT MANAGEMENT CO",
         "matched_ticker": true,
-        "cheapness": 0.171
+        "cheapness": 0.183
       },
       "link": "https://www.usaspending.gov/search",
-      "created_at": 1794159360.4017832
+      "created_at": 1794245777.2192726
+    },
+    {
+      "ticker": "JYNT",
+      "type": "contract",
+      "score": 29.8,
+      "sector": "Patent Owners & Lessors",
+      "headline": "$31M contract \u2014 NATIONAL PLASTERING INDUSTRYS JOINT APPR",
+      "why": "$31M is the award's LIFETIME total to NATIONAL PLASTERING INDUSTRYS JOINT APPR (Patent Owners & Lessors) \u2014 USAspending lists award vehicles, not just fresh signings, so VERIFY recency before acting. (v2 will use SEC 8-K 'material agreement' filings for true fresh-deal catalysts.)",
+      "details": {
+        "amount": 31372958.36,
+        "agency": "Department of Labor",
+        "action_date": "2023-07-31",
+        "recipient": "NATIONAL PLASTERING INDUSTRYS JOINT APPRENTICESHIP TRUST FUND",
+        "matched_ticker": true,
+        "cheapness": 0.124
+      },
+      "link": "https://www.usaspending.gov/search",
+      "created_at": 1794245782.6450632
     },
     {
       "ticker": "BDCI",
@@ -378,7 +558,7 @@
         "cheapness": 0.0
       },
       "link": "https://www.usaspending.gov/search",
-      "created_at": 1794159358.60698
+      "created_at": 1794245773.5577092
     }
   ]
 }
